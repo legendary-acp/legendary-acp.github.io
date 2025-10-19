@@ -1,0 +1,37 @@
+[
+    {
+        "name": "CtrlB Control Plane",
+        "stack": "Go · React · SQLite",
+        "desc": "A unified control plane for managing distributed OpenTelemetry Collector agents — handles configuration, lifecycle management, and metrics collection at scale.",
+        "chips": [
+            "OpenTelemetry",
+            "Prometheus",
+            "Kubernetes",
+            "Docker"
+        ],
+        "repo": "https://github.com/ctrlb-hq/ctrlb-control-plane"
+    },
+    {
+        "name": "Mini NFS",
+        "stack": "Rust · Systems Programming",
+        "desc": "A minimal Network File System implementation in Rust, exploring file operations, request handling, and low-level networking primitives.",
+        "chips": [
+            "NFS Protocol",
+            "Async I/O",
+            "Filesystem Internals"
+        ],
+        "repo": "https://github.com/legendary-acp/mininfs"
+    },
+    {
+        "name": "Mini Object Store (S3-like)",
+        "stack": "Rust · SQLite · HTTP",
+        "desc": "A lightweight, S3-compatible object store built in Rust — implements core object operations (PUT, GET, LIST) with a simple disk layout and pluggable metadata index.",
+        "chips": [
+            "S3 API",
+            "REST",
+            "SQLite",
+            "Storage Internals"
+        ],
+        "repo": "https://github.com/legendary-acp/mini-objstore"
+    }
+]

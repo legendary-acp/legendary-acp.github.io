@@ -1,0 +1,53 @@
+[
+    {
+        "title": "Lead Software Engineer",
+        "company": "CtrlB",
+        "period": "Sept 2025 – Present",
+        "location": "Bengaluru, India",
+        "desc": "Architecting and developing a distributed control-plane to orchestrate telemetry agents (Fluent Bit, OpenTelemetry Collector) across hybrid environments. Driving technical direction, mentoring engineers, and improving system reliability and performance across large-scale deployments.",
+        "skills": [
+            "Rust",
+            "OpenTelemetry",
+            "Kubernetes",
+            "Hybrid Cloud"
+        ]
+    },
+    {
+        "title": "Senior Software Engineer",
+        "company": "CtrlB",
+        "period": "Apr 2024 – Sept 2025",
+        "location": "Bengaluru, India",
+        "desc": "Built a self-hosted Kubernetes platform, cutting onboarding time from hours to under 15 minutes through automated provisioning. Designed and optimized observability ingestion pipelines using Go and Rust-based agents.",
+        "skills": [
+            "Kubernetes",
+            "Go Lang”",
+            "Rust",
+            "Linux"
+        ]
+    },
+    {
+        "title": "Senior Software Engineer",
+        "company": "Middleware",
+        "period": "Sep 2023 – Feb 2024",
+        "location": "Ahmedabad, India",
+        "desc": "Engineered integrations with ClickHouse, Redpanda, and Cassandra to power real-time ingestion and analytics. Automated agent packaging and deployment using a GitHub Actions-based RPM pipeline.",
+        "skills": [
+            "Go Lang”",
+            "Linux",
+            "Kubernetes"
+        ]
+    },
+    {
+        "title": "Software Engineer",
+        "company": "Gap Inc.",
+        "period": "Jun 2021 – Sep 2023",
+        "location": "Hyderabad, India",
+        "desc": "Migrated monitoring stack from RHEL to OEL, saving $24K annually while maintaining high availability. Led OpenTelemetry POC for Azure Kubernetes Service, enhancing visibility across 100+ microservices.",
+        "skills": [
+            "Azure",
+            "OpenTelemetry",
+            "Python",
+            "Linux"
+        ]
+    }
+]

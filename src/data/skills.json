@@ -1,0 +1,100 @@
+{
+    "bars": {
+        "title": "Languages",
+        "items": [
+            {
+                "name": "Go",
+                "level": 92,
+                "label": "Expert"
+            },
+            {
+                "name": "JavaScript",
+                "level": 80,
+                "label": "Advanced"
+            },
+            {
+                "name": "Python",
+                "level": 80,
+                "label": "Advanced"
+            },
+            {
+                "name": "C++",
+                "level": 70,
+                "label": "Intermediate",
+                "note": true
+            },
+            {
+                "name": "Rust",
+                "level": 70,
+                "label": "Intermediate",
+                "note": true
+            },
+            {
+                "name": "Bash",
+                "level": 65,
+                "label": "Intermediate"
+            }
+        ]
+    },
+    "groups": {
+        "title": "Domain Expertise",
+        "items": [
+            {
+                "title": "Distributed & Storage",
+                "skills": [
+                    "ClickHouse",
+                    "Redpanda",
+                    "Cassandra",
+                    "Object Store",
+                    "Replication",
+                    "Partitioning"
+                ]
+            },
+            {
+                "title": "Observability",
+                "skills": [
+                    "OpenTelemetry ",
+                    "Fluent Bit",
+                    "Prometheus",
+                    "Grafana",
+                    "Telemetry Pipelines"
+                ]
+            },
+            {
+                "title": "Infra & Cloud",
+                "skills": [
+                    "Linux",
+                    "Docker",
+                    "Kubernetes",
+                    "Terraform",
+                    "Helm",
+                    "GitHub Actions",
+                    "AWS",
+                    "GCP",
+                    "Azure"
+                ]
+            }
+        ]
+    },
+    "dual": {
+        "left": {
+            "title": "Core Engineering Skills",
+            "skills": [
+                "System Design",
+                "API Design",
+                "High-Availability Systems",
+                "Performance Optimization",
+                "DSA"
+            ]
+        },
+        "right": {
+            "title": "Systems & Internals",
+            "skills": [
+                "Concurrency & Thread Scheduling",
+                "Syscalls",
+                "File Systems (ext4, NFS)",
+                "Socket Programming"
+            ]
+        }
+    }
+}
