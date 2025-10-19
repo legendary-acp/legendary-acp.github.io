@@ -1,6 +1,6 @@
-import SectionHeader from "../SectionHeader";
+import SectionHeader from "../shared/SectionHeader";
 
-export default function Contact() {
+export default function ContactSection() {
   return (
     <section>
       <SectionHeader

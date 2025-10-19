@@ -1,7 +1,7 @@
-import SectionHeader from "../SectionHeader";
+import SectionHeader from "../shared/SectionHeader";
 import skills from "../../data/skills.json";
 
-export default function Skills() {
+export default function SkillsSection() {
   const { bars, groups, dual } = skills;
 
   return (

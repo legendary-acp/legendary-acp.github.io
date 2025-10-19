@@ -1,5 +1,6 @@
 import nowData from "../../data/introNow.json";
-export default function Intro() {
+
+export default function IntroSection() {
   return (
     <section className="grid md:grid-cols-[1.3fr_.7fr] gap-8 items-start">
       <div className="flex items-start gap-6">

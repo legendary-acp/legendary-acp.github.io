@@ -1,7 +1,7 @@
-import SectionHeader from "../SectionHeader";
+import SectionHeader from "../shared/SectionHeader";
 import roles from "../../data/career.json";
 
-export default function Timeline() {
+export default function CareerTimelineSection() {
   return (
     <section className="mt-12">
       <SectionHeader

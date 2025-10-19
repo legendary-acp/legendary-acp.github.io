@@ -1,6 +1,6 @@
-import SectionHeader from "../SectionHeader";
+import SectionHeader from "../shared/SectionHeader";
 
-export default function LatestPaper() {
+export default function LatestPaperSection() {
   const paper = {
     title: "FlowHFT — hazard notes that finally clicked",
     date: "2025-10-10",

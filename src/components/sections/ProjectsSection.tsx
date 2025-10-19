@@ -1,5 +1,5 @@
-import SectionHeader from "../SectionHeader";
-import projects from "../../data/OSSProjects.json";
+import SectionHeader from "../shared/SectionHeader";
+import projects from "../../data/ossProjects.json";
 
 type Project = {
   name: string;
@@ -10,7 +10,7 @@ type Project = {
   metricValue?: string;
   repo?: string;
 };
-export default function OpenSource() {
+export default function ProjectsSection() {
   return (
     <section>
       <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 mb-4">
