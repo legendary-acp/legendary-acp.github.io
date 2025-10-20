@@ -1,6 +1,9 @@
 import nowData from "../../data/introNow.json";
+import { Chips } from "../shared/Chip";
 
 export default function IntroSection() {
+  const keySkills = ["Go", "Rust", "C++", "Linux", "Cloud"];
+
   return (
     <section className="grid md:grid-cols-[1.3fr_.7fr] gap-8 items-start">
       <div className="flex items-start gap-6">
@@ -27,14 +30,7 @@ export default function IntroSection() {
           </p>
 
           <div className="mt-4 flex flex-wrap gap-2">
-            {["Go", "Rust", "C++", "Linux", "Cloud"].map((s) => (
-              <span
-                key={s}
-                className="inline-flex items-center rounded-full px-2.5 py-1 text-xs border border-slate-200 text-slate-600"
-              >
-                {s}
-              </span>
-            ))}
+            <Chips items={keySkills} />
           </div>
 
           <div className="mt-6 flex flex-wrap gap-3 text-sm items-center">
@@ -51,7 +47,7 @@ export default function IntroSection() {
               href="/resume.pdf"
               className="inline-flex items-center rounded-xl border border-slate-300 px-4 py-2 font-medium hover:border-blue-300 hover:text-blue-700 transition"
             >
-              Résumé
+              Resume
             </a>
 
             {/* Social icons (same height, brand colors) */}

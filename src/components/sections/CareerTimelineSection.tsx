@@ -1,5 +1,6 @@
 import SectionHeader from "../shared/SectionHeader";
 import roles from "../../data/career.json";
+import Chip from "../shared/Chip";
 
 export default function CareerTimelineSection() {
   return (
@@ -34,12 +35,7 @@ export default function CareerTimelineSection() {
 
                 <div className="mt-3 flex flex-wrap gap-2 text-xs">
                   {r.skills.map((s) => (
-                    <span
-                      key={s}
-                      className="border border-slate-200 rounded-full px-2.5 py-1 text-slate-600"
-                    >
-                      {s}
-                    </span>
+                    <Chip key={s} text={s} />
                   ))}
                 </div>
               </div>

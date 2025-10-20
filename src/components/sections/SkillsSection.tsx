@@ -1,5 +1,6 @@
 import SectionHeader from "../shared/SectionHeader";
 import skills from "../../data/skills.json";
+import { Chips } from "../shared/Chip";
 
 export default function SkillsSection() {
   const { bars, groups, dual } = skills;
@@ -81,21 +82,6 @@ function Card({
     <div className="rounded-2xl bg-white border border-slate-200 p-6">
       <h3 className="text-lg font-semibold mb-4">{title}</h3>
       {children}
-    </div>
-  );
-}
-
-function Chips({ items }: { items: string[] }) {
-  return (
-    <div className="flex flex-wrap gap-2">
-      {items.map((s) => (
-        <span
-          key={s}
-          className="text-xs border border-slate-200 rounded-full px-2.5 py-1 text-slate-600"
-        >
-          {s}
-        </span>
-      ))}
     </div>
   );
 }

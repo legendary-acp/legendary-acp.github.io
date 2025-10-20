@@ -5,7 +5,7 @@ import { Typewriter } from "react-simple-typewriter";
 
 const LINKS = [
   { label: "Home", to: "/" },
-  { label: "Papers", to: "/papers" },
+  { label: "Reading Log", to: "/reading-log" },
 ];
 
 export default function Navbar() {

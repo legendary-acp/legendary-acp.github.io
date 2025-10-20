@@ -1,3 +1,4 @@
+import { Chips } from "../shared/Chip";
 import SectionHeader from "../shared/SectionHeader";
 
 export default function LatestPaperSection() {
@@ -31,14 +32,7 @@ export default function LatestPaperSection() {
         <h3 className="mt-1 font-medium">{paper.title}</h3>
         <p className="mt-2 text-sm text-slate-700">{paper.summary}</p>
         <div className="mt-3 flex flex-wrap gap-2">
-          {paper.tags.map((t) => (
-            <span
-              key={t}
-              className="inline-flex items-center rounded-full px-2.5 py-1 text-xs border border-slate-200 text-slate-600"
-            >
-              {t}
-            </span>
-          ))}
+          <Chips items={paper.tags} />
         </div>
         <a
           href={paper.link}

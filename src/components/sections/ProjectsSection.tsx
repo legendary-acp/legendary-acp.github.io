@@ -1,5 +1,6 @@
 import SectionHeader from "../shared/SectionHeader";
 import projects from "../../data/ossProjects.json";
+import Chip from "../shared/Chip";
 
 type Project = {
   name: string;
@@ -52,12 +53,7 @@ function ProjectCard({ project }: { project: Project }) {
       <p className="text-sm text-slate-700 leading-relaxed">{project.desc}</p>
       <div className="mt-4 flex flex-wrap gap-1.5">
         {project.chips.map((c) => (
-          <span
-            key={c}
-            className="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2 py-0.5 text-[11px] text-slate-600 font-mono"
-          >
-            {c}
-          </span>
+          <Chip text={c} />
         ))}
       </div>
       {project.repo && (
