@@ -1,5 +1,12 @@
-import { useEffect, useState } from "react";
-import * as pdfjsLib from "pdfjs-dist";
+import { useEffect, useRef, useState } from "react";
+import {
+  getDocument,
+  GlobalWorkerOptions,
+  type PDFDocumentProxy,
+} from "pdfjs-dist";
+import pdfWorkerUrl from "pdfjs-dist/build/pdf.worker.min.mjs?url";
+
+GlobalWorkerOptions.workerSrc = pdfWorkerUrl;
 
 interface PDFViewerProps {
   isOpen: boolean;
@@ -8,52 +15,104 @@ interface PDFViewerProps {
   onClose: () => void;
 }
 
-pdfjsLib.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjsLib.version}/pdf.worker.min.js`;
-
 export default function PDFViewer({
   isOpen,
   pdfPath,
   title,
   onClose,
 }: PDFViewerProps) {
+  const [pdf, setPdf] = useState<PDFDocumentProxy | null>(null);
   const [numPages, setNumPages] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
   const [loading, setLoading] = useState(false);
+  const canvasRef = useRef<HTMLCanvasElement | null>(null);
+  const containerRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    if (!isOpen) return;
+    if (!isOpen || !pdfPath) return;
 
-    const loadPDF = async () => {
-      setLoading(true);
+    let cancelled = false;
+    setLoading(true);
+    (async () => {
       try {
-        const pdf = await pdfjsLib.getDocument(pdfPath).promise;
-        setNumPages(pdf.numPages);
+        const doc = await getDocument({ url: pdfPath, withCredentials: false })
+          .promise;
+        if (cancelled) return;
+        setPdf(doc);
+        setNumPages(doc.numPages);
         setCurrentPage(1);
-      } catch (error) {
-        console.error("Error loading PDF:", error);
+      } catch (err) {
+        console.error("Error loading PDF:", err);
       } finally {
-        setLoading(false);
+        if (!cancelled) setLoading(false);
       }
-    };
+    })();
 
-    loadPDF();
+    return () => {
+      cancelled = true;
+      setPdf(() => {
+        return null;
+      });
+    };
   }, [isOpen, pdfPath]);
 
   useEffect(() => {
-    const handleEscape = (e: KeyboardEvent) => {
-      if (e.key === "Escape") onClose();
-    };
-
+    const handleEscape = (e: KeyboardEvent) => e.key === "Escape" && onClose();
     if (isOpen) {
       document.addEventListener("keydown", handleEscape);
       document.body.style.overflow = "hidden";
     }
-
     return () => {
       document.removeEventListener("keydown", handleEscape);
       document.body.style.overflow = "auto";
     };
   }, [isOpen, onClose]);
+
+  useEffect(() => {
+    let cleanup = () => {};
+    if (!pdf || !canvasRef.current || !containerRef.current) return;
+
+    let renderTask: any = null;
+    const canvas = canvasRef.current;
+    const ctx = canvas.getContext("2d");
+
+    const render = async () => {
+      if (!ctx) return;
+      const page = await pdf.getPage(currentPage);
+
+      const containerWidth = containerRef.current!.clientWidth || 800;
+      const viewport = page.getViewport({ scale: 1 });
+      const scale = containerWidth / viewport.width;
+      const scaledViewport = page.getViewport({ scale });
+
+      canvas.width = Math.floor(scaledViewport.width);
+      canvas.height = Math.floor(scaledViewport.height);
+
+      if (renderTask && renderTask.cancel) {
+        renderTask.cancel();
+      }
+      renderTask = page.render({
+        canvasContext: ctx,
+        viewport: scaledViewport,
+        canvas: canvas,
+      });
+      await renderTask.promise;
+    };
+
+    const ro = new ResizeObserver(() => render());
+    ro.observe(containerRef.current);
+
+    render();
+
+    cleanup = () => {
+      ro.disconnect();
+      if (renderTask && renderTask.cancel) {
+        renderTask.cancel();
+      }
+    };
+
+    return cleanup;
+  }, [pdf, currentPage]);
 
   if (!isOpen) return null;
 
@@ -89,7 +148,6 @@ export default function PDFViewer({
         className="bg-white rounded-2xl shadow-2xl w-full max-w-4xl max-h-[90vh] flex flex-col overflow-hidden"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Header */}
         <div className="flex items-center justify-between border-b border-slate-200 p-6">
           <h2 className="text-lg font-semibold text-slate-900 truncate pr-4">
             {title}
@@ -103,44 +161,39 @@ export default function PDFViewer({
           </button>
         </div>
 
-        {/* Content */}
-        <div className="flex-grow overflow-auto bg-slate-100 flex items-center justify-center">
+        <div
+          ref={containerRef}
+          className="flex-grow overflow-auto bg-slate-100 flex items-center justify-center p-4"
+        >
           {loading ? (
             <div className="text-slate-500">Loading PDF...</div>
           ) : (
-            <iframe
-              src={`${pdfPath}#toolbar=1&navpanes=0`}
-              className="w-full h-full"
-              title={title}
-            />
+            <div className="bg-white shadow rounded-lg overflow-hidden">
+              <canvas ref={canvasRef} className="block max-w-full h-auto" />
+            </div>
           )}
         </div>
 
         {/* Footer */}
         <div className="border-t border-slate-200 p-4 flex items-center justify-between bg-white">
           <div className="text-sm text-slate-600">
-            {numPages > 0 && `${currentPage} / ${numPages}`}
+            {numPages > 0 ? `${currentPage} / ${numPages}` : ""}
           </div>
-
           <div className="flex gap-2">
             <button
-              onClick={() => setCurrentPage(Math.max(1, currentPage - 1))}
-              disabled={currentPage === 1}
+              onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
+              disabled={currentPage <= 1}
               className="px-3 py-2 rounded-lg border border-slate-200 text-sm font-medium text-slate-700 hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
             >
               ← Prev
             </button>
-
             <button
-              onClick={() =>
-                setCurrentPage(Math.min(numPages, currentPage + 1))
-              }
-              disabled={currentPage === numPages}
+              onClick={() => setCurrentPage((p) => Math.min(numPages, p + 1))}
+              disabled={currentPage >= numPages}
               className="px-3 py-2 rounded-lg border border-slate-200 text-sm font-medium text-slate-700 hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
             >
               Next →
             </button>
-
             <a
               href={pdfPath}
               target="_blank"

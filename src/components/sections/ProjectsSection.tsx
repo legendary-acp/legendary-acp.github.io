@@ -32,7 +32,7 @@ export default function ProjectsSection() {
 
       <div className="grid md:grid-cols-2 gap-6">
         {projects.map((p) => (
-          <ProjectCard key={p.name} project={p} />
+          <ProjectCard key={p.id} project={p} />
         ))}
       </div>
     </section>
@@ -53,7 +53,7 @@ function ProjectCard({ project }: { project: Project }) {
       <p className="text-sm text-slate-700 leading-relaxed">{project.desc}</p>
       <div className="mt-4 flex flex-wrap gap-1.5">
         {project.chips.map((c) => (
-          <Chip text={c} />
+          <Chip key={c} text={c} />
         ))}
       </div>
       {project.repo && (

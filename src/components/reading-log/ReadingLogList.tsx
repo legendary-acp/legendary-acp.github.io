@@ -34,6 +34,7 @@ const normalize = (raw: any[]): ReadingLogItem[] =>
     description: String(p.description),
     tags: Array.isArray(p.tags) ? p.tags.map(String) : [],
     blogUrl: typeof p.blogUrl === "string" ? p.blogUrl : undefined,
+    pdfPath: typeof p.pdfPath === "string" ? p.pdfPath : undefined,
   }));
 
 const formatDate = (iso: string) =>
@@ -75,6 +76,7 @@ const filterPapers = (
   );
 };
 
+// 2) make the card actually clickable + keyboard accessible
 function PaperCard({
   paper,
   onClick,
@@ -97,7 +99,15 @@ function PaperCard({
         : "To Read";
 
   return (
-    <article className="rounded-2xl bg-white border border-slate-200 p-6 hover:shadow-md hover:border-slate-300 transition-all duration-200">
+    <article
+      role="button"
+      tabIndex={0}
+      onClick={onClick}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") onClick();
+      }}
+      className="cursor-pointer rounded-2xl bg-white border border-slate-200 p-6 hover:shadow-md hover:border-slate-300 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-600/50"
+    >
       <div className="flex items-start justify-between mb-2">
         <h3 className="text-lg font-semibold text-slate-900 leading-tight tracking-tight">
           {paper.title}
@@ -120,18 +130,6 @@ function PaperCard({
           <Chip key={tag} text={tag} />
         ))}
       </div>
-
-      {paper.blogUrl && (
-        <a
-          href={paper.blogUrl}
-          target="_blank"
-          rel="noreferrer"
-          className="mt-5 inline-flex items-center gap-1.5 rounded-lg border border-slate-200 px-3 py-2 text-xs font-medium text-slate-700 hover:bg-slate-50 hover:border-slate-300 transition-colors"
-        >
-          <span>Notes</span>
-          <span aria-hidden="true">→</span>
-        </a>
-      )}
     </article>
   );
 }
