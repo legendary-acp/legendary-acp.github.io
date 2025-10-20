@@ -87,6 +87,8 @@ export default function PDFViewer({
 
       canvas.width = Math.floor(scaledViewport.width);
       canvas.height = Math.floor(scaledViewport.height);
+      canvas.style.width = `${canvas.width}px`;
+      canvas.style.height = `${canvas.height}px`;
 
       if (renderTask && renderTask.cancel) {
         renderTask.cancel();
@@ -123,7 +125,7 @@ export default function PDFViewer({
         onClick={onClose}
       >
         <div
-          className="bg-white rounded-2xl shadow-2xl w-full max-w-md p-6 text-center"
+          className="bg-white rounded-2xl shadow-2xl w-full max-w-4xl max-h-[90vh] flex flex-col overflow-hidden"
           onClick={(e) => e.stopPropagation()}
         >
           <h2 className="text-lg font-semibold text-slate-900 mb-2">{title}</h2>
@@ -160,20 +162,22 @@ export default function PDFViewer({
             <span className="text-xl">✕</span>
           </button>
         </div>
-
         <div
           ref={containerRef}
-          className="flex-grow overflow-auto bg-slate-100 flex items-center justify-center p-4"
+          className="flex-grow overflow-auto bg-slate-100"
         >
           {loading ? (
             <div className="text-slate-500">Loading PDF...</div>
           ) : (
-            <div className="bg-white shadow rounded-lg overflow-hidden">
-              <canvas ref={canvasRef} className="block max-w-full h-auto" />
+            <div className="bg-white shadow rounded-lg my-auto mx-auto">
+              <canvas
+                ref={canvasRef}
+                className="block"
+                style={{ touchAction: "pan-y" }}
+              />
             </div>
           )}
         </div>
-
         {/* Footer */}
         <div className="border-t border-slate-200 p-4 flex items-center justify-between bg-white">
           <div className="text-sm text-slate-600">

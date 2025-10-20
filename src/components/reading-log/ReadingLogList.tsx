@@ -271,8 +271,6 @@ export default function ReadingLogMain() {
         title={selectedPaper?.title || ""}
         onClose={() => setSelectedPaper(null)}
       />
-
-      {filtered.length === 0 && <EmptyState />}
     </section>
   );
 }
