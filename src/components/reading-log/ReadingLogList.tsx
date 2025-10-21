@@ -76,7 +76,6 @@ const filterPapers = (
   );
 };
 
-// 2) make the card actually clickable + keyboard accessible
 function PaperCard({
   paper,
   onClick,
