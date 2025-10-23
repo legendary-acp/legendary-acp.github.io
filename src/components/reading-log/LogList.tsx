@@ -220,7 +220,7 @@ function EmptyState() {
   );
 }
 
-export default function ReadingLogMain() {
+export default function LogMain() {
   const [items, setItems] = useState<ReadingLogItem[]>([]);
   const [status, setStatus] = useState<StatusFilter>("all");
   const [category, setCategory] = useState("all");

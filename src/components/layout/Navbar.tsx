@@ -5,7 +5,8 @@ import { Typewriter } from "react-simple-typewriter";
 
 const LINKS = [
   { label: "Home", to: "/" },
-  { label: "Reading Log", to: "/reading-log" },
+  { label: "Notes", to: "/notes" },
+  { label: "Log", to: "/logs" },
 ];
 
 export default function Navbar() {
@@ -88,18 +89,55 @@ export default function Navbar() {
 
         {/* Mobile toggle */}
         <button
-          className="md:hidden inline-flex items-center justify-center w-9 h-9 rounded-lg border border-slate-300 text-slate-700"
+          className="md:hidden inline-flex items-center justify-center w-8 h-8 rounded-lg border border-slate-300 text-slate-700"
           onClick={() => setOpen((v) => !v)}
           aria-expanded={open}
           aria-label="Toggle navigation"
         >
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-            {open ? (
-              <path d="M6 18L18 6M6 6l12 12" />
-            ) : (
-              <path d="M4 7h16M4 12h16M4 17h16" />
-            )}
-          </svg>
+          {open ? (
+            <svg
+              fill="#000000"
+              viewBox="-204.8 -204.8 1433.60 1433.60"
+              xmlns="http://www.w3.org/2000/svg"
+              transform="rotate(0)"
+            >
+              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g
+                id="SVGRepo_tracerCarrier"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                stroke="#CCCCCC"
+                strokeWidth="8.192"
+              ></g>
+              <g id="SVGRepo_iconCarrier">
+                <path d="M697.4 759.2l61.8-61.8L573.8 512l185.4-185.4-61.8-61.8L512 450.2 326.6 264.8l-61.8 61.8L450.2 512 264.8 697.4l61.8 61.8L512 573.8z"></path>
+              </g>
+            </svg>
+          ) : (
+            <svg
+              fill="#000000"
+              viewBox="0 0 1024.00 1024.00"
+              xmlns="http://www.w3.org/2000/svg"
+              stroke="#000000"
+              strokeWidth="0.01024"
+            >
+              <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+              <g
+                id="SVGRepo_tracerCarrier"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                stroke="#CCCCCC"
+                strokeWidth="2.048"
+              ></g>
+              <g id="SVGRepo_iconCarrier">
+                <title>Artboard</title>
+                <path
+                  d="M768 306.2V383H256v-76.8h512zM256 536.6h512v-76.8H256v76.8zm0 153.6h512v-76.8H256v76.8z"
+                  fillRule="evenodd"
+                ></path>
+              </g>
+            </svg>
+          )}
         </button>
       </div>
 

@@ -1,10 +1,13 @@
-import ReadingLogIntro from "../components/reading-log/ReadingLogIntro";
-import ReadingLogList from "../components/reading-log/ReadingLogList";
+import ReadingLogList from "../components/reading-log/LogList";
+import PageHeader from "../components/shared/PageHeader";
 
-export default function ReadingLogPage() {
+export default function LogPage() {
   return (
     <main className="max-w-5xl mx-auto px-4 py-8 space-y-12">
-      <ReadingLogIntro />
+      <PageHeader
+        title="Reading Log"
+        subtitle="A curated log of research papers, systems write-ups, and design notes that shaped how I think about reliability, performance, and architecture."
+      />
       <ReadingLogList />
     </main>
   );
