@@ -3,6 +3,7 @@ import {
   getDocument,
   GlobalWorkerOptions,
   type PDFDocumentProxy,
+  type RenderTask,
 } from "pdfjs-dist";
 import pdfWorkerUrl from "pdfjs-dist/build/pdf.worker.min.mjs?url";
 
@@ -71,8 +72,7 @@ export default function PDFViewer({
   useEffect(() => {
     let cleanup = () => {};
     if (!pdf || !canvasRef.current || !containerRef.current) return;
-
-    let renderTask: any = null;
+    let renderTask: RenderTask | null = null;
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
 

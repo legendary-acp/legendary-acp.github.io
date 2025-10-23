@@ -1,4 +1,3 @@
-import { Tags } from "lucide-react";
 import { Chips } from "../shared/Chip";
 import ViewAllLink from "../shared/ViewAllLink";
 
