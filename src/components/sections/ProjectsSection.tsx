@@ -1,6 +1,7 @@
 import SectionHeader from "../shared/SectionHeader";
 import projects from "../../data/ossProjects.json";
-import Chip from "../shared/Chip";
+import { Chips } from "../shared/Chip";
+import ViewAllLink from "../shared/ViewAllLink";
 
 type Project = {
   name: string;
@@ -20,14 +21,11 @@ export default function ProjectsSection() {
           title="Open-source projects"
           subtitle="Things I’m building, learning from, or maintaining."
         />
-        <a
-          className="text-blue-700 text-sm hover:underline whitespace-nowrap self-start md:self-end"
+        <ViewAllLink
           href="https://github.com/legendary-acp"
-          target="_blank"
-          rel="noreferrer"
-        >
-          More on GitHub →
-        </a>
+          external={true}
+          label="More on Github"
+        />
       </div>
 
       <div className="grid md:grid-cols-2 gap-6">
@@ -51,23 +49,14 @@ function ProjectCard({ project }: { project: Project }) {
         </span>
       </div>
       <p className="text-sm text-slate-700 leading-relaxed">{project.desc}</p>
-      <div className="mt-4 flex flex-wrap gap-1.5">
-        {project.chips.map((c) => (
-          <Chip key={c} text={c} />
-        ))}
-      </div>
+      <Chips items={project.chips} />
       {project.repo && (
-        <div className="mt-5">
-          <a
-            className="inline-flex items-center gap-1 text-sm font-medium text-blue-700 hover:text-blue-800 hover:underline transition-colors"
-            href={project.repo}
-            target="_blank"
-            rel="noreferrer"
-          >
-            <span>View repo</span>
-            <span aria-hidden="true">→</span>
-          </a>
-        </div>
+        <ViewAllLink
+          label="View repo"
+          external={true}
+          href={project.repo}
+          className="text-xs pt-2"
+        />
       )}
     </article>
   );

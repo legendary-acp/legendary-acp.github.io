@@ -1,4 +1,4 @@
-import ReadingLogList from "../components/reading-log/LogList";
+import ReadingLogList from "../components/logs/LogsList";
 import PageHeader from "../components/shared/PageHeader";
 
 export default function LogPage() {

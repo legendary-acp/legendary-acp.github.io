@@ -40,7 +40,7 @@ export default function ContactSection() {
                 href="/resume.pdf"
                 className="rounded-xl border border-slate-300 text-slate-700 px-5 py-3 text-sm font-medium text-center hover:border-blue-300 hover:text-blue-700"
               >
-                Résumé
+                Resume
               </a>
               <a
                 href="https://calendly.com/meetupradyuman/30min"

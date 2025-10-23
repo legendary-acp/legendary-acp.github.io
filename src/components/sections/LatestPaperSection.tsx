@@ -1,5 +1,6 @@
 import { Chips } from "../shared/Chip";
 import SectionHeader from "../shared/SectionHeader";
+import ViewAllLink from "../shared/ViewAllLink";
 
 export default function LatestPaperSection() {
   const paper = {
@@ -20,26 +21,44 @@ export default function LatestPaperSection() {
           title="Latest paper"
           subtitle="Fresh notes from what I’m reading and testing."
         />
-        <a href="/writing" className="text-blue-700 text-sm hover:underline">
-          All papers →
-        </a>
+        <ViewAllLink href="/logs" align="end" label="All papers" />
       </div>
 
-      <article className="rounded-2xl bg-white border border-slate-200 p-5 hover:shadow-soft transition">
+      <article className="group rounded-2xl bg-white border border-slate-200 p-5 hover:shadow-soft hover:border-slate-300 transition">
         <div className="text-xs text-slate-500 font-mono">
-          {new Date(paper.date).toLocaleDateString()} · {paper.minutes} min
+          <time dateTime={new Date(paper.date).toISOString()}>
+            {new Date(paper.date).toLocaleDateString(undefined, {
+              year: "numeric",
+              month: "short",
+              day: "2-digit",
+            })}
+          </time>
+          {" · "}
+          {paper.minutes} min read
         </div>
-        <h3 className="mt-1 font-medium">{paper.title}</h3>
-        <p className="mt-2 text-sm text-slate-700">{paper.summary}</p>
+        <a href={paper.link} className="mt-2 block">
+          <h3 className="text-lg font-semibold tracking-tight text-slate-900 group-hover:text-slate-950">
+            {paper.title}
+          </h3>
+        </a>
+
+        <p className="mt-2 text-sm leading-relaxed text-slate-700 line-clamp-3">
+          {paper.summary}
+        </p>
         <div className="mt-3 flex flex-wrap gap-2">
           <Chips items={paper.tags} />
         </div>
-        <a
-          href={paper.link}
-          className="mt-4 inline-block text-blue-700 text-sm font-medium"
-        >
-          Read notes →
-        </a>
+        <div className="mt-4 pt-3 border-t border-slate-200 flex justify-end">
+          <a
+            href={paper.link}
+            className="inline-flex items-center gap-1.5 text-blue-600 text-xs md:text-sm font-medium hover:text-blue-700 transition-colors"
+          >
+            Read notes
+            <span className="transition-transform group-hover:translate-x-0.5">
+              →
+            </span>
+          </a>
+        </div>
       </article>
     </section>
   );
