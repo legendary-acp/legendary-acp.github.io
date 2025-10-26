@@ -1,54 +1,13 @@
 import React, { useEffect, useState } from "react";
 import ViewAllLink from "../shared/ViewAllLink";
 import { Chips } from "../shared/Chip";
-
-type MediumBlogItem = Readonly<{
-  title: string;
-  link: string;
-  pubDate: string;
-  content: string;
-  image?: string | null;
-  excerpt: string;
-  readTime: string;
-  categories: string[];
-}>;
-
-const extractFirstImage = (htmlContent: string): string | null => {
-  const match = htmlContent.match(/<img[^>]+src=["']([^"']+)["']/i);
-  return match ? match[1] : null;
-};
-
-const stripHtml = (html: string): string => html.replace(/<[^>]*>/g, "").trim();
-
-const getExcerpt = (htmlContent: string, wordLimit = 20): string => {
-  const plain = stripHtml(htmlContent);
-  const words = plain.split(/\s+/).filter(Boolean);
-  if (words.length <= wordLimit) return plain;
-  return words.slice(0, wordLimit).join(" ") + "...";
-};
-
-const calculateReadTime = (htmlContent: string): string => {
-  const words = stripHtml(htmlContent).split(/\s+/).filter(Boolean).length;
-  const minutes = Math.max(1, Math.ceil(words / 200));
-  return `${minutes} min read`;
-};
-
-const formatDate = (dateString: string): string =>
-  new Date(dateString).toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "short",
-    day: "numeric",
-  });
-
-type RssItem = {
-  title: string;
-  link: string;
-  pubDate: string;
-  content: string;
-  categories?: string[];
-};
-
-type RssResponse = { items?: RssItem[] };
+import type { MediumBlogItem, RssResponse } from "./d";
+import {
+  calculateReadTime,
+  extractFirstImage,
+  formatDate,
+  getExcerpt,
+} from "../../utils/content";
 
 function BlogCard({ blog }: { blog: MediumBlogItem }) {
   return (
@@ -74,15 +33,12 @@ function BlogCard({ blog }: { blog: MediumBlogItem }) {
           <h3 className="text-lg font-semibold text-gray-900 group-hover:text-blue-600 transition-colors line-clamp-2 flex-1">
             {blog.title}
           </h3>
-          <span className="inline-block bg-amber-100 text-amber-800 px-2.5 py-1 rounded text-xs font-semibold whitespace-nowrap flex-shrink-0">
-            Medium
-          </span>
         </div>
 
         <p className="text-sm text-gray-500 mb-3">{blog.pubDate}</p>
 
         <p className="text-gray-600 text-sm line-clamp-3 mb-4 flex-1">
-          {blog.excerpt}
+          {blog.summary}
         </p>
 
         {blog.categories.length > 0 && (
@@ -112,7 +68,7 @@ export default function MediumBlogCards(): React.ReactElement {
     const controller = new AbortController();
     const signal = controller.signal;
 
-    const fetchMediumFeed = async () => {
+    (async () => {
       try {
         const rssUrl = "https://medium.com/feed/debugging-diaries";
         const corsProxy = "https://api.rss2json.com/v1/api.json?rss_url=";
@@ -129,61 +85,29 @@ export default function MediumBlogCards(): React.ReactElement {
           pubDate: formatDate(item.pubDate),
           content: item.content,
           image: extractFirstImage(item.content),
-          excerpt: getExcerpt(item.content, 20),
+          summary: getExcerpt(item.content, 20),
           readTime: calculateReadTime(item.content),
           categories: item.categories ?? [],
         }));
 
         setBlogs(parsed);
       } catch (err: unknown) {
-        if ((err as DOMException)?.name === "AbortError") return;
-        console.error("Error fetching Medium feed:", err);
-        setError("Failed to load Medium articles");
+        if ((err as DOMException)?.name !== "AbortError") {
+          console.error("Error fetching Medium feed:", err);
+          setError("Failed to load Medium articles");
+        }
       } finally {
         setLoading(false);
       }
-    };
+    })();
 
-    fetchMediumFeed();
     return () => controller.abort();
   }, []);
-
-  if (loading) {
-    return (
-      <div className="flex items-center justify-center p-8">
-        <div className="h-8 w-8 animate-spin rounded-full border-4 border-slate-200 border-t-blue-600" />
-      </div>
-    );
-  }
-
-  if (error) {
-    return (
-      <div className="mx-auto max-w-2xl flex items-center gap-2 rounded-lg border border-red-200 bg-red-50/70 px-3 py-2 text-sm text-red-700">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-4 w-4 flex-shrink-0 text-red-500"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          strokeWidth={2}
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M12 9v2m0 4h.01M12 19a7 7 0 110-14 7 7 0 010 14z"
-          />
-        </svg>
-        <span className="leading-tight">
-          Unable to load Medium posts right now. Please try again later.
-        </span>
-      </div>
-    );
-  }
 
   return (
     <div className="w-full max-w-6xl mx-auto px-4 pb-7">
       <div className="inline-block text-[11px] uppercase tracking-wider font-mono text-slate-600 border border-slate-300 rounded-md px-2 py-0.5 mb-1.5">
-        Blog
+        Blogs
       </div>
       <div className="flex items-center justify-between mb-6">
         <h1 className="text-4xl font-semibold text-slate-900 tracking-tight">
@@ -196,11 +120,41 @@ export default function MediumBlogCards(): React.ReactElement {
         />
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {blogs.map((blog) => (
-          <BlogCard key={blog.link} blog={blog} />
-        ))}
-      </div>
+      {loading ? (
+        <div className="flex items-center justify-center p-8">
+          <div className="h-8 w-8 animate-spin rounded-full border-4 border-slate-200 border-t-blue-600" />
+        </div>
+      ) : error ? (
+        <div className="mx-auto max-w-2xl flex items-center gap-2 rounded-lg border border-red-200 bg-red-50/70 px-3 py-2 text-sm text-red-700">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-4 w-4 flex-shrink-0 text-red-500"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth={2}
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M12 9v2m0 4h.01M12 19a7 7 0 110-14 7 7 0 010 14z"
+            />
+          </svg>
+          <span className="leading-tight">
+            Unable to load Medium posts right now. Please try again later.
+          </span>
+        </div>
+      ) : blogs.length === 0 ? (
+        <div className="text-sm text-slate-600 border border-slate-200 bg-white rounded-lg p-4">
+          No posts found.
+        </div>
+      ) : (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {blogs.map((blog) => (
+            <BlogCard key={blog.link} blog={blog} />
+          ))}
+        </div>
+      )}
     </div>
   );
 }

@@ -1,58 +1,7 @@
 import { Chips } from "../shared/Chip";
 import ViewAllLink from "../shared/ViewAllLink";
-
-type PaperNote = {
-  id: number;
-  title: string;
-  date: string;
-  readTime: string;
-  excerpt: string;
-  tags: string[];
-  link: string;
-};
-
-const PAPER_NOTES = [
-  {
-    id: 1,
-    title: "FlowHFT: Hazard notes that finally clicked",
-    date: "10 Oct 2025",
-    readTime: "6 min read",
-    excerpt:
-      "What 'probability path' really means in practice, plus a tiny Rust snippet I used to sanity-check it. Deep dive into the mathematical foundations of high-frequency trading hazard rates and their practical implications.",
-    tags: ["hft", "systems", "rust"],
-    link: "#",
-  },
-  {
-    id: 2,
-    title: "Misspecification in Inverse Reinforcement Learning",
-    date: "28 Nov 2024",
-    readTime: "15 min read",
-    excerpt:
-      "Exploring the fundamental challenges of inverse reinforcement learning when the true reward function is misspecified. Analysis of how small assumptions can cascade into major prediction errors.",
-    tags: ["ml", "reinforcement-learning", "theory"],
-    link: "#",
-  },
-  {
-    id: 3,
-    title: "Bitcoin: The Original Whitepaper Analysis",
-    date: "04 Jul 2024",
-    readTime: "20 min read",
-    excerpt:
-      "Breaking down Satoshi's whitepaper section by section and what makes the consensus mechanism so elegant. Understanding the breakthrough that solved the double-spending problem.",
-    tags: ["blockchain", "cryptocurrency", "consensus"],
-    link: "#",
-  },
-  {
-    id: 4,
-    title: "Cache Coherence Protocols: Deep Dive",
-    date: "18 Jun 2024",
-    readTime: "22 min read",
-    excerpt:
-      "Understanding MESI, MOESI, and other cache coherence protocols. How modern CPUs keep caches in sync across multiple cores and the performance implications.",
-    tags: ["systems", "cpu", "performance"],
-    link: "#",
-  },
-];
+import type { PaperNote } from "./d";
+import paperNotes from "../../data/paperNotes.json";
 
 export default function PaperNotes() {
   return (
@@ -67,7 +16,7 @@ export default function PaperNotes() {
         <ViewAllLink href="#" label="View all notes" align="end" />
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        {PAPER_NOTES.map((note) => (
+        {paperNotes.map((note) => (
           <PaperNoteCard key={note.id} note={note} />
         ))}
       </div>
@@ -97,7 +46,7 @@ function PaperNoteCard({ note }: { note: PaperNote }) {
         </div>
 
         <p className="text-gray-600 text-sm leading-relaxed mb-4">
-          {note.excerpt}
+          {note.summary}
         </p>
 
         {note.tags.length > 0 && <Chips items={note.tags}></Chips>}

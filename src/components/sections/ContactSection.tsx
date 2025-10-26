@@ -11,7 +11,6 @@ export default function ContactSection() {
 
       <div className="rounded-3xl bg-white border border-slate-200 p-8 shadow-sm">
         <div className="grid md:grid-cols-2 gap-8 items-center">
-          {/* Left: copy */}
           <div>
             <h3 className="text-xl md:text-2xl font-semibold">Contact me</h3>
             <p className="mt-2 text-slate-700">
@@ -20,12 +19,11 @@ export default function ContactSection() {
             </p>
             <p className="mt-2 text-slate-600 font-mono">{`{ Bengaluru, India }`}</p>
             <p className="mt-4 text-xs text-slate-500">
-              For quick syncs or casual tech discussions, you can also use
-              Calendly below.
+              For quick syncs or casual discussions, you can schedule a call
+              anytime.
             </p>
           </div>
 
-          {/* Right: actions */}
           <div className="flex flex-col gap-3">
             <a
               href="mailto:meetupradyuman@gmail.com"
@@ -48,7 +46,7 @@ export default function ContactSection() {
                 rel="noopener noreferrer"
                 className="rounded-xl border border-blue-200 text-blue-700 px-5 py-3 text-sm font-medium text-center hover:bg-blue-50"
               >
-                Schedule a chat
+                Schedule a call
               </a>
             </div>
             <div className="flex justify-center gap-5 text-sm mt-1">

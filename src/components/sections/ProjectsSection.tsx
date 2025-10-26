@@ -2,16 +2,8 @@ import SectionHeader from "../shared/SectionHeader";
 import projects from "../../data/ossProjects.json";
 import { Chips } from "../shared/Chip";
 import ViewAllLink from "../shared/ViewAllLink";
+import type { Project } from "./d";
 
-type Project = {
-  name: string;
-  stack: string;
-  desc: string;
-  chips: string[];
-  metricLabel?: string;
-  metricValue?: string;
-  repo?: string;
-};
 export default function ProjectsSection() {
   return (
     <section>

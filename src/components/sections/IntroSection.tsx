@@ -34,7 +34,6 @@ export default function IntroSection() {
           </div>
 
           <div className="mt-6 flex flex-wrap gap-3 text-sm items-center">
-            {/* Primary CTA */}
             <a
               href="#contact"
               className="inline-flex items-center rounded-xl bg-blue-600 text-white font-medium px-4 py-2 hover:bg-blue-700 transition"
@@ -42,7 +41,6 @@ export default function IntroSection() {
               Say hi
             </a>
 
-            {/* Secondary CTA */}
             <a
               href="/Resume.pdf"
               className="inline-flex items-center rounded-xl border border-slate-300 px-4 py-2 font-medium hover:border-blue-300 hover:text-blue-700 transition"
@@ -50,9 +48,7 @@ export default function IntroSection() {
               Resume
             </a>
 
-            {/* Social icons (same height, brand colors) */}
             <div className="flex items-center gap-2 ml-1">
-              {/* GitHub */}
               <a
                 href="https://github.com/legendary-acp"
                 target="_blank"
@@ -75,7 +71,6 @@ export default function IntroSection() {
                 </svg>
               </a>
 
-              {/* LinkedIn */}
               <a
                 href="https://linkedin.com/in/ppradyu"
                 target="_blank"
