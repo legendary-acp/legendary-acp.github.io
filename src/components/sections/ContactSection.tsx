@@ -37,7 +37,7 @@ export default function ContactSection() {
 
             <div className="grid sm:grid-cols-2 gap-3">
               <a
-                href="/resume.pdf"
+                href="/Resume.pdf"
                 className="rounded-xl border border-slate-300 text-slate-700 px-5 py-3 text-sm font-medium text-center hover:border-blue-300 hover:text-blue-700"
               >
                 Resume
@@ -70,7 +70,7 @@ export default function ContactSection() {
               </a>
               <a
                 className="text-blue-700 hover:underline"
-                href="hhttps://x.com/legendary_acp"
+                href="https://x.com/legendary_acp"
                 target="_blank"
                 rel="noopener noreferrer"
               >

@@ -23,7 +23,6 @@ export default function ProjectsSection() {
         />
         <ViewAllLink
           href="https://github.com/legendary-acp"
-          external={true}
           label="More on Github"
         />
       </div>
@@ -53,7 +52,6 @@ function ProjectCard({ project }: { project: Project }) {
       {project.repo && (
         <ViewAllLink
           label="View repo"
-          external={true}
           href={project.repo}
           className="text-xs pt-2"
         />

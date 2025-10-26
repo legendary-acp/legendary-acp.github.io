@@ -44,7 +44,7 @@ export default function IntroSection() {
 
             {/* Secondary CTA */}
             <a
-              href="/resume.pdf"
+              href="/Resume.pdf"
               className="inline-flex items-center rounded-xl border border-slate-300 px-4 py-2 font-medium hover:border-blue-300 hover:text-blue-700 transition"
             >
               Resume

@@ -10,7 +10,7 @@ export default function LatestPaperSection() {
     tags: ["hft", "systems"],
     summary:
       "What “probability path” really means in practice, plus a tiny Rust snippet I used to sanity-check it.",
-    link: "/writing/flowhft", // later route
+    link: "/notes",
   };
 
   return (
@@ -48,17 +48,7 @@ export default function LatestPaperSection() {
         <div className="mt-3 flex flex-wrap gap-2">
           <Chips items={paper.tags} />
         </div>
-        <div className="mt-4 pt-3 border-t border-slate-200 flex justify-end">
-          <a
-            href={paper.link}
-            className="inline-flex items-center gap-1.5 text-blue-600 text-xs md:text-sm font-medium hover:text-blue-700 transition-colors"
-          >
-            Read notes
-            <span className="transition-transform group-hover:translate-x-0.5">
-              →
-            </span>
-          </a>
-        </div>
+        <ViewAllLink href={paper.link} label="Read notes" />
       </article>
     </section>
   );

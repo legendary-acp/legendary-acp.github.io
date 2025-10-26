@@ -192,7 +192,6 @@ export default function MediumBlogCards(): React.ReactElement {
         <ViewAllLink
           href="https://medium.com/debugging-diaries"
           label="All articles on Medium"
-          external={true}
           align="end"
         />
       </div>
