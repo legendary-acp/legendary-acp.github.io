@@ -2,6 +2,8 @@
 title: "Unpacking the Transformer: The AI Breakthrough That Changed Everything"
 date: "2024-11-15"
 tags: ["ai", "gen-ai"]
+readTime: "4"
+description: "The Transformer model replaced recurrence with self-attention, enabling parallel processing and forming the foundation for modern AI like ChatGPT."
 ---
 
 Alright, so I've had this paper, "**_Attention is All You Need_**" sitting in my reading list for a solid six months now. Finally decided to check it out today. It's not super hard to understand, but I did have to ask ChatGPT for a little help. Funny enough, ChatGPT is actually built on the transformer architecture the paper talks about. Pretty cool, right?
@@ -19,5 +21,3 @@ And here's the real mic-drop moment: the introduction of **attention** completel
 
 So yeah, this paper isn't just a technical blueprint - it's the foundation of some of the most powerful AI systems we're using today. And next time you're chatting with ChatGPT or using an AI model, just know: you're interacting with the magic of the Transformer. Pretty wild, huh?
 Catch you in the next one - where we break down more game-changing tech!
-
-[Download PDF](/papershelf/assets/papers/ai/attention_is_all_you_need.pdf)

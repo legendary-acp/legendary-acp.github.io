@@ -2,7 +2,8 @@
 title: "Hive: SQL-like Data Warehousing on Hadoop"
 date: "2024-12-22"
 tags: ["query", "big-data"]
-readTime: 5
+readTime: "6"
+description: "Hive brings a familiar SQL interface to Hadoop, translating queries into distributed jobs via its metastore and optimizer."
 ---
 
 Hive transforms the complex world of distributed data processing into a familiar SQL-like environment. This paper explores the core components and mechanisms that make Hive an efficient data warehouse solution built on Hadoop.
@@ -79,7 +80,3 @@ Manages query execution through a four-step process:
 ## Conclusion
 
 The key takeaway from studying Hive was seeing how a SQL query transforms into actual execution steps. When we write a SQL query, Hive first converts it into a tree structure, then checks if everything in the query makes sense (like if tables and columns exist), creates a plan of what needs to be done, and finally makes that plan better by optimizing things like joins and filters. This helped me understand what really happens behind the scenes when we run queries, not just in Hive but in other database systems too.
-
----
-
-[Download PDF](/papershelf/assets/papers/data_engineering/hive_a_warehousing_solution_over_a_map_reduce_framework.pdf)

@@ -2,7 +2,8 @@
 title: "A Comprehensive Survey on Vector Database: Storage and Retrieval Technique, Challenge"
 date: "2024-07-04"
 tags: ["data-engineering", "AI"]
-readTime: 5
+readTime: "8"
+description: "Understanding the engine of modern AI: how vector databases enable efficient similarity search for next-generation applications."
 ---
 
 ## 1. Introduction
@@ -47,5 +48,3 @@ Although vector databases (vector DBs) and large language models (LLMs) are indi
 ## 5. Conclusion
 
 Research paper gave really great insight on vector databases, underlying algorithms for NNN problem. I would highly suggest this paper to someone who want to start in this field. This paper might open new doors for you. Additionally this paper also leaves you with a interesting topic to research about i.e. Retrieval-Based LLM. I would definetly continue reading about this further. Hoping you will too.
-
-[Download PDF](/papershelf/assets/papers/data_engineering/a_comprehensive_survey_on_vector_database_storage_and_retrieval_technique_challenge.pdf)

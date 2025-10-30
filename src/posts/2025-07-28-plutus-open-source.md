@@ -1,9 +1,9 @@
 ---
 title: "PLUTUS OPEN SOURCE: Breaking Barriers in Algorithmic Trading"
-date: "2024-07-04"
+date: "2025-07-28"
 tags: ["trading-system", "standard"]
-description: "This is description"
-readTime: 5
+description: "Plutus proposes an open-source standard for algorithmic trading to boost transparency and collaboration, but risks being just another framework."
+readTime: "4"
 ---
 
 ## TL;DR
@@ -40,5 +40,3 @@ By creating a public standard for how research is conducted and shared, it can u
 In my opinion, this paper is not groundbreaking. It introduces yet another standard in a space already saturated with frameworks that rarely get adopted. While the intention is good—making trading research more open and reproducible—it feels like an academic exercise more than something that will shift the industry.
 
 Just another case of the classic problem: there’s always **n+1 standards**.
-
-[Download PDF](/papershelf/assets/papers/trading_systems/plutus_open_source_breaking_barriers_in_algorithmic_trading.pdf)

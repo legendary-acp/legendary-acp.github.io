@@ -38,7 +38,7 @@ function PaperCard({ paper }: { paper: PaperNote }) {
           })}
         </time>
         {" · "}
-        {paper.readTime}
+        {paper.readTime} mins
       </div>
       <a href={paper.slug} className="mt-2 block">
         <h3 className="text-lg font-semibold tracking-tight text-slate-900 group-hover:text-slate-950">

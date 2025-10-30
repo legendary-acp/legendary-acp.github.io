@@ -43,7 +43,7 @@ function PaperNoteCard({ note }: { note: PaperNote }) {
                 month: "short",
                 day: "numeric",
               })}{" "}
-              • {note.readTime} min
+              • {note.readTime} mins
             </p>
           </div>
         </div>
