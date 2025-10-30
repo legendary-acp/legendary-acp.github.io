@@ -7,8 +7,13 @@ export default function BlogPost() {
 
   if (!slug) {
     return (
-      <div className="max-w-4xl mx-auto py-10 px-4">
-        <h1 className="text-3xl font-bold mb-6">Invalid post URL</h1>
+      <div className="max-w-3xl mx-auto py-10 px-4">
+        <h1 className="text-2xl font-semibold text-slate-900">
+          Invalid post URL
+        </h1>
+        <p className="mt-2 text-slate-600">
+          The note you’re looking for doesn’t exist.
+        </p>
       </div>
     );
   }
@@ -17,16 +22,19 @@ export default function BlogPost() {
 
   if (!postRecord) {
     return (
-      <div className="max-w-4xl mx-auto py-10 px-4">
-        <h1 className="text-3xl font-bold mb-6">Post Not Found</h1>
-        <p className="text-gray-600 mb-6">
-          Could not find a blog post with slug: {slug}
+      <div className="max-w-3xl mx-auto py-10 px-4">
+        <h1 className="text-2xl font-semibold text-slate-900">
+          Post not found
+        </h1>
+        <p className="mt-2 text-slate-600">
+          Could not find a note with slug:{" "}
+          <span className="font-mono">{slug}</span>
         </p>
         <button
           onClick={() => navigate("/notes")}
-          className="text-blue-600 hover:text-blue-800 font-semibold"
+          className="mt-6 inline-flex items-center gap-1 text-sm font-medium text-blue-600 hover:text-blue-800"
         >
-          ← Back to Notes
+          ← Back to notes
         </button>
       </div>
     );
@@ -35,38 +43,61 @@ export default function BlogPost() {
   const { Component, meta } = postRecord;
 
   return (
-    <div className="max-w-4xl mx-auto py-10 px-4">
+    <div className="max-w-5xl mx-auto py-10 px-4 lg:py-12">
       <button
         onClick={() => navigate("/notes")}
-        className="text-blue-600 hover:text-blue-800 text-sm font-semibold mb-8"
+        className="mb-6 inline-flex items-center gap-2 text-sm font-medium text-blue-600 hover:text-blue-700 group"
       >
-        ← Back to Notes
+        <span className="group-hover:-translate-x-1 transition-transform">
+          ←
+        </span>
+        Back to notes
       </button>
+      <div className="bg-white text-slate-900 rounded-2xl shadow-sm border border-slate-200 p-8 sm:p-10 mx-auto max-w-4xl">
+        <header className="mb-10">
+          <h1 className="text-5xl font-extrabold tracking-tight text-slate-900 leading-tight mb-6">
+            {meta.title}
+          </h1>
 
-      <div className="mb-8">
-        <div className="text-sm text-slate-500 mb-2">
-          {meta.date} • {meta.readTime} min read
-        </div>
-        <h1 className="text-5xl font-extrabold mb-4 text-slate-900">
-          {meta.title}
-        </h1>
-        {meta.tags && meta.tags.length > 0 && (
-          <div className="flex flex-wrap gap-2">
-            {meta.tags.map((tag) => (
-              <span
-                key={tag}
-                className="inline-block bg-blue-100 text-blue-700 px-3 py-1 rounded text-xs font-semibold"
-              >
-                {tag}
-              </span>
-            ))}
+          <div className="flex items-center gap-3 text-sm text-slate-500">
+            <img
+              src="/profile~2.jpg"
+              alt="Author"
+              className="w-9 h-9 rounded-full object-cover"
+            />
+            <span className="font-medium text-slate-700">Pradyuman</span>
+            <span>·</span>
+            <span>{meta.readTime} min read</span>
+            <span>·</span>
+            <time>
+              {new Date(meta.date).toLocaleDateString(undefined, {
+                year: "numeric",
+                month: "short",
+                day: "2-digit",
+              })}
+            </time>
           </div>
-        )}
+        </header>
+        <hr className="border-t border-slate-200 mb-10" />
+        {/* content */}
+        <article
+          className="
+    prose prose-slate max-w-none leading-relaxed
+    prose-headings:text-slate-950 prose-headings:font-extrabold
+    prose-h1:text-4xl prose-h1:mt-12 prose-h1:mb-6
+    prose-h2:text-3xl prose-h2:mt-10 prose-h2:mb-4
+    prose-h3:text-2xl prose-h3:mt-8 prose-h3:mb-3
+    prose-p:text-slate-800 prose-p:leading-relaxed prose-p:my-5
+    prose-ul:my-5 prose-ol:my-5 prose-li:leading-relaxed
+    prose-a:text-slate-900 prose-a:no-underline hover:prose-a:underline hover:prose-a:decoration-slate-400
+    prose-strong:text-slate-900
+    prose-blockquote:border-l-4 prose-blockquote:border-slate-300 prose-blockquote:pl-4 prose-blockquote:text-slate-700 prose-blockquote:italic
+    prose-code:bg-slate-100 prose-code:rounded prose-code:px-1.5 prose-code:py-0.5
+  "
+        >
+          <Component />
+        </article>
       </div>
-
-      <article className="prose prose-slate max-w-none dark:prose-invert prose-h2:text-2xl prose-h2:font-bold prose-h2:mt-8 prose-h2:mb-4 prose-a:text-blue-600 prose-a:underline hover:prose-a:text-blue-800">
-        <Component />
-      </article>
     </div>
   );
 }
