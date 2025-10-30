@@ -1,7 +1,7 @@
 ---
 title: "Inside MapReduce: The Engine That Powers Large-Scale Data Processing"
 date: "2024-12-13"
-tags: ["engineering-systems", "big-data"]
+tags: ["Engineering Systems", "Big Data"]
 readTime: "9"
 description: "MapReduce simplifies large-scale data processing by abstracting complex distributed tasks into just two functions: Map and Reduce."
 ---

@@ -1,7 +1,7 @@
 ---
 title: "⚙️ When to Use a MonoRepo: Benefits, Drawbacks, and Best Practices"
 date: "2024-09-08"
-tags: ["productivity", "misc"]
+tags: ["Productivity", "Misc"]
 readTime: "6"
 description: "Exploring MonoRepos: when a single repository boosts collaboration and code reuse, and when it creates complexity and friction."
 ---

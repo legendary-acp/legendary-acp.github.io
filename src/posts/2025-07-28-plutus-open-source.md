@@ -1,7 +1,7 @@
 ---
 title: "PLUTUS OPEN SOURCE: Breaking Barriers in Algorithmic Trading"
 date: "2025-07-28"
-tags: ["trading-system", "standard"]
+tags: ["Trading System", "Standard"]
 description: "Plutus proposes an open-source standard for algorithmic trading to boost transparency and collaboration, but risks being just another framework."
 readTime: "4"
 ---

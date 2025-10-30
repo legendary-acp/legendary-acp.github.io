@@ -1,6 +1,6 @@
 import SectionHeader from "../shared/SectionHeader";
 import projects from "../../data/ossProjects.json";
-import { Chips } from "../shared/Chip";
+import Chips from "../shared/Chips";
 import ViewAllLink from "../shared/ViewAllLink";
 import type { Project } from "./d";
 

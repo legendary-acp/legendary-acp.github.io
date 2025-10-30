@@ -1,7 +1,7 @@
 ---
 title: "Unpacking the Transformer: The AI Breakthrough That Changed Everything"
 date: "2024-11-15"
-tags: ["ai", "gen-ai"]
+tags: ["AI", "GenAI"]
 readTime: "4"
 description: "The Transformer model replaced recurrence with self-attention, enabling parallel processing and forming the foundation for modern AI like ChatGPT."
 ---

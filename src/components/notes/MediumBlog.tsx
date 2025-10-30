@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ViewAllLink from "../shared/ViewAllLink";
-import { Chips } from "../shared/Chip";
+import Chips from "../shared/Chips";
 import type { MediumBlogItem, RssResponse } from "./d";
 import {
   calculateReadTime,

@@ -1,7 +1,7 @@
 ---
 title: "Hive: SQL-like Data Warehousing on Hadoop"
 date: "2024-12-22"
-tags: ["query", "big-data"]
+tags: ["Query", "Big Data"]
 readTime: "6"
 description: "Hive brings a familiar SQL interface to Hadoop, translating queries into distributed jobs via its metastore and optimizer."
 ---

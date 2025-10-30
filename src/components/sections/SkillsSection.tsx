@@ -1,6 +1,6 @@
 import SectionHeader from "../shared/SectionHeader";
 import skills from "../../data/skills.json";
-import { Chips } from "../shared/Chip";
+import Chips from "../shared/Chips";
 
 export default function SkillsSection() {
   const { bars, groups, dual } = skills;

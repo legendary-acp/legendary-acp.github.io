@@ -1,7 +1,7 @@
 ---
 title: "Critical Focus Areas for Early Stage Startup CEOs"
 date: "2025-02-13"
-tags: ["report", "Management"]
+tags: ["Report", "Management"]
 readTime: "5"
 description: "A guide for early-stage startup CEOs on mastering three core pillars: financial oversight, organizational design, and talent culture."
 ---

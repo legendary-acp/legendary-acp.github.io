@@ -20,7 +20,7 @@
         "desc": "Built a self-hosted Kubernetes platform, cutting onboarding time from hours to under 15 minutes through automated provisioning. Designed and optimized observability ingestion pipelines using Go and Rust-based agents.",
         "skills": [
             "Kubernetes",
-            "Go Lang”",
+            "Go Lang",
             "Rust",
             "Linux"
         ]
@@ -32,7 +32,7 @@
         "location": "Ahmedabad, India",
         "desc": "Engineered integrations with ClickHouse, Redpanda, and Cassandra to power real-time ingestion and analytics. Automated agent packaging and deployment using a GitHub Actions-based RPM pipeline.",
         "skills": [
-            "Go Lang”",
+            "Go Lang",
             "Linux",
             "Kubernetes"
         ]

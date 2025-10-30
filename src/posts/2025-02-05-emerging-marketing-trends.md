@@ -1,7 +1,7 @@
 ---
 title: "Emerging Marketing Trends"
 date: "2025-02-05"
-tags: ["report", "marketing"]
+tags: ["Report", "Marketing"]
 readTime: "4"
 description: "Five key marketing trends for CMOs: the shift from mobile apps to AI, AI-optimized content, and balancing dynamic pricing with trust."
 ---
