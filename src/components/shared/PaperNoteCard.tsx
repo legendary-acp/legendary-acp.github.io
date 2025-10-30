@@ -16,7 +16,7 @@ export default function PaperNoteCard({ note }: { note: PaperNote }) {
         {" · "}
         {note.readTime} mins
       </div>
-      <a href={note.slug} className="mt-2 block">
+      <a href={`#/notes/${note.slug}`} className="mt-2 block">
         <h3 className="text-lg font-semibold tracking-tight text-slate-900 group-hover:text-slate-950">
           {note.title}
         </h3>
