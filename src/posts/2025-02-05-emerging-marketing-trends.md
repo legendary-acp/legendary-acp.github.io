@@ -1,7 +1,8 @@
 ---
 title: "Emerging Marketing Trends"
-date: 2025-02-05
-tags: [report, marketing]
+date: "2025-02-05"
+tags: ["report", "marketing"]
+readTime: 5
 ---
 
 This report explores the key trends shaping the future of marketing and highlights where Chief Marketing Officers (CMOs) should concentrate their efforts to build strong, sustainable brands. Although brief, the report distills five critical takeaways that provide a roadmap for navigating the evolving digital landscape.

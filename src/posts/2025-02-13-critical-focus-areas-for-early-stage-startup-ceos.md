@@ -1,7 +1,8 @@
 ---
 title: "Critical Focus Areas for Early Stage Startup CEOs"
-date: 2025-02-13
-tags: [report, Management]
+date: "2025-02-13"
+tags: ["report", "Management"]
+readTime: 5
 ---
 
 As a startup CEO, you play a pivotal role in steering your company through the uncertainty and challenges of early-stage growth. Your ability to manage finances, build an efficient organization, and foster a dynamic company culture will directly influence your startup’s success. This report focuses on three main areas that demand your attention: Budgets, Forecasting and KPIs; Organization Design and Alignment; and Talent and Culture.

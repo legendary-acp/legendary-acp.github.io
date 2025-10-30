@@ -3,6 +3,7 @@ title: "PLUTUS OPEN SOURCE: Breaking Barriers in Algorithmic Trading"
 date: "2024-07-04"
 tags: ["trading-system", "standard"]
 description: "This is description"
+readTime: 5
 ---
 
 ## TL;DR

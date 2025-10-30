@@ -1,7 +1,8 @@
 ---
 title: "Hive: SQL-like Data Warehousing on Hadoop"
-date: 2024-12-22
-tags: [query, big-data]
+date: "2024-12-22"
+tags: ["query", "big-data"]
+readTime: 5
 ---
 
 Hive transforms the complex world of distributed data processing into a familiar SQL-like environment. This paper explores the core components and mechanisms that make Hive an efficient data warehouse solution built on Hadoop.

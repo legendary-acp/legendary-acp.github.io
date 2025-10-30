@@ -2,6 +2,7 @@
 title: "A Comprehensive Survey on Vector Database: Storage and Retrieval Technique, Challenge"
 date: "2024-07-04"
 tags: ["data-engineering", "AI"]
+readTime: 5
 ---
 
 ## 1. Introduction

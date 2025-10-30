@@ -2,11 +2,9 @@ import { Chips } from "../shared/Chip";
 import SectionHeader from "../shared/SectionHeader";
 import ViewAllLink from "../shared/ViewAllLink";
 import type { PaperNote } from "../notes/d";
-import papers from "../../data/paperNotes.json";
+import { getAllPaperNotes } from "../../lib/posts";
 export default function LatestPaperSection() {
-  const latestPapers = papers
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-    .slice(0, 4);
+  const latestPapers = getAllPaperNotes().slice(0, 4);
 
   return (
     <section>
@@ -21,7 +19,7 @@ export default function LatestPaperSection() {
 
       <div className="grid md:grid-cols-2 gap-6">
         {latestPapers.map((paper) => (
-          <PaperCard key={paper.id} paper={paper} />
+          <PaperCard key={paper.slug} paper={paper} />
         ))}
       </div>
     </section>
@@ -42,18 +40,18 @@ function PaperCard({ paper }: { paper: PaperNote }) {
         {" · "}
         {paper.readTime}
       </div>
-      <a href={paper.link} className="mt-2 block">
+      <a href={paper.slug} className="mt-2 block">
         <h3 className="text-lg font-semibold tracking-tight text-slate-900 group-hover:text-slate-950">
           {paper.title}
         </h3>
       </a>
       <p className="mt-2 text-sm leading-relaxed text-slate-700 line-clamp-3">
-        {paper.summary}
+        {paper.description}
       </p>
       <div className="mt-3 flex flex-wrap gap-2">
-        <Chips items={paper.tags} />
+        <Chips items={paper.tags ?? []} />
       </div>
-      <ViewAllLink href={paper.link} label="Read notes" />
+      <ViewAllLink href={`#/notes/${paper.slug}`} label="Read notes" />
     </article>
   );
 }

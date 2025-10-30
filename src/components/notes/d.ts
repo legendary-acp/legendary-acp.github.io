@@ -4,7 +4,6 @@ export type PaperNote = {
     slug: string;
     tags?: string[];
     description?: string;
-    path: string;
     readTime: string;
 };
 

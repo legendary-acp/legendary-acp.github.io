@@ -1,9 +1,10 @@
+import { getAllPaperNotes } from "../../lib/posts";
 import { Chips } from "../shared/Chip";
 import ViewAllLink from "../shared/ViewAllLink";
 import type { PaperNote } from "./d";
-import paperNotes from "../../data/paperNotes.json";
 
 export default function PaperNotes() {
+  const paperNotes = getAllPaperNotes();
   return (
     <div className="w-full max-w-6xl mx-auto px-4 pb-12">
       <div className="inline-block text-[11px] uppercase tracking-wider font-mono text-slate-600 border border-slate-300 rounded-md px-2 py-0.5 mb-1.5">
@@ -13,11 +14,10 @@ export default function PaperNotes() {
         <h1 className="text-4xl font-semibold text-slate-900 tracking-tight">
           My Notes
         </h1>
-        <ViewAllLink href="#" label="View all notes" align="end" />
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {paperNotes.map((note) => (
-          <PaperNoteCard key={note.id} note={note} />
+          <PaperNoteCard key={note.slug} note={note} />
         ))}
       </div>
     </div>
@@ -27,7 +27,8 @@ export default function PaperNotes() {
 function PaperNoteCard({ note }: { note: PaperNote }) {
   return (
     <a
-      href={note.link}
+      key={note.slug}
+      href={`#/notes/${note.slug}`}
       className="group block border border-gray-200 rounded-lg overflow-hidden hover:border-gray-400 hover:shadow-md bg-white transition-all duration-300"
     >
       <div className="p-6">
@@ -37,21 +38,23 @@ function PaperNoteCard({ note }: { note: PaperNote }) {
               {note.title}
             </h3>
             <p className="text-sm text-gray-500 mt-1">
-              {note.date} • {note.readTime}
+              {new Date(note.date).toLocaleDateString("en-US", {
+                year: "numeric",
+                month: "short",
+                day: "numeric",
+              })}{" "}
+              • {note.readTime} min
             </p>
           </div>
-          <span className="inline-block bg-blue-100 text-blue-700 px-2.5 py-1 rounded text-xs font-semibold whitespace-nowrap flex-shrink-0">
-            Note
-          </span>
         </div>
 
         <p className="text-gray-600 text-sm leading-relaxed mb-4">
-          {note.summary}
+          {note.description}
         </p>
 
-        {note.tags.length > 0 && <Chips items={note.tags}></Chips>}
+        {(note.tags ?? []).length > 0 && <Chips items={note.tags ?? []} />}
 
-        <ViewAllLink label="Read notes" href="/writing" />
+        <ViewAllLink label="Read notes" href={`#/notes/${note.slug}`} />
       </div>
     </a>
   );
