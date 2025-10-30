@@ -12,6 +12,7 @@ import {
 function BlogCard({ blog }: { blog: MediumBlogItem }) {
   return (
     <a
+      key={blog.link}
       href={blog.link}
       target="_blank"
       rel="noopener noreferrer"

@@ -5,6 +5,7 @@ import HomePage from "./pages/HomePage";
 import LogPage from "./pages/ReadingLogPage";
 import "./styles/globals.css";
 import NotesPage from "./pages/NotesPage";
+import BlogPost from "./pages/BlogPost";
 
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/notes" element={<NotesPage />} />
           <Route path="/logs" element={<LogPage />} />
+          <Route path="/notes/:slug" element={<BlogPost />} />
         </Routes>
       </main>
       <Footer />

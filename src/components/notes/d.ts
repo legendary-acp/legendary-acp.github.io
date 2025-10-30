@@ -1,11 +1,11 @@
-export interface PaperNote {
-    id: number;
+export type PaperNote = {
     title: string;
     date: string;
+    slug: string;
+    tags?: string[];
+    description?: string;
+    path: string;
     readTime: string;
-    summary: string;
-    tags: string[];
-    link: string;
 };
 
 export interface MediumBlogItem {
