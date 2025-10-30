@@ -4,6 +4,14 @@ import { Chips } from "../shared/Chip";
 export default function IntroSection() {
   const keySkills = ["Go", "Rust", "C++", "Linux", "Cloud"];
 
+  const handleSayHi = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+
+    const contactId = "contact";
+    const el = document.getElementById(contactId);
+    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
   return (
     <section className="grid md:grid-cols-[1.3fr_.7fr] gap-8 items-start">
       <div className="flex items-start gap-6">
@@ -35,7 +43,8 @@ export default function IntroSection() {
 
           <div className="mt-6 flex flex-wrap gap-3 text-sm items-center">
             <a
-              href="#contact"
+              href="/#contact"
+              onClick={handleSayHi}
               className="inline-flex items-center rounded-xl bg-blue-600 text-white font-medium px-4 py-2 hover:bg-blue-700 transition"
             >
               Say hi
