@@ -99,7 +99,7 @@ The abstract of the paper gave a clear idea of what to expect from it. The paper
 `,y.jsx(t.p,{children:"Although vector databases (vector DBs) and large language models (LLMs) are individually powerful tools, combining them opens the door to a whole new level of possibilities. LLMs can leverage the storage capabilities provided by vector databases to deliver more efficient responses. Additionally, using LLMs on top of vector databases can enhance search efficiency by adding context to queries, thereby optimizing the performance of vector DBs. Numerous possibilities arise from this combination that can be further explored."}),`
 `,y.jsx(t.h2,{id:"5-conclusion",children:y.jsx(t.a,{href:"#5-conclusion",children:"5. Conclusion"})}),`
 `,y.jsx(t.p,{children:"Research paper gave really great insight on vector databases, underlying algorithms for NNN problem. I would highly suggest this paper to someone who want to start in this field. This paper might open new doors for you. Additionally this paper also leaves you with a interesting topic to research about i.e. Retrieval-Based LLM. I would definetly continue reading about this further. Hoping you will too."})]})}function fA(h={}){const{wrapper:t}={..._e(),...h.components};return t?y.jsx(t,{...h,children:y.jsx(mm,{...h})}):mm(h)}const pA=Object.freeze(Object.defineProperty({__proto__:null,default:fA,frontmatter:dA},Symbol.toStringTag,{value:"Module"})),gA={title:"⚙️ When to Use a MonoRepo: Benefits, Drawbacks, and Best Practices",date:"2024-09-08",tags:["Productivity","Misc"],readTime:"6",description:"Exploring MonoRepos: when a single repository boosts collaboration and code reuse, and when it creates complexity and friction."};function ym(h){const t={a:"a",h2:"h2",h3:"h3",hr:"hr",img:"img",li:"li",p:"p",strong:"strong",ul:"ul",..._e(),...h.components};return y.jsxs(y.Fragment,{children:[y.jsxs(t.p,{children:["When I first encountered the concept of a ",y.jsx(t.strong,{children:"MonoRepo"}),", it didn't quite make sense. 🤔 Why would anyone put all their code into a single repository? In my experience, each microservice had its own dedicated repository, built separately to reduce complexity. Combining everything into one place seemed like it would only increase developer effort and make things more confusing — until I came across this fascinating case study by Google."]}),`
-`,y.jsx(t.p,{children:y.jsx(t.img,{src:"/papershelf/assets/images/monorepo.webp",alt:"Monorepo vs Multirepo"})}),`
+`,y.jsx(t.p,{children:y.jsx(t.img,{src:"/img/monorepo.webp",alt:"Monorepo vs Multirepo"})}),`
 `,y.jsx(t.hr,{}),`
 `,y.jsx(t.h2,{id:"-advantages-and-disadvantages-of-a-monolithic-repository",children:y.jsx(t.a,{href:"#-advantages-and-disadvantages-of-a-monolithic-repository",children:"💡 Advantages and Disadvantages of a Monolithic Repository"})}),`
 `,y.jsxs(t.p,{children:["A ",y.jsx(t.strong,{children:"MonoRepo"})," (Monolithic Source Code Repository) is a way to store many projects in one repository. These projects can be related or completely distinct."]}),`
@@ -148,7 +148,7 @@ The abstract of the paper gave a clear idea of what to expect from it. The paper
 `,y.jsx(t.p,{children:"I hope this article has provided valuable insights into MonoRepos and contributes to your growth as a better engineer. 🖥️💡"})]})}function mA(h={}){const{wrapper:t}={..._e(),...h.components};return t?y.jsx(t,{...h,children:y.jsx(ym,{...h})}):ym(h)}const yA=Object.freeze(Object.defineProperty({__proto__:null,default:mA,frontmatter:gA},Symbol.toStringTag,{value:"Module"})),bA={title:"Unpacking the Transformer: The AI Breakthrough That Changed Everything",date:"2024-11-15",tags:["AI","GenAI"],readTime:"4",description:"The Transformer model replaced recurrence with self-attention, enabling parallel processing and forming the foundation for modern AI like ChatGPT."};function bm(h){const t={em:"em",hr:"hr",img:"img",p:"p",strong:"strong",..._e(),...h.components};return y.jsxs(y.Fragment,{children:[y.jsxs(t.p,{children:[`Alright, so I've had this paper, "`,y.jsx(t.strong,{children:y.jsx(t.em,{children:"Attention is All You Need"})}),`" sitting in my reading list for a solid six months now. Finally decided to check it out today. It's not super hard to understand, but I did have to ask ChatGPT for a little help. Funny enough, ChatGPT is actually built on the transformer architecture the paper talks about. Pretty cool, right?`]}),`
 `,y.jsx(t.p,{children:"So, here's the deal: this paper introduces the Transformer model, and it totally flips the script on how we process data. Instead of relying on traditional recurrence like older models, it goes all-in on self-attention. This is a game-changer because self-attention means the model can process input sequences in parallel. Translation? It's faster, it scales way better, and it just outperforms the older models in pretty much every way."}),`
 `,y.jsx(t.hr,{}),`
-`,y.jsx(t.p,{children:y.jsx(t.img,{src:"/papershelf/assets/images/transformer_architecture.png",alt:"Transformer Architecture"})}),`
+`,y.jsx(t.p,{children:y.jsx(t.img,{src:"/img/transformer_architecture.png",alt:"Transformer Architecture"})}),`
 `,y.jsxs(t.p,{children:[`Now let's talk about the Transformer's core setup. It's based on an encoder-decoder architecture. The encoder handles the input sequence, while the decoder generates the output based on the encoder's work and its own past outputs. But the real magic is in the Multi-Head Attention Mechanism - this is what lets the model focus on different parts of the input data at the same time. So, rather than just processing one piece at a time like traditional recurrent models, the Transformer can look at everything all at once, making it lightning-fast.
 And here's the real mic-drop moment: the introduction of `,y.jsx(t.strong,{children:"attention"})," completely changes the game. With the multi-headed self-attention mechanism, the Transformer model doesn't just speed up training - it takes the whole performance bar and smashes it. We're talking state-of-the-art results on tasks like the WMT 2014 English-to-German and English-to-French translation benchmarks. On the English-to-German task, it hit a BLEU score of 28.4, blowing the previous record out of the water. That's not just progress - it's a huge leap forward."]}),`
 `,y.jsx(t.hr,{}),`
@@ -180,7 +180,7 @@ Catch you in the next one - where we break down more game-changing tech!`})]})}f
 `]}),`
 `,y.jsx(t.hr,{}),`
 `,y.jsx(t.h2,{id:"implementation-details",children:y.jsx(t.a,{href:"#implementation-details",children:"Implementation Details"})}),`
-`,y.jsx(t.p,{children:y.jsx(t.img,{src:"/papershelf/assets/images/mapreduce_architecture.png",alt:"MapReduce Architecture"})}),`
+`,y.jsx(t.p,{children:y.jsx(t.img,{src:"/img/mapreduce_architecture.png",alt:"MapReduce Architecture"})}),`
 `,y.jsx(t.h3,{id:"initial-setup",children:y.jsx(t.a,{href:"#initial-setup",children:"Initial Setup"})}),`
 `,y.jsxs(t.ol,{children:[`
 `,y.jsx(t.li,{children:"Input data is first split into M pieces, corresponding to M map tasks"}),`
@@ -259,7 +259,7 @@ Catch you in the next one - where we break down more game-changing tech!`})]})}f
 `,y.jsx(t.h3,{id:"buckets",children:y.jsx(t.a,{href:"#buckets",children:"Buckets"})}),`
 `,y.jsx(t.p,{children:"Within partitions, data gets distributed across multiple files through bucketing. Hive applies a hash function on specified columns to determine bucket placement. This mechanism enhances join performance and enables efficient sampling operations."}),`
 `,y.jsx(t.p,{children:"The directory structure looks like this:"}),`
-`,y.jsx(t.pre,{children:y.jsx(t.code,{className:"language-plaintext",children:`warehouse/
+`,y.jsx(t.pre,{children:y.jsx(t.code,{className:"language-bash",children:`warehouse/
 └── table_name/
     └── partition_column=value/
         └── bucket_N.file
@@ -274,7 +274,7 @@ Catch you in the next one - where we break down more game-changing tech!`})]})}f
 `]}),`
 `,y.jsx(t.h2,{id:"architecture",children:y.jsx(t.a,{href:"#architecture",children:"Architecture"})}),`
 `,y.jsx(t.p,{children:"Hive's architecture consists of four main components:"}),`
-`,y.jsx(t.p,{children:y.jsx(t.img,{src:"/papershelf/assets/images/hive_architecture.png",alt:"Hive Architecture"})}),`
+`,y.jsx(t.p,{children:y.jsx(t.img,{src:"/img/hive_architecture.png",alt:"Hive Architecture"})}),`
 `,y.jsx(t.h3,{id:"external-interfaces",children:y.jsx(t.a,{href:"#external-interfaces",children:"External Interfaces"})}),`
 `,y.jsx(t.p,{children:"Multiple interfaces provide access to Hive:"}),`
 `,y.jsxs(t.ul,{children:[`
@@ -325,7 +325,7 @@ Catch you in the next one - where we break down more game-changing tech!`})]})}f
 `,y.jsxs(t.li,{children:[y.jsx(t.strong,{children:"Implication:"})," There is a noticeable trend in customer journeys that oscillate between digital and physical experiences."]}),`
 `,y.jsxs(t.li,{children:[y.jsx(t.strong,{children:"Action Point:"})," Invest strategically in offline marketing channels to complement digital efforts, creating a balanced and enriched customer journey."]}),`
 `]}),`
-`,y.jsx(t.p,{children:y.jsx(t.img,{src:"/papershelf/assets/images/customer_journeys.png",alt:"Customer Journeys"})}),`
+`,y.jsx(t.p,{children:y.jsx(t.img,{src:"/img/customer_journeys.png",alt:"Customer Journeys"})}),`
 `,y.jsx(t.h2,{id:"5-automated-customer-data-collection",children:y.jsx(t.a,{href:"#5-automated-customer-data-collection",children:"5. Automated Customer Data Collection"})}),`
 `,y.jsxs(t.ul,{children:[`
 `,y.jsxs(t.li,{children:[y.jsx(t.strong,{children:"Trend Insight:"})," Data collection is increasingly being automated via AI agents."]}),`
@@ -334,7 +334,7 @@ Catch you in the next one - where we break down more game-changing tech!`})]})}f
 `]}),`
 `,y.jsx(t.hr,{}),`
 `,y.jsx(t.p,{children:"In conclusion, these trends collectively underscore the need for a forward-thinking, adaptive approach to marketing. CMOs are urged to embrace emerging technologies and balanced strategies to not only keep pace with change but to set the stage for lasting brand success."})]})}function MA(h={}){const{wrapper:t}={..._e(),...h.components};return t?y.jsx(t,{...h,children:y.jsx(Am,{...h})}):Am(h)}const RA=Object.freeze(Object.defineProperty({__proto__:null,default:MA,frontmatter:CA},Symbol.toStringTag,{value:"Module"})),DA={title:"Critical Focus Areas for Early Stage Startup CEOs",date:"2025-02-13",tags:["Report","Management"],readTime:"5",description:"A guide for early-stage startup CEOs on mastering three core pillars: financial oversight, organizational design, and talent culture."};function Sm(h){const t={a:"a",br:"br",h2:"h2",hr:"hr",img:"img",li:"li",p:"p",strong:"strong",ul:"ul",..._e(),...h.components};return y.jsxs(y.Fragment,{children:[y.jsx(t.p,{children:"As a startup CEO, you play a pivotal role in steering your company through the uncertainty and challenges of early-stage growth. Your ability to manage finances, build an efficient organization, and foster a dynamic company culture will directly influence your startup’s success. This report focuses on three main areas that demand your attention: Budgets, Forecasting and KPIs; Organization Design and Alignment; and Talent and Culture."}),`
-`,y.jsx(t.p,{children:y.jsx(t.img,{src:"/papershelf/assets/images/ceo_roles.png",alt:"CEO's Roles"})}),`
+`,y.jsx(t.p,{children:y.jsx(t.img,{src:"/img/ceo_roles.png",alt:"CEO's Roles"})}),`
 `,y.jsx(t.h2,{id:"1-budgets-forecasting-and-kpis",children:y.jsx(t.a,{href:"#1-budgets-forecasting-and-kpis",children:"1. Budgets, Forecasting and KPIs"})}),`
 `,y.jsxs(t.ul,{children:[`
 `,y.jsxs(t.li,{children:[`
@@ -432,5 +432,8 @@ Catch you in the next one - where we break down more game-changing tech!`})]})}f
     prose-a:text-slate-900 prose-a:no-underline hover:prose-a:underline hover:prose-a:decoration-slate-400
     prose-strong:text-slate-900
     prose-blockquote:border-l-4 prose-blockquote:border-slate-300 prose-blockquote:pl-4 prose-blockquote:text-slate-700 prose-blockquote:italic
-    prose-code:bg-slate-100 prose-code:rounded prose-code:px-1.5 prose-code:py-0.5
+    prose-code:font-mono prose-code:text-sm prose-code:bg-slate-100
+    prose-code:rounded-lg prose-code:px-1.5 prose-code:py-0.5 prose-code:text-slate-900
+    prose-pre:bg-slate-100 prose-pre:text-slate-900 prose-pre:font-mono prose-pre:rounded-xl prose-pre:p-4 prose-pre:overflow-x-auto
+    prose-img:mx-auto prose-img:rounded-xl prose-img:shadow-sm prose-img:my-6
   `,children:y.jsx(s,{})})]})]})}function m1(){return y.jsxs("div",{className:"min-h-dvh bg-slate-50 text-slate-900 flex flex-col",children:[y.jsx(rA,{}),y.jsx("main",{className:"flex-grow",children:y.jsxs(wx,{children:[y.jsx(rr,{path:"/",element:y.jsx(KA,{})}),y.jsx(rr,{path:"/notes",element:y.jsx(p1,{})}),y.jsx(rr,{path:"/logs",element:y.jsx(r1,{})}),y.jsx(rr,{path:"/notes/:slug",element:y.jsx(g1,{})})]})}),y.jsx(eA,{})]})}Nv.createRoot(document.getElementById("root")).render(y.jsx(ul.StrictMode,{children:y.jsx(Xx,{children:y.jsx(m1,{})})}));
