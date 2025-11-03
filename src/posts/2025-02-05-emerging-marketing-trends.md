@@ -32,7 +32,7 @@ This report explores the key trends shaping the future of marketing and highligh
 - **Implication:** There is a noticeable trend in customer journeys that oscillate between digital and physical experiences.
 - **Action Point:** Invest strategically in offline marketing channels to complement digital efforts, creating a balanced and enriched customer journey.
 
-![Customer Journeys](/papershelf/assets/images/customer_journeys.png)
+![Customer Journeys](/img/customer_journeys.png)
 
 ## 5. Automated Customer Data Collection
 

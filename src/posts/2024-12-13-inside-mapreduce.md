@@ -40,7 +40,7 @@ Here are some common use cases of MapReduce:
 
 ## Implementation Details
 
-![MapReduce Architecture](/papershelf/assets/images/mapreduce_architecture.png)
+![MapReduce Architecture](/img/mapreduce_architecture.png)
 
 ### Initial Setup
 

@@ -92,7 +92,10 @@ export default function BlogPost() {
     prose-a:text-slate-900 prose-a:no-underline hover:prose-a:underline hover:prose-a:decoration-slate-400
     prose-strong:text-slate-900
     prose-blockquote:border-l-4 prose-blockquote:border-slate-300 prose-blockquote:pl-4 prose-blockquote:text-slate-700 prose-blockquote:italic
-    prose-code:bg-slate-100 prose-code:rounded prose-code:px-1.5 prose-code:py-0.5
+    prose-code:font-mono prose-code:text-sm prose-code:bg-slate-100
+    prose-code:rounded-lg prose-code:px-1.5 prose-code:py-0.5 prose-code:text-slate-900
+    prose-pre:bg-slate-100 prose-pre:text-slate-900 prose-pre:font-mono prose-pre:rounded-xl prose-pre:p-4 prose-pre:overflow-x-auto
+    prose-img:mx-auto prose-img:rounded-xl prose-img:shadow-sm prose-img:my-6
   "
         >
           <Component />

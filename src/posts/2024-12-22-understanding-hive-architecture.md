@@ -26,7 +26,7 @@ Within partitions, data gets distributed across multiple files through bucketing
 
 The directory structure looks like this:
 
-```plaintext
+```bash
 warehouse/
 └── table_name/
     └── partition_column=value/
@@ -46,7 +46,7 @@ HiveQL, Hive's native query language, closely resembles traditional SQL while ad
 
 Hive's architecture consists of four main components:
 
-![Hive Architecture](/papershelf/assets/images/hive_architecture.png)
+![Hive Architecture](/img/hive_architecture.png)
 
 ### External Interfaces
 
