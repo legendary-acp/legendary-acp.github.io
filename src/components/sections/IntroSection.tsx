@@ -2,15 +2,7 @@ import nowData from "../../data/introNow.json";
 import Chips from "../shared/Chips";
 
 export default function IntroSection() {
-  const keySkills = ["Go", "Rust", "C++", "Linux", "Cloud"];
-
-  const handleSayHi = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-
-    const contactId = "contact";
-    const el = document.getElementById(contactId);
-    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-  };
+  const keySkills: string[] = ["Go", "Rust", "C++", "Linux", "Cloud"];
 
   return (
     <section className="grid md:grid-cols-[1.3fr_.7fr] gap-8 items-start">
@@ -43,16 +35,8 @@ export default function IntroSection() {
 
           <div className="mt-6 flex flex-wrap gap-3 text-sm items-center">
             <a
-              href="/#contact"
-              onClick={handleSayHi}
-              className="inline-flex items-center rounded-xl bg-blue-600 text-white font-medium px-4 py-2 hover:bg-blue-700 transition"
-            >
-              Say hi
-            </a>
-
-            <a
               href="/Resume.pdf"
-              className="inline-flex items-center rounded-xl border border-slate-300 px-4 py-2 font-medium hover:border-blue-300 hover:text-blue-700 transition"
+              className="inline-flex items-center rounded-xl bg-gradient-to-r from-indigo-600 to-blue-500 text-white px-4 py-2 font-medium shadow-sm hover:shadow-md hover:opacity-95 transition"
             >
               Resume
             </a>
@@ -101,18 +85,57 @@ export default function IntroSection() {
           </div>
         </div>
       </div>
+      <NowSection />
+    </section>
+  );
+}
 
-      <aside className="relative rounded-2xl bg-slate-50/80 border border-slate-200 p-5 shadow-sm backdrop-blur-sm">
-        <div className="text-[11px] uppercase tracking-wider text-slate-500 font-mono">
-          Now — <span className="text-slate-600">{nowData.lastUpdated}</span>
+function NowSection() {
+  return (
+    <aside
+      className="group relative rounded-2xl overflow-hidden bg-white border border-slate-200"
+      aria-label="Currently working on"
+    >
+      <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-500 to-blue-600 group-hover:w-1.5 transition-all duration-300" />
+
+      <div className="p-6 space-y-4">
+        <div className="flex items-center justify-between ">
+          <div className="flex items-center gap-2.5">
+            <div className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
+            <h3 className="text-xs uppercase tracking-widest text-slate-700 font-semibold">
+              Now
+            </h3>
+          </div>
+          {nowData?.lastUpdated && (
+            <time
+              dateTime={nowData.lastUpdated}
+              className="text-xs text-slate-500 font-mono"
+            >
+              {nowData.lastUpdated}
+            </time>
+          )}
         </div>
-        <div className="h-px bg-slate-200/70 my-3" />
-        <ul className="space-y-1.5 text-sm text-slate-700 leading-snug">
-          {nowData.items.map((item) => (
-            <li key={item}>• {item}</li>
+
+        <div className="h-px bg-slate-200" />
+        <ul className="space-y-2.5 ">
+          {nowData.items.map((item, idx) => (
+            <li
+              key={idx}
+              className="flex gap-3 text-sm text-slate-700 leading-relaxed group/item"
+              style={{
+                animation: `slideIn 0.4s ease-out ${idx * 50}ms both`,
+              }}
+            >
+              <span className="text-blue-500 font-semibold flex-shrink-0">
+                →
+              </span>
+              <span className="group-hover/item:text-slate-900 transition-colors duration-300">
+                {item}
+              </span>
+            </li>
           ))}
         </ul>
-      </aside>
-    </section>
+      </div>
+    </aside>
   );
 }

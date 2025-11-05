@@ -38,7 +38,6 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-40 bg-white/80 backdrop-blur border-b border-slate-200">
       <div className="max-w-5xl mx-auto px-4 h-14 flex items-center justify-between">
-        {/* Brand */}
         <NavLink
           to="/"
           className="flex items-center gap-2 sm:gap-3 font-mono text-[15px] leading-none"
@@ -49,7 +48,7 @@ export default function Navbar() {
             <span className="text-slate-700">
               <Typewriter
                 words={["systems", "backend", "architecture"]}
-                loop={0} // infinite
+                loop={0}
                 cursor
                 cursorStyle="▌"
                 typeSpeed={100}
@@ -60,7 +59,6 @@ export default function Navbar() {
           </span>
         </NavLink>
 
-        {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
           {LINKS.map(({ label, to }) => (
             <NavLink
@@ -77,17 +75,15 @@ export default function Navbar() {
             </NavLink>
           ))}
 
-          {/* Say hi button */}
           <a
             href="#contact"
             onClick={handleSayHi}
-            className="ml-2 inline-flex items-center rounded-xl bg-blue-600 text-white font-medium px-3 py-2 hover:bg-blue-700 transition"
+            className="inline-flex items-center rounded-xl border border-blue-500/70 text-blue-600 px-4 py-2 font-medium hover:bg-blue-50 hover:shadow-[0_0_8px_rgba(37,99,235,0.25)] transition"
           >
             Say hi
           </a>
         </nav>
 
-        {/* Mobile toggle */}
         <button
           className="md:hidden inline-flex items-center justify-center w-8 h-8 rounded-lg border border-slate-300 text-slate-700"
           onClick={() => setOpen((v) => !v)}
@@ -141,7 +137,6 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile menu */}
       <div
         className={clsx(
           "md:hidden border-t border-slate-200 bg-white/95 backdrop-blur px-4",
@@ -164,11 +159,10 @@ export default function Navbar() {
             </NavLink>
           ))}
 
-          {/* Say hi button */}
           <a
             href="#contact"
             onClick={handleSayHi}
-            className="mt-1 inline-flex items-center justify-center rounded-lg bg-blue-600 text-white font-medium px-3 py-2 hover:bg-blue-700"
+            className="mt-1 inline-flex items-center justify-center rounded-xl border border-blue-500/70 text-blue-600 font-medium px-3 py-2 hover:bg-blue-50 hover:shadow-[0_0_8px_rgba(37,99,235,0.25)] transition"
           >
             Say hi
           </a>

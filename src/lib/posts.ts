@@ -27,7 +27,6 @@ const posts: PaperNoteRecord[] = Object.entries(componentModules)
             return null;
         }
 
-        // Auto-generate slug from filename if not provided
         const filename = path.split('/').pop()?.replace(/\.md$/, '') || '';
         const slug = frontmatter.slug || filename;
 
@@ -49,7 +48,6 @@ const posts: PaperNoteRecord[] = Object.entries(componentModules)
     })
     .filter((item): item is PaperNoteRecord => item !== null);
 
-// Sort by date (newest first)
 posts.sort((a, b) => new Date(b.meta.date).getTime() - new Date(a.meta.date).getTime());
 
 export function getAllPaperNotes(): PaperNote[] {

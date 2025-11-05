@@ -31,23 +31,27 @@ export default function ProjectsSection() {
 function ProjectCard({ project }: { project: Project }) {
   return (
     <article className="rounded-2xl bg-white border border-slate-200 p-6 hover:shadow-md hover:border-slate-300 transition-all duration-200">
-      <div className="flex items-start justify-between mb-2">
-        <h3 className="text-lg font-semibold text-slate-900 leading-tight tracking-tight">
+      <div className="flex items-start justify-between mb-4">
+        <h3 className="text-lg font-semibold tracking-tight text-slate-900 group-hover:text-slate-950">
           {project.name}
         </h3>
-        <span className="text-[11px] font-mono text-slate-500 whitespace-nowrap ml-4">
+        <span className="text-[12px] font-mono text-slate-500 whitespace-nowrap ml-4">
           {`{ ${project.stack} }`}
         </span>
       </div>
-      <p className="text-sm text-slate-700 leading-relaxed">{project.desc}</p>
-      <Chips items={project.chips} />
-      {project.repo && (
-        <ViewAllLink
-          label="View repo"
-          href={project.repo}
-          className="text-xs pt-2"
-        />
-      )}
+      <p className="mt-2 text-sm leading-relaxed text-slate-700 line-clamp-3">
+        {project.desc}
+      </p>
+      <div className="mt-3 flex flex-wrap gap-2 items-center justify-between text-sm text-slate-600">
+        <Chips items={project.chips.slice(0, 3)} />
+        {project.repo && (
+          <ViewAllLink
+            label="View repo"
+            href={project.repo}
+            className="text-slate-500 hover:text-slate-800"
+          />
+        )}
+      </div>
     </article>
   );
 }

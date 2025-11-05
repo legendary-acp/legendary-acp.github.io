@@ -178,7 +178,6 @@ export default function PDFViewer({
             </div>
           )}
         </div>
-        {/* Footer */}
         <div className="border-t border-slate-200 p-4 flex items-center justify-between bg-white">
           <div className="text-sm text-slate-600">
             {numPages > 0 ? `${currentPage} / ${numPages}` : ""}

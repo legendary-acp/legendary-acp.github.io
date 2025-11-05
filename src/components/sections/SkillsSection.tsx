@@ -13,7 +13,6 @@ export default function SkillsSection() {
         subtitle="Languages, frameworks and technologies I enjoy working with"
       />
       <div className="grid lg:grid-cols-2 gap-8">
-        {/* Languages (bars) */}
         <Card title={bars.title}>
           <ul className="space-y-4">
             {bars.items.map((b) => (
@@ -41,7 +40,6 @@ export default function SkillsSection() {
           )}
         </Card>
 
-        {/* Domain Expertise */}
         <Card title={groups.title}>
           <div className="grid sm:grid-cols-2 gap-6">
             {groups.items.map((g) => (
@@ -53,7 +51,6 @@ export default function SkillsSection() {
           </div>
         </Card>
 
-        {/* Bottom dual card */}
         <div className="lg:col-span-2 rounded-2xl bg-white border border-slate-200 p-6">
           <div className="grid md:grid-cols-2 gap-8">
             <div>

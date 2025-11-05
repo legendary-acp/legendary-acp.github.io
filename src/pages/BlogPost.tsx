@@ -79,7 +79,6 @@ export default function BlogPost() {
           </div>
         </header>
         <hr className="border-t border-slate-200 mb-10" />
-        {/* content */}
         <article
           className="
     prose prose-slate max-w-none leading-relaxed
