@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import clsx from "classnames";
 import { Typewriter } from "react-simple-typewriter";
+import { Sun, Moon } from "lucide-react";
+import { useTheme } from "../../context/ThemeContext";
 
 const LINKS = [
   { label: "Home", to: "/" },
@@ -13,6 +15,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
+  const { theme, toggle } = useTheme();
 
   useEffect(() => {
     setOpen(false);
@@ -37,10 +40,13 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-40 bg-white/80 backdrop-blur border-b border-slate-200">
-      <div className="max-w-5xl mx-auto px-4 h-14 flex items-center justify-between">
+      {/* ── Desktop: 3-zone grid ─────────────────────────────────────────── */}
+      <div className="max-w-5xl mx-auto px-4 h-14 hidden md:grid md:grid-cols-3 items-center">
+
+        {/* Zone 1 — Brand */}
         <NavLink
           to="/"
-          className="flex items-center gap-2 sm:gap-3 font-mono text-[15px] leading-none"
+          className="flex items-center gap-2 font-mono text-[15px] leading-none"
         >
           <span className="text-blue-600 font-semibold">{">"}</span>
           <span className="font-semibold text-slate-900 tracking-tight">
@@ -59,7 +65,8 @@ export default function Navbar() {
           </span>
         </NavLink>
 
-        <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
+        {/* Zone 2 — Navigation (centred) */}
+        <nav className="flex items-center justify-center gap-6 text-sm font-medium">
           {LINKS.map(({ label, to }) => (
             <NavLink
               key={to}
@@ -67,29 +74,73 @@ export default function Navbar() {
               className={({ isActive }) =>
                 clsx(
                   "transition hover:text-blue-700",
-                  isActive ? "text-blue-700" : "text-slate-700"
+                  isActive ? "text-blue-700" : "text-slate-600"
                 )
               }
             >
               {label}
             </NavLink>
           ))}
+        </nav>
+
+        {/* Zone 3 — Actions (right-aligned) */}
+        <div className="flex items-center justify-end gap-3">
+          {/* HIDDEN — dark mode toggle (re-enable when ready)
+          <button
+            onClick={toggle}
+            aria-label="Toggle dark mode"
+            className="inline-flex items-center justify-center w-8 h-8 text-slate-400 hover:text-slate-700 active:scale-95 transition"
+          >
+            {theme === "dark" ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+          </button>
+          */}
 
           <a
             href="#contact"
             onClick={handleSayHi}
-            className="inline-flex items-center rounded-xl border border-blue-500/70 text-blue-600 px-4 py-2 font-medium hover:bg-blue-50 hover:shadow-[0_0_8px_rgba(37,99,235,0.25)] active:scale-95 active:bg-blue-100 transition"
+            className="inline-flex items-center gap-1.5 rounded-xl border border-blue-500/70 text-blue-600 px-4 py-2 text-sm font-medium hover:bg-blue-50 hover:shadow-[0_0_8px_rgba(37,99,235,0.15)] active:scale-95 active:bg-blue-100 transition"
           >
-            Say hi
+            Say hi →
           </a>
-        </nav>
+        </div>
+      </div>
 
-        <button
-          className="md:hidden inline-flex items-center justify-center w-8 h-8 rounded-lg border border-slate-300 text-slate-700"
-          onClick={() => setOpen((v) => !v)}
-          aria-expanded={open}
-          aria-label="Toggle navigation"
+      {/* ── Mobile: brand + actions + hamburger ─────────────────────────── */}
+      <div className="max-w-5xl mx-auto px-4 h-14 flex md:hidden items-center justify-between">
+        <NavLink
+          to="/"
+          className="flex items-center gap-2 font-mono text-[15px] leading-none"
         >
+          <span className="text-blue-600 font-semibold">{">"}</span>
+          <span className="font-semibold text-slate-900 tracking-tight">pradyuman</span>
+        </NavLink>
+
+        {/* Right: dark toggle + Say hi + hamburger */}
+        <div className="flex items-center gap-2">
+          {/* HIDDEN — dark mode toggle (re-enable when ready)
+          <button
+            onClick={toggle}
+            aria-label="Toggle dark mode"
+            className="inline-flex items-center justify-center w-8 h-8 text-slate-400 hover:text-slate-700 active:scale-95 transition"
+          >
+            {theme === "dark" ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+          </button>
+          */}
+
+          <a
+            href="#contact"
+            onClick={handleSayHi}
+            className="inline-flex items-center gap-1 rounded-xl border border-blue-500/70 text-blue-600 px-3 py-1.5 text-sm font-medium hover:bg-blue-50 active:scale-95 active:bg-blue-100 transition"
+          >
+            Say hi →
+          </a>
+
+          <button
+            className="inline-flex items-center justify-center w-8 h-8 rounded-lg border border-slate-300 text-slate-700"
+            onClick={() => setOpen((v) => !v)}
+            aria-expanded={open}
+            aria-label="Toggle navigation"
+          >
           {open ? (
             <svg
               fill="#000000"
@@ -97,7 +148,7 @@ export default function Navbar() {
               xmlns="http://www.w3.org/2000/svg"
               transform="rotate(0)"
             >
-              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
               <g
                 id="SVGRepo_tracerCarrier"
                 strokeLinecap="round"
@@ -135,6 +186,7 @@ export default function Navbar() {
             </svg>
           )}
         </button>
+        </div>
       </div>
 
       <div
@@ -159,13 +211,6 @@ export default function Navbar() {
             </NavLink>
           ))}
 
-          <a
-            href="#contact"
-            onClick={handleSayHi}
-            className="mt-1 inline-flex items-center justify-center rounded-xl border border-blue-500/70 text-blue-600 font-medium px-3 py-2 hover:bg-blue-50 hover:shadow-[0_0_8px_rgba(37,99,235,0.25)] active:scale-95 active:bg-blue-100 transition"
-          >
-            Say hi
-          </a>
         </nav>
       </div>
     </header>

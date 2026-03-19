@@ -1,5 +1,6 @@
 import { Routes, Route, useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import { ThemeProvider } from "./context/ThemeContext";
 import Footer from "./components/layout/Footer";
 import Navbar from "./components/layout/Navbar";
 import HomePage from "./pages/HomePage";
@@ -18,6 +19,7 @@ function ScrollToTop() {
 
 export default function App() {
   return (
+    <ThemeProvider>
     <div className="min-h-dvh bg-slate-50 text-slate-900 flex flex-col">
       <ScrollToTop />
       <Navbar />
@@ -31,5 +33,6 @@ export default function App() {
       </main>
       <Footer />
     </div>
+    </ThemeProvider>
   );
 }

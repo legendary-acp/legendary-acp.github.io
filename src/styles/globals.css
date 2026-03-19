@@ -2,15 +2,77 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ─── Semantic colour tokens ─────────────────────────────────────────────────
+   All dark-mode work later lives here — swap the values under .dark {}
+   and then replace Tailwind hard-coded classes with the utility names below.
+   ────────────────────────────────────────────────────────────────────────── */
+:root {
+  /* Surfaces */
+  --color-bg:        #f8fafc; /* slate-50  — page background   */
+  --color-surface:   #ffffff; /* white     — card background   */
+  --color-surface-2: #f1f5f9; /* slate-100 — code / hover bg  */
+
+  /* Borders */
+  --color-border:    #e2e8f0; /* slate-200 */
+  --color-border-2:  #cbd5e1; /* slate-300 */
+
+  /* Text */
+  --color-text-primary:   #0f172a; /* slate-900 */
+  --color-text-secondary: #334155; /* slate-700 */
+  --color-text-tertiary:  #64748b; /* slate-500 */
+}
+
+.dark {
+  /* Surfaces */
+  --color-bg:        #020617; /* slate-950 */
+  --color-surface:   #0f172a; /* slate-900 */
+  --color-surface-2: #1e293b; /* slate-800 */
+
+  /* Borders */
+  --color-border:    #334155; /* slate-700 */
+  --color-border-2:  #475569; /* slate-600 */
+
+  /* Text */
+  --color-text-primary:   #f8fafc; /* slate-50  */
+  --color-text-secondary: #cbd5e1; /* slate-300 */
+  --color-text-tertiary:  #64748b; /* slate-500 */
+}
+
+/* ─── Semantic utility classes ───────────────────────────────────────────────
+   Use these instead of raw slate-* classes going forward.
+   They switch automatically when .dark is on <html>.
+   ────────────────────────────────────────────────────────────────────────── */
+@layer utilities {
+  .bg-page      { background-color: var(--color-bg); }
+  .bg-surface   { background-color: var(--color-surface); }
+  .bg-surface-2 { background-color: var(--color-surface-2); }
+
+  .border-default   { border-color: var(--color-border); }
+  .border-default-2 { border-color: var(--color-border-2); }
+
+  .text-primary   { color: var(--color-text-primary); }
+  .text-secondary { color: var(--color-text-secondary); }
+  .text-tertiary  { color: var(--color-text-tertiary); }
+}
+
+/* ─── Base ───────────────────────────────────────────────────────────────── */
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 * {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-    text-rendering: optimizeLegibility;
+  text-rendering: optimizeLegibility;
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+}
+
+/* ─── Animations ─────────────────────────────────────────────────────────── */
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-6px); }
+  to   { opacity: 1; transform: translateX(0); }
 }
