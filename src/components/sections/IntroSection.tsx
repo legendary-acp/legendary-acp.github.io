@@ -10,13 +10,13 @@ export default function IntroSection() {
         <img
           src="/profile.jpg"
           alt="Pradyuman"
-          className="w-24 h-24 rounded-2xl ring-4 ring-white border border-slate-200 object-cover"
+          className="w-24 h-24 rounded-2xl ring-4 ring-white dark:ring-slate-800 border border-default object-cover"
         />
         <div>
           <h1 className="text-3xl md:text-4xl font-semibold leading-tight tracking-tight">
             Hi, I’m <span className="text-blue-700">Pradyuman</span>.
           </h1>
-          <p className="mt-3 text-slate-700 max-w-2xl leading-relaxed">
+          <p className="mt-3 text-secondary max-w-2xl leading-relaxed">
             I’m a{" "}
             <span className="font-medium">Backend & Systems Engineer</span>{" "}
             working with
@@ -46,7 +46,7 @@ export default function IntroSection() {
                 href="https://github.com/legendary-acp"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center justify-center rounded-xl border border-slate-300 hover:border-slate-400 active:scale-95 transition"
+                className="inline-flex items-center justify-center rounded-xl border border-default-2 hover:border-slate-400 dark:hover:border-slate-500 active:scale-95 transition"
                 style={{ width: "40px", height: "40px" }}
                 aria-label="GitHub"
               >
@@ -68,7 +68,7 @@ export default function IntroSection() {
                 href="https://linkedin.com/in/ppradyu"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center justify-center rounded-xl border border-slate-300 hover:border-slate-400 active:scale-95 transition"
+                className="inline-flex items-center justify-center rounded-xl border border-default-2 hover:border-slate-400 dark:hover:border-slate-500 active:scale-95 transition"
                 style={{ width: "40px", height: "40px" }}
                 aria-label="LinkedIn"
               >
@@ -93,7 +93,7 @@ export default function IntroSection() {
 function NowSection() {
   return (
     <aside
-      className="group relative rounded-2xl overflow-hidden bg-white border border-slate-200"
+      className="group relative rounded-2xl overflow-hidden bg-surface border border-default"
       aria-label="Currently working on"
     >
       <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-500 to-blue-600 group-hover:w-2 transition-all duration-300" />
@@ -102,26 +102,26 @@ function NowSection() {
         <div className="flex items-center justify-between ">
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
-            <h3 className="text-xs uppercase tracking-widest text-slate-700 font-semibold">
+            <h3 className="text-xs uppercase tracking-widest text-secondary font-semibold">
               Now
             </h3>
           </div>
           {nowData?.lastUpdated && (
             <time
               dateTime={nowData.lastUpdated}
-              className="text-xs text-slate-500 font-mono"
+              className="text-xs text-tertiary font-mono"
             >
               {nowData.lastUpdated}
             </time>
           )}
         </div>
 
-        <div className="h-px bg-slate-200" />
+        <div className="h-px bg-slate-200 dark:bg-slate-700" />
         <ul className="space-y-3">
           {nowData.items.map((item, idx) => (
             <li
               key={idx}
-              className="flex gap-3 text-sm text-slate-700 leading-relaxed group/item"
+              className="flex gap-3 text-sm text-secondary leading-relaxed group/item"
               style={{
                 animation: `slideIn 0.4s ease-out ${idx * 50}ms both`,
               }}
@@ -129,7 +129,7 @@ function NowSection() {
               <span className="text-blue-500 font-semibold flex-shrink-0">
                 →
               </span>
-              <span className="group-hover/item:text-slate-900 transition-colors duration-300">
+              <span className="group-hover/item:text-primary transition-colors duration-300">
                 {item}
               </span>
             </li>

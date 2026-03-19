@@ -17,10 +17,10 @@ function BlogCard({ blog }: { blog: MediumBlogItem }) {
       target="_blank"
       rel="noopener noreferrer"
       aria-label={`Read ${blog.title} on Medium`}
-      className="group border border-gray-200 rounded-lg overflow-hidden hover:border-blue-500 hover:shadow-lg transition-all duration-300 bg-white flex flex-col"
+      className="group border border-default rounded-lg overflow-hidden hover:border-blue-500 hover:shadow-lg transition-all duration-300 bg-surface flex flex-col"
     >
       {blog.image && (
-        <div className="h-48 w-full overflow-hidden bg-gray-100">
+        <div className="h-48 w-full overflow-hidden bg-surface-2">
           <img
             src={blog.image}
             alt={blog.title}
@@ -31,14 +31,14 @@ function BlogCard({ blog }: { blog: MediumBlogItem }) {
 
       <div className="p-5 flex flex-col flex-1">
         <div className="flex items-start justify-between gap-2 mb-2">
-          <h3 className="text-lg font-semibold text-gray-900 group-hover:text-blue-600 transition-colors line-clamp-2 flex-1">
+          <h3 className="text-lg font-semibold text-primary group-hover:text-blue-600 transition-colors line-clamp-2 flex-1">
             {blog.title}
           </h3>
         </div>
 
-        <p className="text-sm text-gray-500 mb-3">{blog.pubDate}</p>
+        <p className="text-sm text-tertiary mb-3">{blog.pubDate}</p>
 
-        <p className="text-gray-600 text-sm line-clamp-3 mb-4 flex-1">
+        <p className="text-muted text-sm line-clamp-3 mb-4 flex-1">
           {blog.summary}
         </p>
 
@@ -46,8 +46,8 @@ function BlogCard({ blog }: { blog: MediumBlogItem }) {
           <Chips items={blog.categories.slice(0, 3)} />
         )}
 
-        <div className="flex items-center justify-between pt-3 border-t border-gray-100">
-          <span className="text-xs text-gray-500">{blog.readTime}</span>
+        <div className="flex items-center justify-between pt-3 border-t border-default">
+          <span className="text-xs text-tertiary">{blog.readTime}</span>
           <span className="text-blue-600 font-medium text-sm group-hover:text-blue-700 flex items-center gap-1">
             Read on Medium
             <span className="group-hover:translate-x-1 transition-transform">
@@ -107,11 +107,11 @@ export default function MediumBlogCards(): React.ReactElement {
 
   return (
     <div className="w-full max-w-6xl mx-auto px-4 pb-7">
-      <div className="inline-block text-[11px] uppercase tracking-wider font-mono text-slate-600 border border-slate-300 rounded-md px-2 py-0.5 mb-1.5">
+      <div className="inline-block text-[11px] uppercase tracking-wider font-mono text-muted border border-default-2 rounded-md px-2 py-0.5 mb-1.5">
         Blogs
       </div>
       <div className="flex items-center justify-between mb-6">
-        <h2 className="text-4xl font-semibold text-slate-900 tracking-tight">
+        <h2 className="text-4xl font-semibold text-primary tracking-tight">
           From My Medium
         </h2>
         <ViewAllLink
@@ -124,24 +124,24 @@ export default function MediumBlogCards(): React.ReactElement {
       {loading ? (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {[0, 1, 2].map((i) => (
-            <div key={i} className="border border-gray-200 rounded-lg overflow-hidden bg-white flex flex-col animate-pulse">
-              <div className="h-48 w-full bg-slate-200" />
+            <div key={i} className="border border-default rounded-lg overflow-hidden bg-surface flex flex-col animate-pulse">
+              <div className="h-48 w-full bg-surface-2" />
               <div className="p-5 flex flex-col flex-1 gap-3">
-                <div className="h-4 bg-slate-200 rounded w-3/4" />
-                <div className="h-4 bg-slate-200 rounded w-1/2" />
-                <div className="h-3 bg-slate-100 rounded w-1/4" />
+                <div className="h-4 bg-surface-2 rounded w-3/4" />
+                <div className="h-4 bg-surface-2 rounded w-1/2" />
+                <div className="h-3 bg-surface-2 rounded w-1/4" />
                 <div className="space-y-2 flex-1">
-                  <div className="h-3 bg-slate-100 rounded" />
-                  <div className="h-3 bg-slate-100 rounded" />
-                  <div className="h-3 bg-slate-100 rounded w-4/5" />
+                  <div className="h-3 bg-surface-2 rounded" />
+                  <div className="h-3 bg-surface-2 rounded" />
+                  <div className="h-3 bg-surface-2 rounded w-4/5" />
                 </div>
                 <div className="flex gap-2">
-                  <div className="h-5 w-16 bg-slate-100 rounded-full" />
-                  <div className="h-5 w-20 bg-slate-100 rounded-full" />
+                  <div className="h-5 w-16 bg-surface-2 rounded-full" />
+                  <div className="h-5 w-20 bg-surface-2 rounded-full" />
                 </div>
-                <div className="flex justify-between pt-3 border-t border-gray-100">
-                  <div className="h-3 w-12 bg-slate-100 rounded" />
-                  <div className="h-3 w-24 bg-slate-100 rounded" />
+                <div className="flex justify-between pt-3 border-t border-default">
+                  <div className="h-3 w-12 bg-surface-2 rounded" />
+                  <div className="h-3 w-24 bg-surface-2 rounded" />
                 </div>
               </div>
             </div>
@@ -168,7 +168,7 @@ export default function MediumBlogCards(): React.ReactElement {
           </span>
         </div>
       ) : blogs.length === 0 ? (
-        <div className="text-sm text-slate-600 border border-slate-200 bg-white rounded-lg p-4">
+        <div className="text-sm text-muted border border-default bg-surface rounded-lg p-4">
           No posts found.
         </div>
       ) : (

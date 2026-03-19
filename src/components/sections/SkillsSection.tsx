@@ -26,12 +26,12 @@ export default function SkillsSection() {
               <li key={b.name}>
                 <div className="flex justify-between text-sm">
                   <span className="font-medium">{b.name}</span>
-                  <span className="text-slate-500">
+                  <span className="text-tertiary">
                     {b.label}
                     {b.note && "*"}
                   </span>
                 </div>
-                <div className="h-2 rounded-full bg-slate-200 mt-2">
+                <div className="h-2 rounded-full bg-slate-200 dark:bg-slate-700 mt-2">
                   <div
                     className="h-2 rounded-full bg-blue-600 transition-all duration-700 ease-out"
                     style={{ width: animated ? `${b.level}%` : "0%" }}
@@ -41,7 +41,7 @@ export default function SkillsSection() {
             ))}
           </ul>
           {bars.items.some((i) => i.note) && (
-            <p className="text-xs text-slate-500 mt-4">
+            <p className="text-xs text-tertiary mt-4">
               * Actively learning and deepening expertise.
             </p>
           )}
@@ -58,7 +58,7 @@ export default function SkillsSection() {
           </div>
         </Card>
 
-        <div className="lg:col-span-2 rounded-2xl bg-white border border-slate-200 p-6">
+        <div className="lg:col-span-2 rounded-2xl bg-surface border border-default p-6">
           <div className="grid md:grid-cols-2 gap-8">
             <div>
               <h3 className="text-lg font-semibold mb-4">{dual.left.title}</h3>
@@ -83,7 +83,7 @@ function Card({
   children: React.ReactNode;
 }) {
   return (
-    <div className="rounded-2xl bg-white border border-slate-200 p-6">
+    <div className="rounded-2xl bg-surface border border-default p-6">
       <h3 className="text-lg font-semibold mb-4">{title}</h3>
       {children}
     </div>

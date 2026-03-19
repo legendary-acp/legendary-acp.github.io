@@ -20,7 +20,7 @@ function ScrollToTop() {
 export default function App() {
   return (
     <ThemeProvider>
-    <div className="min-h-dvh bg-slate-50 text-slate-900 flex flex-col">
+    <div className="min-h-dvh bg-page text-primary flex flex-col">
       <ScrollToTop />
       <Navbar />
       <main className="flex-grow">

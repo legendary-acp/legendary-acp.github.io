@@ -39,7 +39,7 @@ export default function Navbar() {
   };
 
   return (
-    <header className="sticky top-0 z-40 bg-white/80 backdrop-blur border-b border-slate-200">
+    <header className="sticky top-0 z-40 bg-white/80 dark:bg-slate-900/80 backdrop-blur border-b border-default">
       {/* ── Desktop: 3-zone grid ─────────────────────────────────────────── */}
       <div className="max-w-5xl mx-auto px-4 h-14 hidden md:grid md:grid-cols-3 items-center">
 
@@ -49,9 +49,9 @@ export default function Navbar() {
           className="flex items-center gap-2 font-mono text-[15px] leading-none"
         >
           <span className="text-blue-600 font-semibold">{">"}</span>
-          <span className="font-semibold text-slate-900 tracking-tight">
+          <span className="font-semibold text-primary tracking-tight">
             pradyuman&nbsp;|&nbsp;
-            <span className="text-slate-700">
+            <span className="text-secondary">
               <Typewriter
                 words={["systems", "backend", "architecture"]}
                 loop={0}
@@ -74,7 +74,7 @@ export default function Navbar() {
               className={({ isActive }) =>
                 clsx(
                   "transition hover:text-blue-700",
-                  isActive ? "text-blue-700" : "text-slate-600"
+                  isActive ? "text-blue-700" : "text-muted"
                 )
               }
             >
@@ -85,20 +85,18 @@ export default function Navbar() {
 
         {/* Zone 3 — Actions (right-aligned) */}
         <div className="flex items-center justify-end gap-3">
-          {/* HIDDEN — dark mode toggle (re-enable when ready)
           <button
             onClick={toggle}
             aria-label="Toggle dark mode"
-            className="inline-flex items-center justify-center w-8 h-8 text-slate-400 hover:text-slate-700 active:scale-95 transition"
+            className="inline-flex items-center justify-center w-8 h-8 text-tertiary hover:text-secondary active:scale-95 transition"
           >
             {theme === "dark" ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
           </button>
-          */}
 
           <a
             href="#contact"
             onClick={handleSayHi}
-            className="inline-flex items-center gap-1.5 rounded-xl border border-blue-500/70 text-blue-600 px-4 py-2 text-sm font-medium hover:bg-blue-50 hover:shadow-[0_0_8px_rgba(37,99,235,0.15)] active:scale-95 active:bg-blue-100 transition"
+            className="inline-flex items-center gap-1.5 rounded-xl border border-blue-500/70 text-blue-600 px-4 py-2 text-sm font-medium hover:bg-blue-50 dark:hover:bg-blue-950 hover:shadow-[0_0_8px_rgba(37,99,235,0.15)] active:scale-95 active:bg-blue-100 transition"
           >
             Say hi →
           </a>
@@ -112,31 +110,29 @@ export default function Navbar() {
           className="flex items-center gap-2 font-mono text-[15px] leading-none"
         >
           <span className="text-blue-600 font-semibold">{">"}</span>
-          <span className="font-semibold text-slate-900 tracking-tight">pradyuman</span>
+          <span className="font-semibold text-primary tracking-tight">pradyuman</span>
         </NavLink>
 
         {/* Right: dark toggle + Say hi + hamburger */}
         <div className="flex items-center gap-2">
-          {/* HIDDEN — dark mode toggle (re-enable when ready)
           <button
             onClick={toggle}
             aria-label="Toggle dark mode"
-            className="inline-flex items-center justify-center w-8 h-8 text-slate-400 hover:text-slate-700 active:scale-95 transition"
+            className="inline-flex items-center justify-center w-8 h-8 text-tertiary hover:text-secondary active:scale-95 transition"
           >
             {theme === "dark" ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
           </button>
-          */}
 
           <a
             href="#contact"
             onClick={handleSayHi}
-            className="inline-flex items-center gap-1 rounded-xl border border-blue-500/70 text-blue-600 px-3 py-1.5 text-sm font-medium hover:bg-blue-50 active:scale-95 active:bg-blue-100 transition"
+            className="inline-flex items-center gap-1 rounded-xl border border-blue-500/70 text-blue-600 px-3 py-1.5 text-sm font-medium hover:bg-blue-50 dark:hover:bg-blue-950 active:scale-95 active:bg-blue-100 transition"
           >
             Say hi →
           </a>
 
           <button
-            className="inline-flex items-center justify-center w-8 h-8 rounded-lg border border-slate-300 text-slate-700"
+            className="inline-flex items-center justify-center w-8 h-8 rounded-lg border border-default-2 text-secondary"
             onClick={() => setOpen((v) => !v)}
             aria-expanded={open}
             aria-label="Toggle navigation"
@@ -191,7 +187,7 @@ export default function Navbar() {
 
       <div
         className={clsx(
-          "md:hidden border-t border-slate-200 bg-white/95 backdrop-blur px-4 overflow-hidden transition-all duration-200 ease-in-out",
+          "md:hidden border-t border-default bg-white/95 dark:bg-slate-900/95 backdrop-blur px-4 overflow-hidden transition-all duration-200 ease-in-out",
           open ? "max-h-64 opacity-100" : "max-h-0 opacity-0"
         )}
       >
@@ -202,8 +198,8 @@ export default function Navbar() {
               to={to}
               className={({ isActive }) =>
                 clsx(
-                  "rounded-lg px-3 py-2 hover:bg-slate-100",
-                  isActive && "bg-slate-100 text-blue-700 font-medium"
+                  "rounded-lg px-3 py-2 hover:bg-surface-2 text-secondary",
+                  isActive && "bg-surface-2 text-blue-700 font-medium"
                 )
               }
             >

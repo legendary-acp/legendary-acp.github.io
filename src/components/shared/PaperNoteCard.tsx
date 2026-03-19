@@ -4,8 +4,8 @@ import ViewAllLink from "./ViewAllLink";
 
 export default function PaperNoteCard({ note }: { note: PaperNote }) {
   return (
-    <article className="rounded-2xl bg-white border border-slate-200 p-6 hover:shadow-md hover:border-slate-300 transition-all duration-200">
-      <div className="text-xs text-slate-500 font-mono">
+    <article className="rounded-2xl bg-surface border border-default p-6 hover:shadow-md hover:border-default-2 transition-all duration-200">
+      <div className="text-xs text-tertiary font-mono">
         <time dateTime={new Date(note.date).toISOString()}>
           {new Date(note.date).toLocaleDateString(undefined, {
             year: "numeric",
@@ -17,14 +17,14 @@ export default function PaperNoteCard({ note }: { note: PaperNote }) {
         {note.readTime} mins
       </div>
       <a href={`#/notes/${note.slug}`} className="mt-2 block">
-        <h3 className="text-lg font-semibold tracking-tight text-slate-900 group-hover:text-slate-950">
+        <h3 className="text-lg font-semibold tracking-tight text-primary">
           {note.title}
         </h3>
       </a>
-      <p className="mt-2 text-sm leading-relaxed text-slate-700 line-clamp-3">
+      <p className="mt-2 text-sm leading-relaxed text-secondary line-clamp-3">
         {note.description}
       </p>
-      <div className="mt-3 flex flex-wrap gap-2 items-center justify-between text-sm text-slate-600">
+      <div className="mt-3 flex flex-wrap gap-2 items-center justify-between text-sm text-muted">
         <Chips items={note.tags ?? []} />
         <ViewAllLink
           href={`#/notes/${note.slug}`}

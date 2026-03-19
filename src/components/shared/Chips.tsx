@@ -6,9 +6,9 @@ export default function Chips({ items }: { items: string[] }) {
           key={i}
           className="
         inline-block select-none
-        rounded-full border border-slate-300
-        bg-white px-3 py-1
-        text-xs font-medium leading-[1.2] text-slate-600
+        rounded-full border border-default-2
+        bg-surface px-3 py-1
+        text-xs font-medium leading-[1.2] text-muted
         shadow-sm align-middle whitespace-nowrap
       "
         >

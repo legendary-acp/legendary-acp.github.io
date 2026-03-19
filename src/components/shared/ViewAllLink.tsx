@@ -24,7 +24,7 @@ export default function ViewAllLink({
 
   const isInternal = href.startsWith("/");
   const isAnchor = href.startsWith("#");
-  const containerClasses = `flex items-center ${justifyMap[align]} pt-3 border-t border-gray-100 ${className}`;
+  const containerClasses = `flex items-center ${justifyMap[align]} pt-3 border-t border-default ${className}`;
 
   return (
     <div className={containerClasses}>
