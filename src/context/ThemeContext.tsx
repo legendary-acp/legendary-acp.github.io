@@ -7,6 +7,10 @@ interface ThemeContextValue {
   toggle: () => void;
 }
 
+const mq = () => window.matchMedia("(prefers-color-scheme: dark)");
+
+const getSystemTheme = (): Theme => (mq().matches ? "dark" : "light");
+
 const ThemeContext = createContext<ThemeContextValue>({
   theme: "light",
   toggle: () => {},
@@ -14,20 +18,36 @@ const ThemeContext = createContext<ThemeContextValue>({
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [theme, setTheme] = useState<Theme>(() => {
-    const stored = localStorage.getItem("theme") as Theme | null;
+    const stored = localStorage.getItem("theme");
     if (stored === "light" || stored === "dark") return stored;
-    // Respect OS preference on first visit
-    return window.matchMedia("(prefers-color-scheme: dark)").matches
-      ? "dark"
-      : "light";
+    // No explicit user choice — follow OS
+    return getSystemTheme();
   });
 
+  // If the user has no explicit override, keep in sync with OS changes live
+  useEffect(() => {
+    if (localStorage.getItem("theme")) return; // user has made a choice — don't override
+
+    const listener = (e: MediaQueryListEvent) => {
+      setTheme(e.matches ? "dark" : "light");
+    };
+
+    mq().addEventListener("change", listener);
+    return () => mq().removeEventListener("change", listener);
+  }, []);
+
+  // Apply the class + only persist when the user has made an explicit choice
   useEffect(() => {
     document.documentElement.classList.toggle("dark", theme === "dark");
-    localStorage.setItem("theme", theme);
   }, [theme]);
 
-  const toggle = () => setTheme((t) => (t === "light" ? "dark" : "light"));
+  const toggle = () => {
+    setTheme((t) => {
+      const next = t === "light" ? "dark" : "light";
+      localStorage.setItem("theme", next); // explicit override
+      return next;
+    });
+  };
 
   return (
     <ThemeContext.Provider value={{ theme, toggle }}>
