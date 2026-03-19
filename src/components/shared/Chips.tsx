@@ -7,9 +7,9 @@ export default function Chips({ items }: { items: string[] }) {
           className="
         inline-block select-none
         rounded-full border border-default-2
-        bg-surface px-3 py-1
+        bg-surface-2 px-3 py-1
         text-xs font-medium leading-[1.2] text-muted
-        shadow-sm align-middle whitespace-nowrap
+        align-middle whitespace-nowrap
       "
         >
           {s.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase())}
