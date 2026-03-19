@@ -6,8 +6,8 @@ export default function Footer() {
 
         <div className="font-mono text-xs sm:text-sm text-slate-500">
           {`{ built with React · Tailwind · `}
-          <span className="inline-block w-[75px] text-center opacity-20 hover:opacity-100 transition-opacity duration-300">
-            {"ChatGPT"}
+          <span className="inline-block w-[56px] text-center opacity-20 hover:opacity-100 transition-opacity duration-300">
+            {"Claude"}
           </span>
           {" }"}
         </div>

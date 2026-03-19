@@ -26,25 +26,25 @@ export default function ContactSection() {
 
           <div className="flex flex-col gap-3">
             <a
-              href="mailto:meetupradyuman@gmail.com"
-              className="rounded-xl bg-blue-600 text-white px-5 py-3 text-sm font-medium text-center hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
-              aria-label="Email meetupradyuman@gmail.com"
+              href="/Resume.pdf"
+              className="rounded-xl bg-blue-600 text-white px-5 py-3 text-sm font-medium text-center hover:bg-blue-700 active:scale-95 transition focus:outline-none focus:ring-2 focus:ring-blue-500"
             >
-              Email
+              View Resume
             </a>
 
             <div className="grid sm:grid-cols-2 gap-3">
               <a
-                href="/Resume.pdf"
-                className="rounded-xl border border-slate-300 text-slate-700 px-5 py-3 text-sm font-medium text-center hover:border-blue-300 hover:text-blue-700"
+                href="mailto:meetupradyuman@gmail.com"
+                className="rounded-xl border border-slate-300 text-slate-700 px-5 py-3 text-sm font-medium text-center hover:border-blue-300 hover:text-blue-700 active:scale-95 transition"
+                aria-label="Email meetupradyuman@gmail.com"
               >
-                Resume
+                Email
               </a>
               <a
                 href="https://calendly.com/meetupradyuman/30min"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-xl border border-blue-200 text-blue-700 px-5 py-3 text-sm font-medium text-center hover:bg-blue-50"
+                className="rounded-xl border border-blue-200 text-blue-700 px-5 py-3 text-sm font-medium text-center hover:bg-blue-50 active:scale-95 transition"
               >
                 Schedule a call
               </a>

@@ -78,7 +78,7 @@ export default function Navbar() {
           <a
             href="#contact"
             onClick={handleSayHi}
-            className="inline-flex items-center rounded-xl border border-blue-500/70 text-blue-600 px-4 py-2 font-medium hover:bg-blue-50 hover:shadow-[0_0_8px_rgba(37,99,235,0.25)] transition"
+            className="inline-flex items-center rounded-xl border border-blue-500/70 text-blue-600 px-4 py-2 font-medium hover:bg-blue-50 hover:shadow-[0_0_8px_rgba(37,99,235,0.25)] active:scale-95 active:bg-blue-100 transition"
           >
             Say hi
           </a>
@@ -139,8 +139,8 @@ export default function Navbar() {
 
       <div
         className={clsx(
-          "md:hidden border-t border-slate-200 bg-white/95 backdrop-blur px-4",
-          open ? "block" : "hidden"
+          "md:hidden border-t border-slate-200 bg-white/95 backdrop-blur px-4 overflow-hidden transition-all duration-200 ease-in-out",
+          open ? "max-h-64 opacity-100" : "max-h-0 opacity-0"
         )}
       >
         <nav className="py-3 flex flex-col gap-1 text-sm">
@@ -162,7 +162,7 @@ export default function Navbar() {
           <a
             href="#contact"
             onClick={handleSayHi}
-            className="mt-1 inline-flex items-center justify-center rounded-xl border border-blue-500/70 text-blue-600 font-medium px-3 py-2 hover:bg-blue-50 hover:shadow-[0_0_8px_rgba(37,99,235,0.25)] transition"
+            className="mt-1 inline-flex items-center justify-center rounded-xl border border-blue-500/70 text-blue-600 font-medium px-3 py-2 hover:bg-blue-50 hover:shadow-[0_0_8px_rgba(37,99,235,0.25)] active:scale-95 active:bg-blue-100 transition"
           >
             Say hi
           </a>

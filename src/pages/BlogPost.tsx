@@ -61,8 +61,8 @@ export default function BlogPost() {
 
           <div className="flex items-center gap-3 text-sm text-slate-500">
             <img
-              src="/profile~2.jpg"
-              alt="Author"
+              src="/profile.jpg"
+              alt="Pradyuman"
               className="w-9 h-9 rounded-full object-cover"
             />
             <span className="font-medium text-slate-700">Pradyuman</span>
@@ -77,6 +77,18 @@ export default function BlogPost() {
               })}
             </time>
           </div>
+          {meta.tags && meta.tags.length > 0 && (
+            <div className="flex flex-wrap gap-2 mt-4">
+              {meta.tags.map((tag: string) => (
+                <span
+                  key={tag}
+                  className="inline-block rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs font-medium text-slate-600"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          )}
         </header>
         <hr className="border-t border-slate-200 mb-10" />
         <article

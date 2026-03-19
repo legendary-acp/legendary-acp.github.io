@@ -13,7 +13,7 @@ export default function IntroSection() {
           className="w-24 h-24 rounded-2xl ring-4 ring-white border border-slate-200 object-cover"
         />
         <div>
-          <h1 className="text-3xl md:text-4xl font-semibold leading-tight">
+          <h1 className="text-3xl md:text-4xl font-semibold leading-tight tracking-tight">
             Hi, I’m <span className="text-blue-700">Pradyuman</span>.
           </h1>
           <p className="mt-3 text-slate-700 max-w-2xl leading-relaxed">
@@ -36,7 +36,7 @@ export default function IntroSection() {
           <div className="mt-6 flex flex-wrap gap-3 text-sm items-center">
             <a
               href="/Resume.pdf"
-              className="inline-flex items-center rounded-xl bg-gradient-to-r from-indigo-600 to-blue-500 text-white px-4 py-2 font-medium shadow-sm hover:shadow-md hover:opacity-95 transition"
+              className="inline-flex items-center rounded-xl bg-gradient-to-r from-indigo-600 to-blue-500 text-white px-4 py-2 font-medium shadow-sm hover:shadow-md hover:opacity-95 active:scale-95 active:opacity-90 transition"
             >
               Resume
             </a>
@@ -46,7 +46,7 @@ export default function IntroSection() {
                 href="https://github.com/legendary-acp"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center justify-center rounded-xl border border-slate-300 hover:border-slate-400 transition"
+                className="inline-flex items-center justify-center rounded-xl border border-slate-300 hover:border-slate-400 active:scale-95 transition"
                 style={{ width: "40px", height: "40px" }}
                 aria-label="GitHub"
               >
@@ -54,7 +54,7 @@ export default function IntroSection() {
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                   fill="#181717"
-                  className="w-6 h-6"
+                  className="w-5 h-5"
                 >
                   <path
                     fillRule="evenodd"
@@ -68,7 +68,7 @@ export default function IntroSection() {
                 href="https://linkedin.com/in/ppradyu"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center justify-center rounded-xl border border-slate-300 hover:border-slate-400 transition"
+                className="inline-flex items-center justify-center rounded-xl border border-slate-300 hover:border-slate-400 active:scale-95 transition"
                 style={{ width: "40px", height: "40px" }}
                 aria-label="LinkedIn"
               >
@@ -76,7 +76,7 @@ export default function IntroSection() {
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                   fill="#0A66C2"
-                  className="w-6 h-6"
+                  className="w-5 h-5"
                 >
                   <path d="M19 0h-14a5 5 0 0 0-5 5v14a5 5 0 0 0 5 5h14a5 5 0 0 0 5-5v-14a5 5 0 0 0-5-5ZM7 20h-3v-11h3v11Zm-1.5-12.3a1.7 1.7 0 1 1 0-3.4 1.7 1.7 0 0 1 0 3.4ZM21 20h-3v-5.6c0-1.34-.03-3.06-1.86-3.06s-2.14 1.45-2.14 2.96v5.7h-3v-11h2.88v1.5h.04a3.17 3.17 0 0 1 2.85-1.56c3.05 0 3.63 2.01 3.63 4.63v6.43Z" />
                 </svg>
@@ -96,11 +96,11 @@ function NowSection() {
       className="group relative rounded-2xl overflow-hidden bg-white border border-slate-200"
       aria-label="Currently working on"
     >
-      <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-500 to-blue-600 group-hover:w-1.5 transition-all duration-300" />
+      <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-500 to-blue-600 group-hover:w-2 transition-all duration-300" />
 
       <div className="p-6 space-y-4">
         <div className="flex items-center justify-between ">
-          <div className="flex items-center gap-2.5">
+          <div className="flex items-center gap-2">
             <div className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
             <h3 className="text-xs uppercase tracking-widest text-slate-700 font-semibold">
               Now
@@ -117,7 +117,7 @@ function NowSection() {
         </div>
 
         <div className="h-px bg-slate-200" />
-        <ul className="space-y-2.5 ">
+        <ul className="space-y-3">
           {nowData.items.map((item, idx) => (
             <li
               key={idx}

@@ -111,9 +111,9 @@ export default function MediumBlogCards(): React.ReactElement {
         Blogs
       </div>
       <div className="flex items-center justify-between mb-6">
-        <h1 className="text-4xl font-semibold text-slate-900 tracking-tight">
+        <h2 className="text-4xl font-semibold text-slate-900 tracking-tight">
           From My Medium
-        </h1>
+        </h2>
         <ViewAllLink
           href="https://medium.com/debugging-diaries"
           label="All articles on Medium"
@@ -122,8 +122,30 @@ export default function MediumBlogCards(): React.ReactElement {
       </div>
 
       {loading ? (
-        <div className="flex items-center justify-center p-8">
-          <div className="h-8 w-8 animate-spin rounded-full border-4 border-slate-200 border-t-blue-600" />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {[0, 1, 2].map((i) => (
+            <div key={i} className="border border-gray-200 rounded-lg overflow-hidden bg-white flex flex-col animate-pulse">
+              <div className="h-48 w-full bg-slate-200" />
+              <div className="p-5 flex flex-col flex-1 gap-3">
+                <div className="h-4 bg-slate-200 rounded w-3/4" />
+                <div className="h-4 bg-slate-200 rounded w-1/2" />
+                <div className="h-3 bg-slate-100 rounded w-1/4" />
+                <div className="space-y-2 flex-1">
+                  <div className="h-3 bg-slate-100 rounded" />
+                  <div className="h-3 bg-slate-100 rounded" />
+                  <div className="h-3 bg-slate-100 rounded w-4/5" />
+                </div>
+                <div className="flex gap-2">
+                  <div className="h-5 w-16 bg-slate-100 rounded-full" />
+                  <div className="h-5 w-20 bg-slate-100 rounded-full" />
+                </div>
+                <div className="flex justify-between pt-3 border-t border-gray-100">
+                  <div className="h-3 w-12 bg-slate-100 rounded" />
+                  <div className="h-3 w-24 bg-slate-100 rounded" />
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       ) : error ? (
         <div className="mx-auto max-w-2xl flex items-center gap-2 rounded-lg border border-red-200 bg-red-50/70 px-3 py-2 text-sm text-red-700">

@@ -7,7 +7,7 @@
         "category": "ai",
         "description": "Foundational paper on transformer architecture",
         "tags": [
-            "ai",
+            "Artificial Intelligence",
             "transformers",
             "attention"
         ],
@@ -22,7 +22,7 @@
         "category": "ai",
         "description": "Exploration of challenges in inverse reinforcement learning",
         "tags": [
-            "ai",
+            "Artificial Intelligence",
             "reinforcement-learning"
         ],
         "blogUrl": null,
@@ -36,7 +36,7 @@
         "category": "ai",
         "description": "Application of diffusion models to real-time game development",
         "tags": [
-            "ai",
+            "Artificial Intelligence",
             "diffusion-models",
             "games"
         ],
@@ -51,7 +51,7 @@
         "category": "ai",
         "description": "Study on using textbook data for training models",
         "tags": [
-            "ai",
+            "Artificial Intelligence",
             "training"
         ],
         "blogUrl": null,
@@ -65,7 +65,7 @@
         "category": "ai",
         "description": "Exploration of large-scale concept-based models",
         "tags": [
-            "ai",
+            "Artificial Intelligence",
             "language-models"
         ],
         "blogUrl": null,

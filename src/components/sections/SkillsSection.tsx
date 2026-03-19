@@ -1,9 +1,16 @@
+import { useEffect, useState } from "react";
 import SectionHeader from "../shared/SectionHeader";
 import skills from "../../data/skills.json";
 import Chips from "../shared/Chips";
 
 export default function SkillsSection() {
   const { bars, groups, dual } = skills;
+  const [animated, setAnimated] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setAnimated(true), 100);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <section className="mt-12">
@@ -26,8 +33,8 @@ export default function SkillsSection() {
                 </div>
                 <div className="h-2 rounded-full bg-slate-200 mt-2">
                   <div
-                    className="h-2 rounded-full bg-blue-600"
-                    style={{ width: `${b.level}%` }}
+                    className="h-2 rounded-full bg-blue-600 transition-all duration-700 ease-out"
+                    style={{ width: animated ? `${b.level}%` : "0%" }}
                   />
                 </div>
               </li>
