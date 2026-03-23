@@ -29,8 +29,8 @@ export default function ProjectsSection() {
 }
 
 function ProjectCard({ project }: { project: Project }) {
-  return (
-    <article className="rounded-2xl bg-surface border border-default p-6 hover:shadow-md hover:border-default-2 transition-all duration-200">
+  const card = (
+    <article className="rounded-2xl bg-surface border border-default p-6 hover:shadow-md hover:border-default-2 transition-all duration-200 h-full">
       <div className="flex items-start justify-between mb-4">
         <h3 className="text-lg font-semibold tracking-tight text-primary">
           {project.name}
@@ -42,16 +42,24 @@ function ProjectCard({ project }: { project: Project }) {
       <p className="mt-2 text-sm leading-relaxed text-secondary line-clamp-3">
         {project.desc}
       </p>
-      <div className="mt-3 flex flex-wrap gap-2 items-center justify-between text-sm text-muted">
+      <div className="mt-3 flex flex-wrap gap-2">
         <Chips items={project.chips.slice(0, 3)} />
-        {project.repo && (
-          <ViewAllLink
-            label="View repo"
-            href={project.repo}
-            className="text-slate-500 hover:text-slate-800"
-          />
-        )}
       </div>
     </article>
   );
+
+  if (project.repo) {
+    return (
+      <a
+        href={project.repo}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="block cursor-pointer"
+      >
+        {card}
+      </a>
+    );
+  }
+
+  return card;
 }

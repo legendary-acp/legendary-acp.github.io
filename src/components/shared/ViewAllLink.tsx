@@ -5,6 +5,7 @@ type ViewAllLinkProps = {
   label: string;
   align?: "start" | "center" | "end";
   className?: string;
+  bordered?: boolean;
 };
 
 export default function ViewAllLink({
@@ -12,6 +13,7 @@ export default function ViewAllLink({
   label,
   align = "end",
   className = "",
+  bordered = true,
 }: ViewAllLinkProps) {
   const justifyMap: Record<NonNullable<ViewAllLinkProps["align"]>, string> = {
     start: "justify-start",
@@ -24,7 +26,7 @@ export default function ViewAllLink({
 
   const isInternal = href.startsWith("/");
   const isAnchor = href.startsWith("#");
-  const containerClasses = `flex items-center ${justifyMap[align]} pt-3 border-t border-default ${className}`;
+  const containerClasses = `flex items-center ${justifyMap[align]} ${bordered ? "pt-3 border-t border-default" : ""} ${className}`;
 
   return (
     <div className={containerClasses}>
