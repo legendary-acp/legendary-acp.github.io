@@ -3,7 +3,7 @@ import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import clsx from "classnames";
 import { Typewriter } from "react-simple-typewriter";
 import { Sun, Moon } from "lucide-react";
-import { useTheme } from "../../context/ThemeContext";
+import { useTheme } from "../../context/useTheme";
 
 const LINKS = [
   { label: "Home", to: "/" },
@@ -48,7 +48,7 @@ export default function Navbar() {
           to="/"
           className="flex items-center gap-2 font-mono text-[15px] leading-none"
         >
-          <span className="text-blue-600 font-semibold">{">"}</span>
+          <span className="text-brand font-semibold">{">"}</span>
           <span className="font-semibold text-primary tracking-tight">
             pradyuman&nbsp;|&nbsp;
             <span className="text-secondary">
@@ -73,8 +73,8 @@ export default function Navbar() {
               to={to}
               className={({ isActive }) =>
                 clsx(
-                  "transition hover:text-blue-700",
-                  isActive ? "text-blue-700" : "text-muted"
+                  "transition hover:text-brand-hover",
+                  isActive ? "text-brand-hover" : "text-muted"
                 )
               }
             >
@@ -88,7 +88,7 @@ export default function Navbar() {
           <button
             onClick={toggle}
             aria-label="Toggle dark mode"
-            className="inline-flex items-center justify-center w-8 h-8 text-tertiary hover:text-secondary active:scale-95 transition"
+            className="inline-flex items-center justify-center w-8 h-8 text-tertiary hover:text-secondary active:scale-95 transition focus-ring"
           >
             {theme === "dark" ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
           </button>
@@ -96,7 +96,7 @@ export default function Navbar() {
           <a
             href="#contact"
             onClick={handleSayHi}
-            className="inline-flex items-center gap-1.5 rounded-xl border border-blue-500/70 text-blue-600 px-4 py-2 text-sm font-medium hover:bg-blue-50 dark:hover:bg-blue-950 hover:shadow-[0_0_8px_rgba(37,99,235,0.15)] active:scale-95 active:bg-blue-100 transition"
+            className="inline-flex items-center gap-1.5 rounded-xl border border-brand/70 text-brand px-4 py-2 text-sm font-medium hover:bg-brand-subtle hover:shadow-[0_0_8px_var(--color-brand-muted)] active:scale-95 active:bg-brand-subtle transition focus-ring"
           >
             Say hi →
           </a>
@@ -109,7 +109,7 @@ export default function Navbar() {
           to="/"
           className="flex items-center gap-2 font-mono text-[15px] leading-none"
         >
-          <span className="text-blue-600 font-semibold">{">"}</span>
+          <span className="text-brand font-semibold">{">"}</span>
           <span className="font-semibold text-primary tracking-tight">pradyuman</span>
         </NavLink>
 
@@ -118,7 +118,7 @@ export default function Navbar() {
           <button
             onClick={toggle}
             aria-label="Toggle dark mode"
-            className="inline-flex items-center justify-center w-8 h-8 text-tertiary hover:text-secondary active:scale-95 transition"
+            className="inline-flex items-center justify-center w-8 h-8 text-tertiary hover:text-secondary active:scale-95 transition focus-ring"
           >
             {theme === "dark" ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
           </button>
@@ -126,30 +126,31 @@ export default function Navbar() {
           <a
             href="#contact"
             onClick={handleSayHi}
-            className="inline-flex items-center gap-1 rounded-xl border border-blue-500/70 text-blue-600 px-3 py-1.5 text-sm font-medium hover:bg-blue-50 dark:hover:bg-blue-950 active:scale-95 active:bg-blue-100 transition"
+            className="inline-flex items-center gap-1 rounded-xl border border-brand/70 text-brand px-3 py-1.5 text-sm font-medium hover:bg-brand-subtle active:scale-95 active:bg-brand-subtle transition focus-ring"
           >
             Say hi →
           </a>
 
           <button
-            className="inline-flex items-center justify-center w-8 h-8 rounded-lg border border-default-2 text-secondary"
+            className="inline-flex items-center justify-center w-8 h-8 rounded-lg border border-default-2 text-secondary focus-ring"
             onClick={() => setOpen((v) => !v)}
             aria-expanded={open}
             aria-label="Toggle navigation"
           >
           {open ? (
             <svg
-              fill="#000000"
+              fill="currentColor"
               viewBox="-204.8 -204.8 1433.60 1433.60"
               xmlns="http://www.w3.org/2000/svg"
               transform="rotate(0)"
+              className="w-5 h-5"
             >
               <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
               <g
                 id="SVGRepo_tracerCarrier"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                stroke="#CCCCCC"
+                stroke="currentColor"
                 strokeWidth="8.192"
               ></g>
               <g id="SVGRepo_iconCarrier">
@@ -158,18 +159,19 @@ export default function Navbar() {
             </svg>
           ) : (
             <svg
-              fill="#000000"
+              fill="currentColor"
               viewBox="0 0 1024.00 1024.00"
               xmlns="http://www.w3.org/2000/svg"
-              stroke="#000000"
+              stroke="currentColor"
               strokeWidth="0.01024"
+              className="w-5 h-5"
             >
               <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
               <g
                 id="SVGRepo_tracerCarrier"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                stroke="#CCCCCC"
+                stroke="currentColor"
                 strokeWidth="2.048"
               ></g>
               <g id="SVGRepo_iconCarrier">
@@ -199,7 +201,7 @@ export default function Navbar() {
               className={({ isActive }) =>
                 clsx(
                   "rounded-lg px-3 py-2 hover:bg-surface-2 text-secondary",
-                  isActive && "bg-surface-2 text-blue-700 font-medium"
+                  isActive && "bg-surface-2 text-brand-hover font-medium"
                 )
               }
             >

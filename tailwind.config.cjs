@@ -24,6 +24,16 @@ module.exports = {
       borderRadius: { "2xl": "1rem" },
       boxShadow: {
         soft: "0 6px 24px rgba(16,24,40,.08), 0 2px 4px rgba(16,24,40,.06)",
+        xs:   "0 1px 2px rgba(16,24,40,.05)",
+        sm:   "0 1px 3px rgba(16,24,40,.1), 0 1px 2px rgba(16,24,40,.06)",
+        md:   "0 4px 8px -2px rgba(16,24,40,.1), 0 2px 4px -2px rgba(16,24,40,.06)",
+        lg:   "0 12px 16px -4px rgba(16,24,40,.1), 0 4px 6px -2px rgba(16,24,40,.05)",
+      },
+      zIndex: {
+        dropdown: "100",
+        sticky:   "200",
+        modal:    "400",
+        tooltip:  "600",
       },
     },
   },

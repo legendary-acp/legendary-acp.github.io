@@ -22,7 +22,7 @@ function ScrollToTop() {
 function PageLoader() {
   return (
     <div className="flex-grow flex items-center justify-center min-h-[40vh]">
-      <div className="w-6 h-6 rounded-full border-2 border-blue-500 border-t-transparent animate-spin" />
+      <div className="w-6 h-6 rounded-full border-2 border-brand border-t-transparent animate-spin" />
     </div>
   );
 }

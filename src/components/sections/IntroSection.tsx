@@ -1,5 +1,7 @@
-import nowData from "../../data/introNow.json";
+import type { CSSProperties } from "react";
+import nowData from "../../data/now.json";
 import Chips from "../shared/Chips";
+import Button from "../shared/Button";
 
 export default function IntroSection() {
   const keySkills: string[] = ["Go", "Rust", "C++", "Linux", "Cloud"];
@@ -10,14 +12,15 @@ export default function IntroSection() {
         <img
           src="/profile.jpg"
           alt="Pradyuman"
-          className="w-24 h-24 rounded-2xl ring-4 ring-white dark:ring-slate-800 border border-default object-cover"
+          className="w-24 h-24 rounded-2xl ring-4 border border-default object-cover"
+          style={{ "--tw-ring-color": "var(--color-ring-img)" } as CSSProperties}
         />
         <div>
           <h1 className="text-3xl md:text-4xl font-semibold leading-tight tracking-tight">
-            Hi, I’m <span className="text-blue-700">Pradyuman</span>.
+            Hi, I'm <span className="text-brand-hover">Pradyuman</span>.
           </h1>
           <p className="mt-3 text-secondary max-w-2xl leading-relaxed">
-            I’m a{" "}
+            I'm a{" "}
             <span className="font-medium">Backend & Systems Engineer</span>{" "}
             working with
             <span className="font-mono"> Rust, C++, and Go</span>. I lead
@@ -34,27 +37,24 @@ export default function IntroSection() {
           </div>
 
           <div className="mt-6 flex flex-wrap gap-3 text-sm items-center">
-            <a
-              href="/Resume.pdf"
-              className="inline-flex items-center rounded-xl bg-gradient-to-r from-indigo-600 to-blue-500 text-white px-4 py-2 font-medium shadow-sm hover:shadow-md hover:opacity-95 active:scale-95 active:opacity-90 transition"
-            >
+            <Button href="/Resume.pdf" variant="primary" size="md">
               Resume
-            </a>
+            </Button>
 
             <div className="flex items-center gap-2 ml-1">
-              <a
+              <Button
                 href="https://github.com/legendary-acp"
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center justify-center rounded-xl border border-default-2 hover:border-slate-400 dark:hover:border-slate-500 active:scale-95 transition"
-                style={{ width: "40px", height: "40px" }}
+                variant="icon"
+                size="md"
+                external
                 aria-label="GitHub"
+                className="!px-2.5 aspect-square"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
-                  fill="#181717"
-                  className="w-5 h-5"
+                  fill="currentColor"
+                  className="w-6 h-6 text-primary"
                 >
                   <path
                     fillRule="evenodd"
@@ -62,25 +62,25 @@ export default function IntroSection() {
                     clipRule="evenodd"
                   />
                 </svg>
-              </a>
+              </Button>
 
-              <a
+              <Button
                 href="https://linkedin.com/in/ppradyu"
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center justify-center rounded-xl border border-default-2 hover:border-slate-400 dark:hover:border-slate-500 active:scale-95 transition"
-                style={{ width: "40px", height: "40px" }}
+                variant="icon"
+                size="md"
+                external
                 aria-label="LinkedIn"
+                className="!px-2.5 aspect-square"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                   fill="#0A66C2"
-                  className="w-5 h-5"
+                  className="w-6 h-6"
                 >
                   <path d="M19 0h-14a5 5 0 0 0-5 5v14a5 5 0 0 0 5 5h14a5 5 0 0 0 5-5v-14a5 5 0 0 0-5-5ZM7 20h-3v-11h3v11Zm-1.5-12.3a1.7 1.7 0 1 1 0-3.4 1.7 1.7 0 0 1 0 3.4ZM21 20h-3v-5.6c0-1.34-.03-3.06-1.86-3.06s-2.14 1.45-2.14 2.96v5.7h-3v-11h2.88v1.5h.04a3.17 3.17 0 0 1 2.85-1.56c3.05 0 3.63 2.01 3.63 4.63v6.43Z" />
                 </svg>
-              </a>
+              </Button>
             </div>
           </div>
         </div>
@@ -96,7 +96,7 @@ function NowSection() {
       className="group relative rounded-2xl overflow-hidden bg-surface border border-default"
       aria-label="Currently working on"
     >
-      <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-500 to-blue-600 group-hover:w-2 transition-all duration-300" />
+      <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-brand-500 to-brand-600 group-hover:w-2 transition-all duration-300" />
 
       <div className="p-6 space-y-4">
         <div className="flex items-center justify-between ">
@@ -116,7 +116,7 @@ function NowSection() {
           )}
         </div>
 
-        <div className="h-px bg-slate-200 dark:bg-slate-700" />
+        <div className="h-px bg-border" />
         <ul className="space-y-3">
           {nowData.items.map((item, idx) => (
             <li
@@ -126,7 +126,7 @@ function NowSection() {
                 animation: `slideIn 0.4s ease-out ${idx * 50}ms both`,
               }}
             >
-              <span className="text-blue-500 font-semibold flex-shrink-0">
+              <span className="text-brand font-semibold flex-shrink-0">
                 →
               </span>
               <span className="group-hover/item:text-primary transition-colors duration-300">

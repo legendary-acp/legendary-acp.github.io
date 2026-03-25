@@ -31,9 +31,9 @@ export default function SkillsSection() {
                     {b.note && "*"}
                   </span>
                 </div>
-                <div className="h-2 rounded-full bg-slate-200 dark:bg-slate-700 mt-2">
+                <div className="h-2 rounded-full bg-surface-2 mt-2">
                   <div
-                    className="h-2 rounded-full bg-blue-600 transition-all duration-700 ease-out"
+                    className="h-2 rounded-full bg-brand transition-all duration-700 ease-out"
                     style={{ width: animated ? `${b.level}%` : "0%" }}
                   />
                 </div>

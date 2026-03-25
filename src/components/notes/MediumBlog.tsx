@@ -17,7 +17,7 @@ function BlogCard({ blog }: { blog: MediumBlogItem }) {
       target="_blank"
       rel="noopener noreferrer"
       aria-label={`Read ${blog.title} on Medium`}
-      className="group border border-default rounded-lg overflow-hidden hover:border-blue-500 hover:shadow-lg transition-all duration-300 bg-surface flex flex-col"
+      className="group border border-default rounded-lg overflow-hidden hover:border-brand hover:shadow-lg transition-all duration-300 bg-surface flex flex-col"
     >
       {blog.image && (
         <div className="h-48 w-full overflow-hidden bg-surface-2">
@@ -31,7 +31,7 @@ function BlogCard({ blog }: { blog: MediumBlogItem }) {
 
       <div className="p-5 flex flex-col flex-1">
         <div className="flex items-start justify-between gap-2 mb-2">
-          <h3 className="text-lg font-semibold text-primary group-hover:text-blue-600 transition-colors line-clamp-2 flex-1">
+          <h3 className="text-lg font-semibold text-primary group-hover:text-brand transition-colors line-clamp-2 flex-1">
             {blog.title}
           </h3>
         </div>
@@ -48,7 +48,7 @@ function BlogCard({ blog }: { blog: MediumBlogItem }) {
 
         <div className="flex items-center justify-between pt-3 border-t border-default">
           <span className="text-xs text-tertiary">{blog.readTime}</span>
-          <span className="text-blue-600 font-medium text-sm group-hover:text-blue-700 flex items-center gap-1">
+          <span className="text-brand font-medium text-sm group-hover:text-brand-hover flex items-center gap-1">
             Read on Medium
             <span className="group-hover:translate-x-1 transition-transform">
               ↗
@@ -98,7 +98,9 @@ export default function MediumBlogCards(): React.ReactElement {
           setError("Failed to load Medium articles");
         }
       } finally {
-        setLoading(false);
+        if (!signal.aborted) {
+          setLoading(false);
+        }
       }
     })();
 

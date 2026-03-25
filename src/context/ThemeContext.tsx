@@ -1,32 +1,20 @@
-import { createContext, useContext, useEffect, useState } from "react";
-
-type Theme = "light" | "dark";
-
-interface ThemeContextValue {
-  theme: Theme;
-  toggle: () => void;
-}
+import { useEffect, useState } from "react";
+import { ThemeContext } from "./theme";
+import type { Theme } from "./theme";
 
 const mq = () => window.matchMedia("(prefers-color-scheme: dark)");
-
 const getSystemTheme = (): Theme => (mq().matches ? "dark" : "light");
-
-const ThemeContext = createContext<ThemeContextValue>({
-  theme: "light",
-  toggle: () => {},
-});
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [theme, setTheme] = useState<Theme>(() => {
     const stored = localStorage.getItem("theme");
     if (stored === "light" || stored === "dark") return stored;
-    // No explicit user choice — follow OS
     return getSystemTheme();
   });
 
   // If the user has no explicit override, keep in sync with OS changes live
   useEffect(() => {
-    if (localStorage.getItem("theme")) return; // user has made a choice — don't override
+    if (localStorage.getItem("theme")) return;
 
     const listener = (e: MediaQueryListEvent) => {
       setTheme(e.matches ? "dark" : "light");
@@ -36,7 +24,6 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     return () => mq().removeEventListener("change", listener);
   }, []);
 
-  // Apply the class + only persist when the user has made an explicit choice
   useEffect(() => {
     document.documentElement.classList.toggle("dark", theme === "dark");
   }, [theme]);
@@ -44,7 +31,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const toggle = () => {
     setTheme((t) => {
       const next = t === "light" ? "dark" : "light";
-      localStorage.setItem("theme", next); // explicit override
+      localStorage.setItem("theme", next);
       return next;
     });
   };
@@ -55,5 +42,3 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     </ThemeContext.Provider>
   );
 }
-
-export const useTheme = () => useContext(ThemeContext);

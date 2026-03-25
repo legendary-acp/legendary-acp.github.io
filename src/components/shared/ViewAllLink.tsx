@@ -22,7 +22,7 @@ export default function ViewAllLink({
   };
 
   const baseClasses =
-    "group inline-flex items-center gap-2 text-blue-600 text-sm md:text-base font-medium hover:text-blue-700 transition-colors";
+    "group inline-flex items-center gap-2 text-brand text-sm md:text-base font-medium hover:text-brand-hover transition-colors";
 
   const isInternal = href.startsWith("/");
   const isAnchor = href.startsWith("#");

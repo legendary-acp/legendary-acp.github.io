@@ -21,6 +21,28 @@
   --color-text-secondary: #334155; /* slate-700 */
   --color-text-tertiary:  #64748b; /* slate-500 */
   --color-text-muted:     #475569; /* slate-600 */
+
+  /* Brand / interactive */
+  --color-brand:        #2563eb; /* blue-600 — primary CTA, links   */
+  --color-brand-hover:  #1d4ed8; /* blue-700 — hover / active       */
+  --color-brand-subtle: #eff6ff; /* blue-50  — ghost hover bg       */
+  --color-brand-muted:  rgba(37, 99, 235, 0.12); /* soft glow/ring  */
+
+  /* Semantic status */
+  --color-success:        #16a34a; /* green-600 */
+  --color-success-subtle: #f0fdf4; /* green-50  */
+  --color-warning:        #d97706; /* amber-600 */
+  --color-warning-subtle: #fffbeb; /* amber-50  */
+  --color-error:          #dc2626; /* red-600   */
+  --color-error-subtle:   #fef2f2; /* red-50    */
+  --color-info:           #0284c7; /* sky-600   */
+  --color-info-subtle:    #f0f9ff; /* sky-50    */
+
+  /* Focus ring */
+  --color-focus-ring: rgba(37, 99, 235, 0.4);
+
+  /* Profile image ring / timeline dot border */
+  --color-ring-img: #ffffff;
 }
 
 .dark {
@@ -38,6 +60,28 @@
   --color-text-secondary: #cbd5e1; /* slate-300 */
   --color-text-tertiary:  #64748b; /* slate-500 */
   --color-text-muted:     #94a3b8; /* slate-400 */
+
+  /* Brand / interactive — brighter on dark backgrounds */
+  --color-brand:        #3b82f6; /* blue-500 */
+  --color-brand-hover:  #2563eb; /* blue-600 */
+  --color-brand-subtle: #1e3a8a; /* blue-900 */
+  --color-brand-muted:  rgba(59, 130, 246, 0.15);
+
+  /* Semantic status — lighter shades for dark bg */
+  --color-success:        #4ade80; /* green-400  */
+  --color-success-subtle: #14532d; /* green-900  */
+  --color-warning:        #fbbf24; /* amber-400  */
+  --color-warning-subtle: #78350f; /* amber-900  */
+  --color-error:          #f87171; /* red-400    */
+  --color-error-subtle:   #7f1d1d; /* red-900    */
+  --color-info:           #38bdf8; /* sky-400    */
+  --color-info-subtle:    #082f49; /* sky-950    */
+
+  /* Focus ring */
+  --color-focus-ring: rgba(59, 130, 246, 0.5);
+
+  /* Profile image ring / timeline dot border */
+  --color-ring-img: #1e293b; /* slate-800 */
 }
 
 /* ─── Semantic utility classes ───────────────────────────────────────────────
@@ -45,17 +89,58 @@
    They switch automatically when .dark is on <html>.
    ────────────────────────────────────────────────────────────────────────── */
 @layer utilities {
+  /* ─── Surfaces ───────────────────────────────────────────────────────── */
   .bg-page      { background-color: var(--color-bg); }
   .bg-surface   { background-color: var(--color-surface); }
   .bg-surface-2 { background-color: var(--color-surface-2); }
 
+  /* ─── Borders ────────────────────────────────────────────────────────── */
   .border-default   { border-color: var(--color-border); }
   .border-default-2 { border-color: var(--color-border-2); }
+  /* Uses page background — for timeline dots sitting on page bg */
+  .border-bg        { border-color: var(--color-bg); }
+  /* A thin rule using the border token */
+  .bg-border        { background-color: var(--color-border); }
 
+  /* ─── Text ───────────────────────────────────────────────────────────── */
   .text-primary   { color: var(--color-text-primary); }
   .text-secondary { color: var(--color-text-secondary); }
   .text-tertiary  { color: var(--color-text-tertiary); }
   .text-muted     { color: var(--color-text-muted); }
+
+  /* ─── Brand ──────────────────────────────────────────────────────────── */
+  .text-brand       { color: var(--color-brand); }
+  .text-brand-hover { color: var(--color-brand-hover); }
+  .bg-brand         { background-color: var(--color-brand); }
+  .bg-brand-subtle  { background-color: var(--color-brand-subtle); }
+  .border-brand     { border-color: var(--color-brand); }
+
+  /* ─── Status: success ────────────────────────────────────────────────── */
+  .text-success       { color: var(--color-success); }
+  .bg-success-subtle  { background-color: var(--color-success-subtle); }
+  .border-success     { border-color: var(--color-success); }
+
+  /* ─── Status: warning ────────────────────────────────────────────────── */
+  .text-warning       { color: var(--color-warning); }
+  .bg-warning-subtle  { background-color: var(--color-warning-subtle); }
+  .border-warning     { border-color: var(--color-warning); }
+
+  /* ─── Status: error ──────────────────────────────────────────────────── */
+  .text-error         { color: var(--color-error); }
+  .bg-error-subtle    { background-color: var(--color-error-subtle); }
+  .border-error       { border-color: var(--color-error); }
+
+  /* ─── Status: info ───────────────────────────────────────────────────── */
+  .text-info          { color: var(--color-info); }
+  .bg-info-subtle     { background-color: var(--color-info-subtle); }
+  .border-info        { border-color: var(--color-info); }
+
+  /* ─── Focus ring ─────────────────────────────────────────────────────── */
+  /* Apply to interactive elements; only shows on keyboard navigation */
+  .focus-ring { outline: none; }
+  .focus-ring:focus-visible {
+    box-shadow: 0 0 0 3px var(--color-focus-ring);
+  }
 }
 
 /* ─── Base ───────────────────────────────────────────────────────────────── */
@@ -78,4 +163,29 @@ body {
 @keyframes slideIn {
   from { opacity: 0; transform: translateX(-6px); }
   to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── Reduced motion ─────────────────────────────────────────────────────── */
+/* Respects user OS preference — collapses all animations/transitions to
+   near-zero duration so they fire (events still dispatch) but are imperceptible */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
 }

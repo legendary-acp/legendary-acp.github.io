@@ -32,7 +32,7 @@ export default function BlogPost() {
         </p>
         <button
           onClick={() => navigate("/notes")}
-          className="mt-6 inline-flex items-center gap-1 text-sm font-medium text-blue-600 hover:text-blue-800"
+          className="mt-6 inline-flex items-center gap-1 text-sm font-medium text-brand hover:text-brand-hover"
         >
           ← Back to notes
         </button>
@@ -46,7 +46,7 @@ export default function BlogPost() {
     <div className="max-w-5xl mx-auto py-10 px-4 lg:py-12">
       <button
         onClick={() => navigate("/notes")}
-        className="mb-6 inline-flex items-center gap-2 text-sm font-medium text-blue-600 hover:text-blue-700 group"
+        className="mb-6 inline-flex items-center gap-2 text-sm font-medium text-brand hover:text-brand-hover group"
       >
         <span className="group-hover:-translate-x-1 transition-transform">
           ←

@@ -1,21 +1,22 @@
 import SectionHeader from "../shared/SectionHeader";
+import Button from "../shared/Button";
 
 export default function ContactSection() {
   return (
     <section>
       <SectionHeader
-        label="Let’s connect"
+        label="Let's connect"
         title="Get in Touch"
         subtitle="Always open for discussions, collaborations, and ideas."
       />
 
-      <div className="rounded-3xl bg-surface border border-default p-8 shadow-sm">
+      <div className="rounded-3xl bg-surface border border-default p-8 shadow-xs">
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div>
             <h3 className="text-xl md:text-2xl font-semibold">Contact me</h3>
             <p className="mt-2 text-secondary">
-              Whether it’s about scalable systems, new ideas, or potential
-              collaborations — I’m always happy to connect and chat.
+              Whether it's about scalable systems, new ideas, or potential
+              collaborations — I'm always happy to connect and chat.
             </p>
             <p className="mt-2 text-muted font-mono">{`{ Bengaluru, India }`}</p>
             <p className="mt-4 text-xs text-tertiary">
@@ -25,33 +26,39 @@ export default function ContactSection() {
           </div>
 
           <div className="flex flex-col gap-3">
-            <a
+            <Button
               href="/Resume.pdf"
-              className="rounded-xl bg-blue-600 text-white px-5 py-3 text-sm font-medium text-center hover:bg-blue-700 active:scale-95 transition focus:outline-none focus:ring-2 focus:ring-blue-500"
+              variant="primary"
+              size="lg"
+              className="w-full justify-center"
             >
               View Resume
-            </a>
+            </Button>
 
             <div className="grid sm:grid-cols-2 gap-3">
-              <a
+              <Button
                 href="mailto:meetupradyuman@gmail.com"
-                className="rounded-xl border border-default-2 text-secondary px-5 py-3 text-sm font-medium text-center hover:border-blue-300 hover:text-blue-700 active:scale-95 transition"
+                variant="secondary"
+                size="lg"
+                className="justify-center"
                 aria-label="Email meetupradyuman@gmail.com"
               >
                 Email
-              </a>
-              <a
+              </Button>
+              <Button
                 href="https://calendly.com/meetupradyuman/30min"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="rounded-xl border border-blue-200 text-blue-700 px-5 py-3 text-sm font-medium text-center hover:bg-blue-50 active:scale-95 transition"
+                variant="ghost"
+                size="lg"
+                external
+                className="justify-center"
               >
                 Schedule a call
-              </a>
+              </Button>
             </div>
+
             <div className="flex justify-center gap-5 text-sm mt-1">
               <a
-                className="text-blue-700 hover:underline"
+                className="text-brand-hover hover:underline transition-colors"
                 href="https://github.com/legendary-acp"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -59,7 +66,7 @@ export default function ContactSection() {
                 GitHub
               </a>
               <a
-                className="text-blue-700 hover:underline"
+                className="text-brand-hover hover:underline transition-colors"
                 href="https://www.linkedin.com/in/ppradyu"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -67,7 +74,7 @@ export default function ContactSection() {
                 LinkedIn
               </a>
               <a
-                className="text-blue-700 hover:underline"
+                className="text-brand-hover hover:underline transition-colors"
                 href="https://x.com/legendary_acp"
                 target="_blank"
                 rel="noopener noreferrer"
