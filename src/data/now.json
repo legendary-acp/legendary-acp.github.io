@@ -1,8 +1,8 @@
 {
-  "lastUpdated": "March 2026",
+  "lastUpdated": "April 2026",
   "items": [
-    "Leveling up on the leadership track — currently reading The Staff Engineer's Path",
-    "Shipped my first MCP server from scratch",
-    "Going deeper into the cloud-native toolkit — Kubernetes, Terraform, and the ecosystem around them"
+    "Started at Microsoft as SDE2 (L61) — building backend infrastructure at scale",
+    "Diving into multi-tenant platform architecture using Kubernetes namespace and stamp patterns",
+    "Sketching out something experimental in the trading/fintech space (more soon 👀)"
   ]
 }
