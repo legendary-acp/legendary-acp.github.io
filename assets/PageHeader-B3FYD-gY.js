@@ -1,1 +1,0 @@
-import{j as e}from"./vendor-react-BEZkRyaf.js";function s({title:t,subtitle:x}){return e.jsxs("section",{className:"mx-auto max-w-6xl px-4 md:px-6 pt-8",children:[e.jsx("h1",{className:"text-4xl font-semibold text-primary mb-3 tracking-tight",children:t}),e.jsx("p",{className:"text-[17px] text-muted leading-relaxed max-w-2xl",children:x})]})}export{s as P};
