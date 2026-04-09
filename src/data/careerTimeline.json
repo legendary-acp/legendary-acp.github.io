@@ -1,8 +1,18 @@
 [
     {
+        "title": "Software Engineer II",
+        "company": "Microsoft",
+        "period": "April 2026 - Present",
+        "location": "Hyderabad, India",
+        "desc": "Joined Microsoft IDC to manage kubernetes workload for Microsoft Security.",
+        "skills": [
+            "Kubernetes"
+        ]
+    },
+    {
         "title": "Lead Software Engineer",
         "company": "CtrlB",
-        "period": "Sept 2025 – Present",
+        "period": "Sept 2025 – April 2026",
         "location": "Bengaluru, India",
         "desc": "Architecting and developing a distributed control-plane to orchestrate telemetry agents (Fluent Bit, OpenTelemetry Collector) across hybrid environments. Driving technical direction, mentoring engineers, and improving system reliability and performance across large-scale deployments.",
         "skills": [
