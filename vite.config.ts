@@ -5,7 +5,6 @@ import remarkGfm from 'remark-gfm';
 import remarkFrontmatter from 'remark-frontmatter';
 import remarkMdxFrontmatter from 'remark-mdx-frontmatter';
 import rehypeSlug from 'rehype-slug';
-import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 
 export default defineConfig({
   base: '/',
@@ -18,7 +17,6 @@ export default defineConfig({
       ],
       rehypePlugins: [
         [rehypeSlug],
-        [rehypeAutolinkHeadings, { behavior: 'wrap' }],
       ],
       providerImportSource: '@mdx-js/react',
     }),
@@ -33,24 +31,24 @@ export default defineConfig({
           if (id.includes('pdfjs-dist')) return 'vendor-pdf';
           // React core
           if (id.includes('node_modules/react/') ||
-              id.includes('node_modules/react-dom/') ||
-              id.includes('node_modules/react-router') ||
-              id.includes('node_modules/scheduler/')) return 'vendor-react';
+            id.includes('node_modules/react-dom/') ||
+            id.includes('node_modules/react-router') ||
+            id.includes('node_modules/scheduler/')) return 'vendor-react';
           // MDX runtime
           if (id.includes('@mdx-js') ||
-              id.includes('remark') ||
-              id.includes('rehype') ||
-              id.includes('unified') ||
-              id.includes('micromark') ||
-              id.includes('mdast') ||
-              id.includes('hast') ||
-              id.includes('unist') ||
-              id.includes('vfile')) return 'vendor-mdx';
+            id.includes('remark') ||
+            id.includes('rehype') ||
+            id.includes('unified') ||
+            id.includes('micromark') ||
+            id.includes('mdast') ||
+            id.includes('hast') ||
+            id.includes('unist') ||
+            id.includes('vfile')) return 'vendor-mdx';
           // UI utilities
           if (id.includes('lucide-react') ||
-              id.includes('react-simple-typewriter') ||
-              id.includes('classnames') ||
-              id.includes('react-pdf')) return 'vendor-ui';
+            id.includes('react-simple-typewriter') ||
+            id.includes('classnames') ||
+            id.includes('react-pdf')) return 'vendor-ui';
         },
       },
     },

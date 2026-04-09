@@ -4,9 +4,13 @@
         "company": "Microsoft",
         "period": "April 2026 - Present",
         "location": "Hyderabad, India",
-        "desc": "Joined Microsoft IDC to manage kubernetes workload for Microsoft Security.",
+        "desc": "Working on Microsoft IDC to manage Kubernetes workloads and infrastructure for Microsoft Security. Building and optimizing cloud-native systems to support security operations and threat detection at scale. [Details to be updated]",
         "skills": [
-            "Kubernetes"
+            "Kubernetes",
+            "Cloud Infrastructure",
+            "Security",
+            "Azure",
+            "Distributed Systems"
         ]
     },
     {
