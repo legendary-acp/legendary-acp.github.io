@@ -20,18 +20,14 @@ export default function IntroSection() {
             Hi, I'm <span className="text-brand-hover">Pradyuman</span>.
           </h1>
           <p className="mt-3 text-secondary max-w-2xl leading-relaxed">
-            I'm a{" "}
-            <span className="font-medium">Backend & Systems Engineer</span>{" "}
-            working with
-            <span className="font-mono"> Rust, C++, and Go</span>. I lead
-            engineering at
-            <span className="font-medium"> CtrlB</span>, building scalable
-            observability and control-plane systems for cloud workloads. I focus
-            on <span className="font-medium">reliability, performance,</span>{" "}
-            and the craft of turning complex infrastructure into simple, robust
-            software.
+            I'm a <span className="font-medium">Software Engineer at Microsoft Security</span>, 
+            where I design and build high-performance, resilient infrastructure at global scale. 
+            With a deep focus on <span className="font-medium">systems programming and distributed 
+            architectures</span>, I leverage <span className="font-mono">Go, Rust, and C++</span> to 
+            solve complex cloud-scale observability and security challenges. I am passionate 
+            about <span className="font-medium">architectural integrity, performance,</span> and the 
+            rigorous craft of turning intricate infrastructure into robust, dependable software.
           </p>
-
           <div className="mt-4 flex flex-wrap gap-2">
             <Chips items={keySkills} />
           </div>
