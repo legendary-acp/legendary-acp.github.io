@@ -29,7 +29,7 @@ export default function PaperNoteCard({ note }: { note: PaperNote }) {
         <ViewAllLink
           href={`#/notes/${note.slug}`}
           label="Read notes"
-          className="text-slate-500 hover:text-slate-800"
+          className="text-tertiary hover:text-primary"
         />
       </div>
     </article>

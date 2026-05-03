@@ -27,8 +27,8 @@ export type ButtonProps = ButtonAsButton | ButtonAsAnchor;
 
 const variantClasses: Record<NonNullable<BaseProps["variant"]>, string> = {
   primary:
-    "bg-gradient-to-r from-indigo-600 to-blue-500 text-white shadow-sm " +
-    "hover:shadow-md hover:opacity-95 active:opacity-90",
+    "bg-brand text-white shadow-sm " +
+    "hover:bg-[color:var(--color-brand-hover)] hover:shadow-md active:opacity-90",
   secondary:
     "bg-surface border border-default-2 text-secondary " +
     "hover:border-brand hover:text-brand active:bg-brand-subtle",

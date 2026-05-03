@@ -88,10 +88,10 @@ function PaperCard({
 }) {
   const statusColor =
     paper.status === "read"
-      ? "bg-emerald-100 text-emerald-700"
+      ? "bg-fluent-green-subtle text-fluent-green"
       : paper.status === "reading"
-        ? "bg-blue-100 text-blue-700"
-        : "bg-amber-100 text-amber-800";
+        ? "bg-fluent-blue-subtle text-fluent-blue"
+        : "bg-fluent-yellow-subtle text-fluent-yellow";
 
   const statusLabel =
     paper.status === "read"
@@ -108,10 +108,10 @@ function PaperCard({
       onKeyDown={(e) => {
         if (e.key === "Enter" || e.key === " ") onClick();
       }}
-      className="cursor-pointer rounded-2xl bg-white border border-slate-200 p-6 hover:shadow-md hover:border-slate-300 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-600/50"
+      className="cursor-pointer rounded-2xl bg-surface border border-default p-6 hover:shadow-md hover:border-default-2 transition-all duration-200 focus-ring"
     >
       <div className="flex items-start justify-between mb-2">
-        <h3 className="text-lg font-semibold text-slate-900 leading-tight tracking-tight">
+        <h3 className="text-lg font-semibold text-primary leading-tight tracking-tight">
           {paper.title}
         </h3>
         <span
@@ -121,9 +121,9 @@ function PaperCard({
         </span>
       </div>
 
-      <time className="text-xs text-slate-500">{formatDate(paper.date)}</time>
+      <time className="text-xs text-tertiary">{formatDate(paper.date)}</time>
 
-      <p className="mt-3 text-sm text-slate-700 leading-relaxed">
+      <p className="mt-3 text-sm text-secondary leading-relaxed">
         {paper.description}
       </p>
 
@@ -145,7 +145,7 @@ function FilterTabs({
     <div
       role="tablist"
       aria-label="Status"
-      className="flex gap-2 border-b border-slate-200"
+      className="flex gap-2 border-b border-default"
     >
       {(Object.keys(STATUS_CONFIG) as StatusFilter[]).map((status) => {
         const isActive = active === status;
@@ -157,8 +157,8 @@ function FilterTabs({
             onClick={() => onChange(status)}
             className={`relative -mb-px border-b-2 px-4 py-3 text-sm font-medium outline-none transition-colors ${
               isActive
-                ? "border-blue-600 text-blue-600"
-                : "border-transparent text-slate-500 hover:text-slate-900"
+                ? "border-brand text-brand"
+                : "border-transparent text-tertiary hover:text-primary"
             }`}
           >
             {STATUS_CONFIG[status]}
@@ -180,7 +180,7 @@ function CategoryFilter({
 }) {
   return (
     <div className="mt-5 flex flex-wrap items-center gap-2">
-      <span className="text-sm font-semibold text-slate-800">Categories:</span>
+      <span className="text-sm font-semibold text-secondary">Categories:</span>
       {["all", ...categories].map((category) => {
         const isActive = active === category;
         const label =
@@ -194,8 +194,8 @@ function CategoryFilter({
             onClick={() => onChange(category)}
             className={`rounded-full border px-3 py-1.5 text-xs font-medium transition-colors ${
               isActive
-                ? "border-blue-600 bg-blue-600 text-white"
-                : "border-slate-200 bg-slate-50 text-slate-600 hover:bg-slate-100"
+                ? "border-brand bg-brand text-white"
+                : "border-default bg-surface text-tertiary hover:bg-surface-2"
             }`}
           >
             {label}
@@ -208,12 +208,12 @@ function CategoryFilter({
 
 function EmptyState() {
   return (
-    <div className="mt-6 grid place-items-center rounded-lg border border-dashed border-slate-300 p-10 text-center">
+    <div className="mt-6 grid place-items-center rounded-lg border border-dashed border-default-2 p-10 text-center">
       <div>
-        <h3 className="text-sm font-semibold text-slate-700">
+        <h3 className="text-sm font-semibold text-secondary">
           No papers match your filters
         </h3>
-        <p className="mt-1 text-xs text-slate-500">
+        <p className="mt-1 text-xs text-tertiary">
           Try changing status or category.
         </p>
       </div>

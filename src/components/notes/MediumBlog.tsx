@@ -86,7 +86,7 @@ export default function MediumBlogCards(): React.ReactElement {
           pubDate: formatDate(item.pubDate),
           content: item.content,
           image: extractFirstImage(item.content),
-          summary: getExcerpt(item.content, 20),
+          summary: getExcerpt(item.content, 14),
           readTime: calculateReadTime(item.content),
           categories: item.categories ?? [],
         }));
@@ -150,10 +150,10 @@ export default function MediumBlogCards(): React.ReactElement {
           ))}
         </div>
       ) : error ? (
-        <div className="mx-auto max-w-2xl flex items-center gap-2 rounded-lg border border-red-200 bg-red-50/70 px-3 py-2 text-sm text-red-700">
+        <div className="mx-auto max-w-2xl flex items-center gap-2 rounded-lg border border-error bg-error-subtle px-3 py-2 text-sm text-error">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-4 w-4 flex-shrink-0 text-red-500"
+            className="h-4 w-4 flex-shrink-0 text-error"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"

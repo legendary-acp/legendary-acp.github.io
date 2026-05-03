@@ -92,12 +92,12 @@ function NowSection() {
       className="group relative rounded-2xl overflow-hidden bg-surface border border-default"
       aria-label="Currently working on"
     >
-      <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-brand-500 to-brand-600 group-hover:w-2 transition-all duration-300" />
+      <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-brand-500 to-brand-700 group-hover:w-2 transition-all duration-300" />
 
       <div className="p-6 space-y-4">
         <div className="flex items-center justify-between ">
           <div className="flex items-center gap-2">
-            <div className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
+            <div className="w-2 h-2 rounded-full bg-fluent-red animate-pulse" />
             <h3 className="text-xs uppercase tracking-widest text-secondary font-semibold">
               Now
             </h3>

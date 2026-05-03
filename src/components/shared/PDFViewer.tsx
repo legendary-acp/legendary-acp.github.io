@@ -125,14 +125,14 @@ export default function PDFViewer({
         onClick={onClose}
       >
         <div
-          className="bg-white rounded-2xl shadow-2xl w-full max-w-4xl max-h-[90vh] flex flex-col overflow-hidden"
+          className="bg-surface rounded-2xl shadow-2xl w-full max-w-4xl max-h-[90vh] flex flex-col overflow-hidden"
           onClick={(e) => e.stopPropagation()}
         >
-          <h2 className="text-lg font-semibold text-slate-900 mb-2">{title}</h2>
-          <p className="text-sm text-slate-600 mb-4">PDF not available</p>
+          <h2 className="text-lg font-semibold text-primary mb-2">{title}</h2>
+          <p className="text-sm text-secondary mb-4">PDF not available</p>
           <button
             onClick={onClose}
-            className="px-4 py-2 rounded-lg bg-slate-100 text-slate-700 hover:bg-slate-200 transition-colors"
+            className="px-4 py-2 rounded-lg bg-surface-2 text-secondary hover:bg-surface-2/80 transition-colors"
           >
             Close
           </button>
@@ -147,16 +147,16 @@ export default function PDFViewer({
       onClick={onClose}
     >
       <div
-        className="bg-white rounded-2xl shadow-2xl w-full max-w-4xl max-h-[90vh] flex flex-col overflow-hidden"
+        className="bg-surface rounded-2xl shadow-2xl w-full max-w-4xl max-h-[90vh] flex flex-col overflow-hidden"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="flex items-center justify-between border-b border-slate-200 p-6">
-          <h2 className="text-lg font-semibold text-slate-900 truncate pr-4">
+        <div className="flex items-center justify-between border-b border-default p-6">
+          <h2 className="text-lg font-semibold text-primary truncate pr-4">
             {title}
           </h2>
           <button
             onClick={onClose}
-            className="flex-shrink-0 inline-flex items-center justify-center h-8 w-8 rounded-lg text-slate-500 hover:bg-slate-100 hover:text-slate-900 transition-colors"
+            className="flex-shrink-0 inline-flex items-center justify-center h-8 w-8 rounded-lg text-tertiary hover:bg-surface-2 hover:text-primary transition-colors"
             aria-label="Close"
           >
             <span className="text-xl">✕</span>
@@ -164,12 +164,12 @@ export default function PDFViewer({
         </div>
         <div
           ref={containerRef}
-          className="flex-grow overflow-auto bg-slate-100"
+          className="flex-grow overflow-auto bg-surface-2"
         >
           {loading ? (
-            <div className="text-slate-500">Loading PDF...</div>
+            <div className="text-tertiary">Loading PDF...</div>
           ) : (
-            <div className="bg-white shadow rounded-lg my-auto mx-auto">
+            <div className="bg-surface shadow rounded-lg my-auto mx-auto">
               <canvas
                 ref={canvasRef}
                 className="block"
@@ -178,22 +178,22 @@ export default function PDFViewer({
             </div>
           )}
         </div>
-        <div className="border-t border-slate-200 p-4 flex items-center justify-between bg-white">
-          <div className="text-sm text-slate-600">
+        <div className="border-t border-default p-4 flex items-center justify-between bg-surface">
+          <div className="text-sm text-secondary">
             {numPages > 0 ? `${currentPage} / ${numPages}` : ""}
           </div>
           <div className="flex gap-2">
             <button
               onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
               disabled={currentPage <= 1}
-              className="px-3 py-2 rounded-lg border border-slate-200 text-sm font-medium text-slate-700 hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              className="px-3 py-2 rounded-lg border border-default text-sm font-medium text-secondary hover:bg-surface-2 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
             >
               ← Prev
             </button>
             <button
               onClick={() => setCurrentPage((p) => Math.min(numPages, p + 1))}
               disabled={currentPage >= numPages}
-              className="px-3 py-2 rounded-lg border border-slate-200 text-sm font-medium text-slate-700 hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              className="px-3 py-2 rounded-lg border border-default text-sm font-medium text-secondary hover:bg-surface-2 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
             >
               Next →
             </button>
@@ -201,7 +201,7 @@ export default function PDFViewer({
               href={pdfPath}
               target="_blank"
               rel="noreferrer"
-              className="px-3 py-2 rounded-lg border border-slate-200 text-sm font-medium text-slate-700 hover:bg-slate-50 transition-colors"
+              className="px-3 py-2 rounded-lg border border-default text-sm font-medium text-secondary hover:bg-surface-2 transition-colors"
             >
               Open
             </a>

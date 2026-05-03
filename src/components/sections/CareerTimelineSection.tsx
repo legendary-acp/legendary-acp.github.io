@@ -16,7 +16,7 @@ export default function CareerTimelineSection() {
           {roles.map((r, i) => (
             <div key={i} className="relative flex gap-6 items-start">
               {i !== roles.length - 1 && (
-                <div className="absolute left-6 top-0 bottom-0 w-[2px] bg-blue-600/50 h-[calc(100%+2.5rem)]"></div>
+                <div className="absolute left-6 top-0 bottom-0 w-[2px] bg-border-2 h-[calc(100%+2.5rem)]"></div>
               )}
               <div className="relative z-10 left-4 top-0 bottom-0">
                 <div className="w-5 h-5 bg-brand rounded-full border-4 border-bg shadow-md"></div>

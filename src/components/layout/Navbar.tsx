@@ -39,7 +39,7 @@ export default function Navbar() {
   };
 
   return (
-    <header className="sticky top-0 z-40 bg-white/80 dark:bg-slate-900/80 backdrop-blur border-b border-default">
+    <header className="sticky top-0 z-40 bg-surface/80 backdrop-blur border-b border-default">
       {/* ── Desktop: 3-zone grid ─────────────────────────────────────────── */}
       <div className="max-w-5xl mx-auto px-4 h-14 hidden md:grid md:grid-cols-3 items-center">
 
@@ -189,7 +189,7 @@ export default function Navbar() {
 
       <div
         className={clsx(
-          "md:hidden border-t border-default bg-white/95 dark:bg-slate-900/95 backdrop-blur px-4 overflow-hidden transition-all duration-200 ease-in-out",
+          "md:hidden border-t border-default bg-surface/95 backdrop-blur px-4 overflow-hidden transition-all duration-200 ease-in-out",
           open ? "max-h-64 opacity-100" : "max-h-0 opacity-0"
         )}
       >

@@ -7,81 +7,108 @@
    and then replace Tailwind hard-coded classes with the utility names below.
    ────────────────────────────────────────────────────────────────────────── */
 :root {
-  /* Surfaces */
-  --color-bg:        #f8fafc; /* slate-50  — page background   */
-  --color-surface:   #ffffff; /* white     — card background   */
-  --color-surface-2: #f1f5f9; /* slate-100 — code / hover bg  */
+  /* ─── Microsoft Fluent — Light ─────────────────────────────────────────── */
+
+  /* Surfaces (Fluent neutrals) */
+  --color-bg:        #faf9f8; /* neutralLighterAlt — page background */
+  --color-surface:   #ffffff; /* white             — card background */
+  --color-surface-2: #f3f2f1; /* neutralLighter    — code / hover bg */
 
   /* Borders */
-  --color-border:    #e2e8f0; /* slate-200 */
-  --color-border-2:  #cbd5e1; /* slate-300 */
+  --color-border:    #edebe9; /* neutralLight        */
+  --color-border-2:  #e1dfdd; /* neutralQuaternaryAlt */
 
   /* Text */
-  --color-text-primary:   #0f172a; /* slate-900 */
-  --color-text-secondary: #334155; /* slate-700 */
-  --color-text-tertiary:  #64748b; /* slate-500 */
-  --color-text-muted:     #475569; /* slate-600 */
+  --color-text-primary:   #201f1e; /* neutralDark      */
+  --color-text-secondary: #323130; /* neutralPrimary   */
+  --color-text-tertiary:  #605e5c; /* neutralSecondary */
+  --color-text-muted:     #484644; /* neutralPrimaryAlt */
 
-  /* Brand / interactive */
-  --color-brand:        #2563eb; /* blue-600 — primary CTA, links   */
-  --color-brand-hover:  #1d4ed8; /* blue-700 — hover / active       */
-  --color-brand-subtle: #eff6ff; /* blue-50  — ghost hover bg       */
-  --color-brand-muted:  rgba(37, 99, 235, 0.12); /* soft glow/ring  */
+  /* Brand / interactive — Fluent communication blue */
+  --color-brand:        #0078d4; /* themePrimary  — CTA, links     */
+  --color-brand-hover:  #106ebe; /* themeDarkAlt  — hover / active */
+  --color-brand-subtle: #deecf9; /* themeLighter  — ghost hover bg */
+  --color-brand-muted:  rgba(0, 120, 212, 0.12);
 
-  /* Semantic status */
-  --color-success:        #16a34a; /* green-600 */
-  --color-success-subtle: #f0fdf4; /* green-50  */
-  --color-warning:        #d97706; /* amber-600 */
-  --color-warning-subtle: #fffbeb; /* amber-50  */
-  --color-error:          #dc2626; /* red-600   */
-  --color-error-subtle:   #fef2f2; /* red-50    */
-  --color-info:           #0284c7; /* sky-600   */
-  --color-info-subtle:    #f0f9ff; /* sky-50    */
+  /* Semantic status (Fluent shared palette) */
+  --color-success:        #107c10;
+  --color-success-subtle: #dff6dd;
+  --color-warning:        #a66a00;
+  --color-warning-subtle: #fff4ce;
+  --color-error:          #a4262c;
+  --color-error-subtle:   #fde7e9;
+  --color-info:           #0078d4;
+  --color-info-subtle:    #deecf9;
+
+  /* Microsoft logo accent palette — used sparingly */
+  --color-fluent-red:    #f25022;
+  --color-fluent-green:  #7fba00;
+  --color-fluent-blue:   #00a4ef;
+  --color-fluent-yellow: #ffb900;
+
+  /* Soft accent backgrounds for category / status pills */
+  --color-fluent-red-subtle:    #fde7e1;
+  --color-fluent-green-subtle:  #e8f3cd;
+  --color-fluent-blue-subtle:   #cdeefd;
+  --color-fluent-yellow-subtle: #fff4ce;
 
   /* Focus ring */
-  --color-focus-ring: rgba(37, 99, 235, 0.4);
+  --color-focus-ring: rgba(0, 120, 212, 0.4);
 
   /* Profile image ring / timeline dot border */
   --color-ring-img: #ffffff;
 }
 
 .dark {
+  /* ─── Microsoft Fluent — Dark ──────────────────────────────────────────── */
+
   /* Surfaces */
-  --color-bg:        #020617; /* slate-950 */
-  --color-surface:   #0f172a; /* slate-900 */
-  --color-surface-2: #1e293b; /* slate-800 */
+  --color-bg:        #1b1a19; /* gray-200 */
+  --color-surface:   #252423; /* gray-180 */
+  --color-surface-2: #323130; /* gray-160 */
 
   /* Borders */
-  --color-border:    #334155; /* slate-700 */
-  --color-border-2:  #475569; /* slate-600 */
+  --color-border:    #3b3a39; /* gray-150 */
+  --color-border-2:  #484644; /* gray-130 */
 
   /* Text */
-  --color-text-primary:   #f8fafc; /* slate-50  */
-  --color-text-secondary: #cbd5e1; /* slate-300 */
-  --color-text-tertiary:  #64748b; /* slate-500 */
-  --color-text-muted:     #94a3b8; /* slate-400 */
+  --color-text-primary:   #ffffff;
+  --color-text-secondary: #e1dfdd;
+  --color-text-tertiary:  #a19f9d;
+  --color-text-muted:     #c8c6c4;
 
-  /* Brand / interactive — brighter on dark backgrounds */
-  --color-brand:        #3b82f6; /* blue-500 */
-  --color-brand-hover:  #2563eb; /* blue-600 */
-  --color-brand-subtle: #1e3a8a; /* blue-900 */
-  --color-brand-muted:  rgba(59, 130, 246, 0.15);
+  /* Brand / interactive — lighter Fluent blue for dark surfaces */
+  --color-brand:        #2b88d8; /* themeDarkAlt  */
+  --color-brand-hover:  #71afe5; /* themeTertiary */
+  --color-brand-subtle: #004578; /* themeDarker   */
+  --color-brand-muted:  rgba(43, 136, 216, 0.18);
 
-  /* Semantic status — lighter shades for dark bg */
-  --color-success:        #4ade80; /* green-400  */
-  --color-success-subtle: #14532d; /* green-900  */
-  --color-warning:        #fbbf24; /* amber-400  */
-  --color-warning-subtle: #78350f; /* amber-900  */
-  --color-error:          #f87171; /* red-400    */
-  --color-error-subtle:   #7f1d1d; /* red-900    */
-  --color-info:           #38bdf8; /* sky-400    */
-  --color-info-subtle:    #082f49; /* sky-950    */
+  /* Semantic status */
+  --color-success:        #6ccb5f;
+  --color-success-subtle: #1b3a1b;
+  --color-warning:        #ffd335;
+  --color-warning-subtle: #4a3500;
+  --color-error:          #f1707b;
+  --color-error-subtle:   #4a1419;
+  --color-info:           #2b88d8;
+  --color-info-subtle:    #004578;
+
+  /* Microsoft logo accent palette — same hues, dark subtle backgrounds */
+  --color-fluent-red:    #f25022;
+  --color-fluent-green:  #7fba00;
+  --color-fluent-blue:   #00a4ef;
+  --color-fluent-yellow: #ffb900;
+
+  --color-fluent-red-subtle:    #4a1a0d;
+  --color-fluent-green-subtle:  #2a3d00;
+  --color-fluent-blue-subtle:   #003a52;
+  --color-fluent-yellow-subtle: #4a3500;
 
   /* Focus ring */
-  --color-focus-ring: rgba(59, 130, 246, 0.5);
+  --color-focus-ring: rgba(43, 136, 216, 0.5);
 
   /* Profile image ring / timeline dot border */
-  --color-ring-img: #1e293b; /* slate-800 */
+  --color-ring-img: #252423;
 }
 
 /* ─── Semantic utility classes ───────────────────────────────────────────────
@@ -101,6 +128,7 @@
   .border-bg        { border-color: var(--color-bg); }
   /* A thin rule using the border token */
   .bg-border        { background-color: var(--color-border); }
+  .bg-border-2      { background-color: var(--color-border-2); }
 
   /* ─── Text ───────────────────────────────────────────────────────────── */
   .text-primary   { color: var(--color-text-primary); }
@@ -134,6 +162,28 @@
   .text-info          { color: var(--color-info); }
   .bg-info-subtle     { background-color: var(--color-info-subtle); }
   .border-info        { border-color: var(--color-info); }
+
+  /* ─── Microsoft logo accent palette ──────────────────────────────────── */
+  /* Use sparingly — e.g., status pills, category chips, decorative dots.   */
+  .text-fluent-red       { color: var(--color-fluent-red); }
+  .text-fluent-green     { color: var(--color-fluent-green); }
+  .text-fluent-blue      { color: var(--color-fluent-blue); }
+  .text-fluent-yellow    { color: var(--color-fluent-yellow); }
+
+  .bg-fluent-red         { background-color: var(--color-fluent-red); }
+  .bg-fluent-green       { background-color: var(--color-fluent-green); }
+  .bg-fluent-blue        { background-color: var(--color-fluent-blue); }
+  .bg-fluent-yellow      { background-color: var(--color-fluent-yellow); }
+
+  .bg-fluent-red-subtle    { background-color: var(--color-fluent-red-subtle); }
+  .bg-fluent-green-subtle  { background-color: var(--color-fluent-green-subtle); }
+  .bg-fluent-blue-subtle   { background-color: var(--color-fluent-blue-subtle); }
+  .bg-fluent-yellow-subtle { background-color: var(--color-fluent-yellow-subtle); }
+
+  .border-fluent-red     { border-color: var(--color-fluent-red); }
+  .border-fluent-green   { border-color: var(--color-fluent-green); }
+  .border-fluent-blue    { border-color: var(--color-fluent-blue); }
+  .border-fluent-yellow  { border-color: var(--color-fluent-yellow); }
 
   /* ─── Focus ring ─────────────────────────────────────────────────────── */
   /* Apply to interactive elements; only shows on keyboard navigation */
