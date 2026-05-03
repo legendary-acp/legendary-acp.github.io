@@ -1,13 +1,13 @@
 import{n as e}from"./rolldown-runtime-Dw2cE7zH.js";import{t}from"./vendor-mdx-43oxWCap.js";import{t as n}from"./vendor-react-B-MjnhAO.js";var r=e({default:()=>s,frontmatter:()=>a}),i=n(),a={title:`A Comprehensive Survey on Vector Database: Storage and Retrieval Technique, Challenge`,date:`2024-07-04`,tags:[`Data Engineering`,`AI`],readTime:`8`,description:`Understanding the engine of modern AI: how vector databases enable efficient similarity search for next-generation applications.`};function o(e){let n={h2:`h2`,h3:`h3`,li:`li`,p:`p`,strong:`strong`,ul:`ul`,...t(),...e.components};return(0,i.jsxs)(i.Fragment,{children:[(0,i.jsx)(n.h2,{id:`1-introduction`,children:`1. Introduction`}),`
-`,(0,i.jsx)(n.p,{children:`This paper attempts to consolidate all the information regarding vector databases including algorithms for solving ANN and NNN problem using hash-based, tree-based & graph-based approaches.
-It also mentioned what challenges are faced while developing vector databases.
-It also touched upon use cases of combining Large Language Models with Vector Database and vice versa, how they can help each other in generating value.
+`,(0,i.jsx)(n.p,{children:`This paper attempts to consolidate all the information regarding vector databases including algorithms for solving ANN and NNN problem using hash-based, tree-based & graph-based approaches.\r
+It also mentioned what challenges are faced while developing vector databases.\r
+It also touched upon use cases of combining Large Language Models with Vector Database and vice versa, how they can help each other in generating value.\r
 At last it introduced Retrieval-Based LLM which is enhancement of LLMs and hot topic of research.`}),`
 `,(0,i.jsx)(n.h2,{id:`2-paper-summary`,children:`2. Paper Summary`}),`
 `,(0,i.jsxs)(n.ul,{children:[`
-`,(0,i.jsxs)(n.li,{children:[(0,i.jsx)(n.strong,{children:`Title & Authors`}),`
+`,(0,i.jsxs)(n.li,{children:[(0,i.jsx)(n.strong,{children:`Title & Authors`}),`\r
 A Comprehensive Survey on Vector Database: Storage and Retrieval Technique, Challenge by Yikun Han, Chunjiang Liu and Pengfei Wang`]}),`
-`,(0,i.jsxs)(n.li,{children:[(0,i.jsx)(n.strong,{children:`Abstract Summary`}),`
+`,(0,i.jsxs)(n.li,{children:[(0,i.jsx)(n.strong,{children:`Abstract Summary`}),`\r
 The abstract of the paper gave a clear idea of what to expect from it. The paper tries to review existing algorithms and the architecture of vector databases and how they solve problems like storing high-dimensional data, the nearest neighbor search problem, etc. It also touches on how it can be used with LLMs to open new possibilities.`]}),`
 `]}),`
 `,(0,i.jsx)(n.h2,{id:`3-key-concepts`,children:`3. Key Concepts`}),`
@@ -80,10 +80,10 @@ The abstract of the paper gave a clear idea of what to expect from it. The paper
 `,(0,i.jsx)(n.p,{children:`So, here's the deal: this paper introduces the Transformer model, and it totally flips the script on how we process data. Instead of relying on traditional recurrence like older models, it goes all-in on self-attention. This is a game-changer because self-attention means the model can process input sequences in parallel. Translation? It's faster, it scales way better, and it just outperforms the older models in pretty much every way.`}),`
 `,(0,i.jsx)(n.hr,{}),`
 `,(0,i.jsx)(n.p,{children:(0,i.jsx)(n.img,{src:`/img/transformer_architecture.png`,alt:`Transformer Architecture`})}),`
-`,(0,i.jsxs)(n.p,{children:[`Now let's talk about the Transformer's core setup. It's based on an encoder-decoder architecture. The encoder handles the input sequence, while the decoder generates the output based on the encoder's work and its own past outputs. But the real magic is in the Multi-Head Attention Mechanism - this is what lets the model focus on different parts of the input data at the same time. So, rather than just processing one piece at a time like traditional recurrent models, the Transformer can look at everything all at once, making it lightning-fast.
+`,(0,i.jsxs)(n.p,{children:[`Now let's talk about the Transformer's core setup. It's based on an encoder-decoder architecture. The encoder handles the input sequence, while the decoder generates the output based on the encoder's work and its own past outputs. But the real magic is in the Multi-Head Attention Mechanism - this is what lets the model focus on different parts of the input data at the same time. So, rather than just processing one piece at a time like traditional recurrent models, the Transformer can look at everything all at once, making it lightning-fast.\r
 And here's the real mic-drop moment: the introduction of `,(0,i.jsx)(n.strong,{children:`attention`}),` completely changes the game. With the multi-headed self-attention mechanism, the Transformer model doesn't just speed up training - it takes the whole performance bar and smashes it. We're talking state-of-the-art results on tasks like the WMT 2014 English-to-German and English-to-French translation benchmarks. On the English-to-German task, it hit a BLEU score of 28.4, blowing the previous record out of the water. That's not just progress - it's a huge leap forward.`]}),`
 `,(0,i.jsx)(n.hr,{}),`
-`,(0,i.jsx)(n.p,{children:`So yeah, this paper isn't just a technical blueprint - it's the foundation of some of the most powerful AI systems we're using today. And next time you're chatting with ChatGPT or using an AI model, just know: you're interacting with the magic of the Transformer. Pretty wild, huh?
+`,(0,i.jsx)(n.p,{children:`So yeah, this paper isn't just a technical blueprint - it's the foundation of some of the most powerful AI systems we're using today. And next time you're chatting with ChatGPT or using an AI model, just know: you're interacting with the magic of the Transformer. Pretty wild, huh?\r
 Catch you in the next one - where we break down more game-changing tech!`})]})}function h(e={}){let{wrapper:n}={...t(),...e.components};return n?(0,i.jsx)(n,{...e,children:(0,i.jsx)(m,{...e})}):m(e)}var g=e({default:()=>y,frontmatter:()=>_}),_={title:`Inside MapReduce: The Engine That Powers Large-Scale Data Processing`,date:`2024-12-13`,tags:[`Engineering Systems`,`Big Data`],readTime:`9`,description:`MapReduce simplifies large-scale data processing by abstracting complex distributed tasks into just two functions: Map and Reduce.`};function v(e){let n={code:`code`,em:`em`,h2:`h2`,h3:`h3`,hr:`hr`,img:`img`,li:`li`,ol:`ol`,p:`p`,ul:`ul`,...t(),...e.components};return(0,i.jsxs)(i.Fragment,{children:[(0,i.jsx)(n.p,{children:`MapReduce consists of two main components: Map, which converts input data into (key,value) pairs using user-defined functions, and a Reduce function. While this might sound like a simple program, it handles many complex tasks associated with distributed computing, hiding them from the end user and letting them focus on core logic. The system can handle petabytes of data while abstracting details like parallelization, fault-tolerance, data distribution, and load balancing.`}),`
 `,(0,i.jsx)(n.h2,{id:`system-overview`,children:`System Overview`}),`
 `,(0,i.jsx)(n.p,{children:`The system runs on clusters of hundreds of machines and can be easily configured using a MapReduce specification object. It operates with one master node and several worker nodes, responsible for map or reduce tasks.`}),`
@@ -190,9 +190,9 @@ Catch you in the next one - where we break down more game-changing tech!`})]})}f
 `,(0,i.jsx)(n.h3,{id:`buckets`,children:`Buckets`}),`
 `,(0,i.jsx)(n.p,{children:`Within partitions, data gets distributed across multiple files through bucketing. Hive applies a hash function on specified columns to determine bucket placement. This mechanism enhances join performance and enables efficient sampling operations.`}),`
 `,(0,i.jsx)(n.p,{children:`The directory structure looks like this:`}),`
-`,(0,i.jsx)(n.pre,{children:(0,i.jsx)(n.code,{className:`language-bash`,children:`warehouse/
-└── table_name/
-    └── partition_column=value/
+`,(0,i.jsx)(n.pre,{children:(0,i.jsx)(n.code,{className:`language-bash`,children:`warehouse/\r
+└── table_name/\r
+    └── partition_column=value/\r
         └── bucket_N.file
 `})}),`
 `,(0,i.jsx)(n.h2,{id:`query-language`,children:`Query Language`}),`
