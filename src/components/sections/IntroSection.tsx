@@ -104,7 +104,12 @@ function NowSection() {
           </div>
           {nowData?.lastUpdated && (
             <time
-              dateTime={nowData.lastUpdated}
+              dateTime={(() => {
+                const d = new Date(nowData.lastUpdated);
+                return Number.isNaN(d.getTime())
+                  ? undefined
+                  : `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}`;
+              })()}
               className="text-xs text-tertiary font-mono"
             >
               {nowData.lastUpdated}

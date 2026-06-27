@@ -4,12 +4,12 @@
         "company": "Microsoft",
         "period": "April 2026 - Present",
         "location": "Hyderabad, India",
-        "desc": "Working on Microsoft IDC to manage Kubernetes workloads and infrastructure for Microsoft Security. Building and optimizing cloud-native systems to support security operations and threat detection at scale. [Details to be updated]",
+        "desc": "Engineering and operating large-scale Azure Kubernetes Service (AKS) infrastructure that powers Microsoft's cloud security products. Focused on fleet-wide reliability, capacity and cost optimization across multi-region clusters, and building observability pipelines with Prometheus, Grafana, and OpenTelemetry.",
         "skills": [
             "Kubernetes",
-            "Cloud Infrastructure",
-            "Security",
             "Azure",
+            "Go Lang",
+            "Observability",
             "Distributed Systems"
         ]
     },
