@@ -68,6 +68,7 @@ export default function MediumBlogCards(): React.ReactElement {
   useEffect(() => {
     const controller = new AbortController();
     const signal = controller.signal;
+    const timeoutId = setTimeout(() => controller.abort(), 10000);
 
     (async () => {
       try {
@@ -98,13 +99,17 @@ export default function MediumBlogCards(): React.ReactElement {
           setError("Failed to load Medium articles");
         }
       } finally {
+        clearTimeout(timeoutId);
         if (!signal.aborted) {
           setLoading(false);
         }
       }
     })();
 
-    return () => controller.abort();
+    return () => {
+      clearTimeout(timeoutId);
+      controller.abort();
+    };
   }, []);
 
   return (

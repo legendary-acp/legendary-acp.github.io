@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import type { PaperNote } from "../notes/d";
 import Chips from "./Chips";
 import ViewAllLink from "./ViewAllLink";
@@ -16,18 +17,18 @@ export default function PaperNoteCard({ note }: { note: PaperNote }) {
         {" · "}
         {note.readTime} mins
       </div>
-      <a href={`#/notes/${note.slug}`} className="mt-2 block">
+      <Link to={`/notes/${note.slug}`} className="mt-2 block">
         <h3 className="text-lg font-semibold tracking-tight text-primary">
           {note.title}
         </h3>
-      </a>
+      </Link>
       <p className="mt-2 text-sm leading-relaxed text-secondary line-clamp-3">
         {note.description}
       </p>
       <div className="mt-3 flex flex-wrap gap-2 items-center justify-between text-sm text-muted">
         <Chips items={note.tags ?? []} />
         <ViewAllLink
-          href={`#/notes/${note.slug}`}
+          href={`/notes/${note.slug}`}
           label="Read notes"
           className="text-tertiary hover:text-primary"
         />

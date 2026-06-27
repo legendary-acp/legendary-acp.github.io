@@ -1,6 +1,7 @@
 import { Routes, Route, useLocation } from "react-router-dom";
 import { useEffect, lazy, Suspense } from "react";
 import { ThemeProvider } from "./context/ThemeContext";
+import ErrorBoundary from "./components/shared/ErrorBoundary";
 import Footer from "./components/layout/Footer";
 import Navbar from "./components/layout/Navbar";
 import "./styles/globals.css";
@@ -10,6 +11,7 @@ const HomePage   = lazy(() => import("./pages/HomePage"));
 const NotesPage  = lazy(() => import("./pages/NotesPage"));
 const LogPage    = lazy(() => import("./pages/ReadingLogPage"));
 const BlogPost   = lazy(() => import("./pages/BlogPost"));
+const NotFound   = lazy(() => import("./pages/NotFound"));
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -34,14 +36,17 @@ export default function App() {
         <ScrollToTop />
         <Navbar />
         <main className="flex-grow">
-          <Suspense fallback={<PageLoader />}>
-            <Routes>
-              <Route path="/"            element={<HomePage />} />
-              <Route path="/notes"       element={<NotesPage />} />
-              <Route path="/logs"        element={<LogPage />} />
-              <Route path="/notes/:slug" element={<BlogPost />} />
-            </Routes>
-          </Suspense>
+          <ErrorBoundary>
+            <Suspense fallback={<PageLoader />}>
+              <Routes>
+                <Route path="/"            element={<HomePage />} />
+                <Route path="/notes"       element={<NotesPage />} />
+                <Route path="/logs"        element={<LogPage />} />
+                <Route path="/notes/:slug" element={<BlogPost />} />
+                <Route path="*"            element={<NotFound />} />
+              </Routes>
+            </Suspense>
+          </ErrorBoundary>
         </main>
         <Footer />
       </div>
