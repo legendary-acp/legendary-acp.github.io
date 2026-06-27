@@ -1,7 +1,8 @@
 {
-  "lastUpdated": "May 2026",
+  "lastUpdated": "July 2026",
   "items": [
-    "Started a new role at Microsoft as Software Engineer II, working on large-scale cloud and security systems",
-    "Relocated to Hyderabad as part of this career move"
+    "Settling into my role as a Software Engineer II at Microsoft, going deeper on large-scale cloud-native infrastructure and observability",
+    "Writing on Debugging Diaries about distributed systems, performance, and the messy realities of running software at scale",
+    "Working through a backlog of systems and reliability papers, logging the ones worth revisiting"
   ]
 }

@@ -13,7 +13,7 @@ export default function LatestPaperSection() {
           title="Latest paper notes"
           subtitle="Fresh notes from what I’m reading and testing."
         />
-        <ViewAllLink href="/logs" align="end" label="All papers" />
+        <ViewAllLink href="/notes" align="end" label="All notes" />
       </div>
 
       <div className="grid md:grid-cols-2 gap-6">

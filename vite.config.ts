@@ -47,8 +47,7 @@ export default defineConfig({
           // UI utilities
           if (id.includes('lucide-react') ||
             id.includes('react-simple-typewriter') ||
-            id.includes('classnames') ||
-            id.includes('react-pdf')) return 'vendor-ui';
+            id.includes('classnames')) return 'vendor-ui';
         },
       },
     },

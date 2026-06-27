@@ -18,7 +18,7 @@ export default function ContactSection() {
               Whether it's about scalable systems, new ideas, or potential
               collaborations — I'm always happy to connect and chat.
             </p>
-            <p className="mt-2 text-muted font-mono">{`{ Bengaluru, India }`}</p>
+            <p className="mt-2 text-muted font-mono">{`{ Hyderabad, India }`}</p>
             <p className="mt-4 text-xs text-tertiary">
               For quick syncs or casual discussions, you can schedule a call
               anytime.

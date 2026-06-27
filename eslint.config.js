@@ -12,9 +12,17 @@ export default defineConfig([
     extends: [
       js.configs.recommended,
       tseslint.configs.recommended,
-      reactHooks.configs['recommended-latest'],
       reactRefresh.configs.vite,
     ],
+    // react-hooks 7.x ships `recommended-latest` with `plugins` as a string
+    // array (legacy eslintrc shape), which ESLint 9 flat config rejects.
+    // Register the plugin manually and reuse its rule set instead.
+    plugins: {
+      'react-hooks': reactHooks,
+    },
+    rules: {
+      ...reactHooks.configs['recommended-latest'].rules,
+    },
     languageOptions: {
       ecmaVersion: 2020,
       globals: globals.browser,

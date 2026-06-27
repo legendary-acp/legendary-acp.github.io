@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import readingLog from "../../data/readingLog.json";
 import Chips from "../shared/Chips";
 import PDFViewer from "../shared/PDFViewer";
@@ -222,16 +222,13 @@ function EmptyState() {
 }
 
 export default function LogMain() {
-  const [items, setItems] = useState<ReadingLogItem[]>([]);
   const [status, setStatus] = useState<StatusFilter>("all");
   const [category, setCategory] = useState("all");
   const [selectedPaper, setSelectedPaper] = useState<ReadingLogItem | null>(
     null
   );
 
-  useEffect(() => {
-    setItems(normalize(readingLog as unknown[]));
-  }, []);
+  const items = useMemo(() => normalize(readingLog as unknown[]), []);
 
   const categories = useMemo(() => getUniqueCategoryValues(items), [items]);
 

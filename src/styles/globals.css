@@ -1,6 +1,5 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@config "../../tailwind.config.cjs";
 
 /* ─── Semantic colour tokens ─────────────────────────────────────────────────
    All dark-mode work later lives here — swap the values under .dark {}

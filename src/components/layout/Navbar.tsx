@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import clsx from "classnames";
 import { Typewriter } from "react-simple-typewriter";
@@ -17,12 +17,9 @@ export default function Navbar() {
   const navigate = useNavigate();
   const { theme, toggle } = useTheme();
 
-  useEffect(() => {
-    setOpen(false);
-  }, [location]);
-
   const handleSayHi = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
+    setOpen(false);
 
     const contactId = "contact";
     const scrollToContact = () => {
@@ -198,6 +195,7 @@ export default function Navbar() {
             <NavLink
               key={to}
               to={to}
+              onClick={() => setOpen(false)}
               className={({ isActive }) =>
                 clsx(
                   "rounded-lg px-3 py-2 hover:bg-surface-2 text-secondary",

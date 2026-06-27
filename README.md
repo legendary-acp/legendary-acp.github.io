@@ -12,7 +12,7 @@ It includes:
 ## Tech Stack
 
 - React 19 + TypeScript
-- Vite 7
+- Vite 8
 - React Router (`HashRouter`)
 - Tailwind CSS
 - MD/MDX pipeline (`@mdx-js/rollup`, `remark-*`, `rehype-*`)
@@ -70,7 +70,7 @@ description: "Short description"
 tags:
   - systems
   - architecture
-readTime: "8 min read"
+readTime: "8"
 ---
 ```
 
@@ -80,12 +80,11 @@ These posts are loaded through `src/lib/posts.ts` and rendered on the notes rout
 
 Edit JSON files inside `src/data/`:
 
-- `introNow.json`
-- `career.json`
+- `now.json`
+- `careerTimeline.json`
 - `skills.json`
-- `ossProjects.json`
-- `papers.json`
-- `paperNotes.json`
+- `projects.json`
+- `readingLog.json`
 
 ## Deployment
 

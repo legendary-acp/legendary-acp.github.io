@@ -33,8 +33,8 @@ export default function PDFViewer({
     if (!isOpen || !pdfPath) return;
 
     let cancelled = false;
-    setLoading(true);
     (async () => {
+      setLoading(true);
       try {
         const doc = await getDocument({ url: pdfPath, withCredentials: false })
           .promise;
@@ -70,7 +70,6 @@ export default function PDFViewer({
   }, [isOpen, onClose]);
 
   useEffect(() => {
-    let cleanup = () => {};
     if (!pdf || !canvasRef.current || !containerRef.current) return;
     let renderTask: RenderTask | null = null;
     const canvas = canvasRef.current;
@@ -106,14 +105,12 @@ export default function PDFViewer({
 
     render();
 
-    cleanup = () => {
+    return () => {
       ro.disconnect();
       if (renderTask && renderTask.cancel) {
         renderTask.cancel();
       }
     };
-
-    return cleanup;
   }, [pdf, currentPage]);
 
   if (!isOpen) return null;
