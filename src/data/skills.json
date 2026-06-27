@@ -8,11 +8,6 @@
                 "label": "Expert"
             },
             {
-                "name": "JavaScript",
-                "level": 80,
-                "label": "Advanced"
-            },
-            {
                 "name": "Python",
                 "level": 80,
                 "label": "Advanced"
@@ -28,11 +23,6 @@
                 "level": 70,
                 "label": "Intermediate",
                 "note": true
-            },
-            {
-                "name": "Bash",
-                "level": 65,
-                "label": "Intermediate"
             }
         ]
     },
@@ -40,12 +30,18 @@
         "title": "Domain Expertise",
         "items": [
             {
-                "title": "Distributed & Storage",
+                "title": "Databases & Storage",
                 "skills": [
+                    "PostgreSQL",
                     "ClickHouse",
-                    "Redpanda",
                     "Cassandra",
-                    "Object Store",
+                    "Object Store"
+                ]
+            },
+            {
+                "title": "Streaming & Distributed",
+                "skills": [
+                    "Redpanda",
                     "Replication",
                     "Partitioning"
                 ]
@@ -53,7 +49,7 @@
             {
                 "title": "Observability",
                 "skills": [
-                    "OpenTelemetry ",
+                    "OpenTelemetry",
                     "Fluent Bit",
                     "Prometheus",
                     "Grafana",
