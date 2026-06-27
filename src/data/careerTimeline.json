@@ -4,13 +4,13 @@
         "company": "Microsoft",
         "period": "April 2026 - Present",
         "location": "Hyderabad, India",
-        "desc": "Engineering and operating large-scale Azure Kubernetes Service (AKS) infrastructure that powers Microsoft's cloud security products. Focused on fleet-wide reliability, capacity and cost optimization across multi-region clusters, and building observability pipelines with Prometheus, Grafana, and OpenTelemetry.",
+        "desc": "Operate and maintain large-scale, multi-region production AKS infrastructure supporting 100+ internal services — owning node-pool capacity, autoscaling, and node-image lifecycle. Improve cluster reliability by resolving failures in distributed logging pipelines and reducing pod crash loops caused by resource contention and connectivity issues, and tune Fluentd configurations for higher log-collection throughput and stability under high volume. Lead production incident response — triaging alerts, performing root-cause analysis, and coordinating fixes for critical failures.",
         "skills": [
             "Kubernetes",
             "Azure",
-            "Go Lang",
+            "Fluentd",
             "Observability",
-            "Distributed Systems"
+            "Incident Response"
         ]
     },
     {
