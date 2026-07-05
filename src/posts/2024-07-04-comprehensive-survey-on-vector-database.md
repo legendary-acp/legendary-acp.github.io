@@ -4,6 +4,7 @@ date: "2024-07-04"
 tags: ["Data Engineering", "AI"]
 readTime: "8"
 description: "Understanding the engine of modern AI: how vector databases enable efficient similarity search for next-generation applications."
+paperId: "p-data-engineering-1"
 ---
 
 ## 1. Introduction

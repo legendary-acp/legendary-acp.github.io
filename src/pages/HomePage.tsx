@@ -12,14 +12,14 @@ export default function HomePage() {
       <section id="papers">
         <LatestPaperSection />
       </section>
-      <section id="oss">
-        <ProjectsSection />
-      </section>
       <section id="timeline">
         <CareerTimelineSection />
       </section>
       <section id="skills">
         <SkillsSection />
+      </section>
+      <section id="oss">
+        <ProjectsSection />
       </section>
       <section id="contact">
         <ContactSection />

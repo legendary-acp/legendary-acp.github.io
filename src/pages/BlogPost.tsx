@@ -1,5 +1,6 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { getPaperNotesBySlug } from "../lib/posts";
+import readingLog from "../data/readingLog.json";
 
 export default function BlogPost() {
   const { slug } = useParams<{ slug: string }>();
@@ -39,6 +40,12 @@ export default function BlogPost() {
   }
 
   const { Component, meta } = postRecord;
+
+  const linkedPaper = meta.paperId
+    ? (readingLog as { id: string; title: string; pdfPath?: string }[]).find(
+        (p) => p.id === meta.paperId
+      )
+    : undefined;
 
   return (
     <div className="max-w-5xl mx-auto py-10 px-4 lg:py-12">
@@ -86,6 +93,17 @@ export default function BlogPost() {
                 </span>
               ))}
             </div>
+          )}
+          {linkedPaper?.pdfPath && (
+            <a
+              href={linkedPaper.pdfPath}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-6 inline-flex items-center gap-2 rounded-full border border-default bg-page px-4 py-2 text-sm font-medium text-brand hover:text-brand-hover hover:border-default-2 transition-colors"
+            >
+              <span aria-hidden="true">📄</span>
+              Read the original paper
+            </a>
           )}
         </header>
         <hr className="border-t border-default mb-10" />

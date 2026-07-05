@@ -5,6 +5,7 @@ export type PaperNote = {
     tags?: string[];
     description?: string;
     readTime: string;
+    paperId?: string;
 };
 
 export interface MediumBlogItem {

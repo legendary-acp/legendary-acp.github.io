@@ -4,6 +4,7 @@ date: "2024-12-22"
 tags: ["Query", "Big Data"]
 readTime: "6"
 description: "Hive brings a familiar SQL interface to Hadoop, translating queries into distributed jobs via its metastore and optimizer."
+paperId: "p-data-engineering-2"
 ---
 
 Hive transforms the complex world of distributed data processing into a familiar SQL-like environment. This paper explores the core components and mechanisms that make Hive an efficient data warehouse solution built on Hadoop.

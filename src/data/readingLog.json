@@ -1,387 +1,293 @@
 [
-    {
-        "id": "p1",
-        "title": "Attention Is All You Need",
-        "date": "2024-10-28",
-        "status": "read",
-        "category": "ai",
-        "description": "Foundational paper on transformer architecture",
-        "tags": [
-            "Artificial Intelligence",
-            "transformers",
-            "attention"
-        ],
-        "blogUrl": "./_posts/2024-11-15-introduction-to-transformers.md",
-        "pdfPath": "/pdfs/ai/attention_is_all_you_need.pdf"
-    },
-    {
-        "id": "p2",
-        "title": "Misspecification in Inverse Reinforcement Learning",
-        "date": "2024-11-28",
-        "status": "reading",
-        "category": "ai",
-        "description": "Exploration of challenges in inverse reinforcement learning",
-        "tags": [
-            "Artificial Intelligence",
-            "reinforcement-learning"
-        ],
-        "blogUrl": null,
-        "pdfPath": "/pdfs/ai/misspecification_in_inverse_reinforcement_learning.pdf"
-    },
-    {
-        "id": "p3",
-        "title": "Diffusion Models Are Real-Time Game Engines",
-        "date": "2024-09-14",
-        "status": "queue",
-        "category": "ai",
-        "description": "Application of diffusion models to real-time game development",
-        "tags": [
-            "Artificial Intelligence",
-            "diffusion-models",
-            "games"
-        ],
-        "blogUrl": null,
-        "pdfPath": "/pdfs/ai/diffusion_models_are_real_time_game_engines.pdf"
-    },
-    {
-        "id": "p4",
-        "title": "Textbooks Are All You Need",
-        "date": "2024-11-27",
-        "status": "queue",
-        "category": "ai",
-        "description": "Study on using textbook data for training models",
-        "tags": [
-            "Artificial Intelligence",
-            "training"
-        ],
-        "blogUrl": null,
-        "pdfPath": "/pdfs/ai/textbooks_are_all_you_need.pdf"
-    },
-    {
-        "id": "p5",
-        "title": "Large Concept Models",
-        "date": "2024-12-22",
-        "status": "queue",
-        "category": "ai",
-        "description": "Exploration of large-scale concept-based models",
-        "tags": [
-            "Artificial Intelligence",
-            "language-models"
-        ],
-        "blogUrl": null,
-        "pdfPath": "/pdfs/ai/large_concept_models.pdf"
-    },
-    {
-        "id": "p6",
-        "title": "A Comprehensive Survey on Vector Database: Storage and Retrieval Technique, Challenge",
-        "date": "2024-07-04",
-        "status": "read",
-        "category": "data-engineering",
-        "description": "Comprehensive overview of vector database technologies and techniques",
-        "tags": [
-            "data-engineering",
-            "vector-databases"
-        ],
-        "blogUrl": "./_posts/2024-07-04-comprehensive-survey-on-vector-database.md",
-        "pdfPath": "/pdfs/data_engineering/a_comprehensive_survey_on_vector_database_storage_and_retrieval_technique_challenge.pdf"
-    },
-    {
-        "id": "p7",
-        "title": "Hive: A Warehousing Solution Over a Map-Reduce Framework",
-        "date": "2024-09-22",
-        "status": "read",
-        "category": "data-engineering",
-        "description": "Architecture and design of Hive data warehouse system",
-        "tags": [
-            "data-engineering",
-            "hadoop",
-            "hive"
-        ],
-        "blogUrl": "./_posts/2024-12-22-understanding-hive-architecture.md",
-        "pdfPath": "/pdfs/data_engineering/hive_a_warehousing_solution_over_a_map_reduce_framework.pdf"
-    },
-    {
-        "id": "p8",
-        "title": "CLP: Efficient and Scalable Search on Compressed Text Logs",
-        "date": "2025-06-27",
-        "status": "queue",
-        "category": "data-engineering",
-        "description": "Techniques for efficient searching on compressed log data",
-        "tags": [
-            "data-engineering",
-            "logs",
-            "compression"
-        ],
-        "blogUrl": null,
-        "pdfPath": "/pdfs/data_engineering/clp.pdf"
-    },
-    {
-        "id": "p9",
-        "title": "BigLake: BigQuery's Evolution toward a Multi-Cloud Lakehouse",
-        "date": "2024-09-22",
-        "status": "queue",
-        "category": "data-engineering",
-        "description": "BigQuery's lakehouse architecture across multiple clouds",
-        "tags": [
-            "data-engineering",
-            "bigquery",
-            "lakehouse"
-        ],
-        "blogUrl": null,
-        "pdfPath": "/pdfs/data_engineering/biglake_bigquery_s_evolution_toward_a_multi_cloud_lakehouse.pdf"
-    },
-    {
-        "id": "p10",
-        "title": "Presto: A Decade of SQL Analytics at Meta",
-        "date": "2024-07-04",
-        "status": "queue",
-        "category": "data-engineering",
-        "description": "Evolution and architecture of Presto SQL analytics engine at Meta",
-        "tags": [
-            "data-engineering",
-            "sql",
-            "analytics"
-        ],
-        "blogUrl": null,
-        "pdfPath": "/pdfs/data_engineering/presto_a_decade_of_sql_analytics_at_meta.pdf"
-    },
-    {
-        "id": "p11",
-        "title": "Computation Reuse via Fusion in Amazon Athena",
-        "date": "2024-11-18",
-        "status": "queue",
-        "category": "data-engineering",
-        "description": "Optimization techniques for computation reuse in Amazon Athena",
-        "tags": [
-            "data-engineering",
-            "athena",
-            "optimization"
-        ],
-        "blogUrl": null,
-        "pdfPath": "/pdfs/data_engineering/computation_reuse_via_fusion_in_amazon_athena.pdf"
-    },
-    {
-        "id": "p12",
-        "title": "MapReduce: Simplified Data Processing on Large Clusters",
-        "date": "2024-09-30",
-        "status": "read",
-        "category": "engineering-systems",
-        "description": "Foundational distributed computing framework for large-scale data processing",
-        "tags": [
-            "engineering-systems",
-            "mapreduce",
-            "distributed-systems"
-        ],
-        "blogUrl": "./_posts/2024-12-13-inside-mapreduce.md",
-        "pdfPath": "/pdfs/marvels/mapreduce_simplified_data_processing_on_large_clusters.pdf"
-    },
-    {
-        "id": "p13",
-        "title": "The Google File System",
-        "date": "2024-09-30",
-        "status": "queue",
-        "category": "engineering-systems",
-        "description": "Design and architecture of Google's distributed file system",
-        "tags": [
-            "engineering-systems",
-            "distributed-systems",
-            "storage"
-        ],
-        "blogUrl": null,
-        "pdfPath": "/pdfs/marvels/the_google_file_system.pdf"
-    },
-    {
-        "id": "p14",
-        "title": "Zanzibar: Google's Consistent, Global Authorization System",
-        "date": "2024-09-30",
-        "status": "queue",
-        "category": "engineering-systems",
-        "description": "Centralized authorization system for consistent permission management at scale",
-        "tags": [
-            "engineering-systems",
-            "authorization",
-            "security"
-        ],
-        "blogUrl": null,
-        "pdfPath": "/pdfs/marvels/zanzibar_google's_consistent,_global_authorization_system.pdf"
-    },
-    {
-        "id": "p15",
-        "title": "Firecracker: Lightweight Virtualization for Serverless Applications",
-        "date": "2024-07-04",
-        "status": "queue",
-        "category": "system-engineering",
-        "description": "Lightweight virtualization technology for serverless computing",
-        "tags": [
-            "system-engineering",
-            "virtualization",
-            "serverless"
-        ],
-        "blogUrl": null,
-        "pdfPath": "/pdfs/systems_engineering/firecracker-lightweight-virtualization-for-serverless-applications.pdf"
-    },
-    {
-        "id": "p16",
-        "title": "Bitcoin",
-        "date": "2024-07-04",
-        "status": "reading",
-        "category": "blockchain",
-        "description": "The original Bitcoin whitepaper",
-        "tags": [
-            "blockchain",
-            "cryptocurrency"
-        ],
-        "blogUrl": null,
-        "pdfPath": "/pdfs/web3/bitcoin.pdf"
-    },
-    {
-        "id": "p18",
-        "title": "A Method for Obtaining Digital Signatures and Public-Key Cryptosystems",
-        "date": "2025-02-21",
-        "status": "queue",
-        "category": "cybersecurity",
-        "description": "Foundational work on digital signatures and public-key cryptography",
-        "tags": [
-            "cybersecurity",
-            "cryptography",
-            "digital-signatures"
-        ],
-        "blogUrl": null,
-        "pdfPath": "/pdfs/security/a_method_for_obtaining_digital_signatures_and_public_key_cryptosystems.pdf"
-    },
-    {
-        "id": "p19",
-        "title": "New Directions in Cryptography",
-        "date": "2025-02-21",
-        "status": "queue",
-        "category": "cybersecurity",
-        "description": "Pioneering research on new cryptographic approaches",
-        "tags": [
-            "cybersecurity",
-            "cryptography"
-        ],
-        "blogUrl": null,
-        "pdfPath": "/pdfs/security/new_directions_in_cryptography.pdf"
-    },
-    {
-        "id": "p20",
-        "title": "PLUTUS OPEN SOURCE Breaking Barriers in Algorithmic Trading",
-        "date": "2025-07-28",
-        "status": "read",
-        "category": "trading-systems",
-        "description": "Open-source framework for algorithmic trading systems",
-        "tags": [
-            "trading-systems",
-            "algorithms",
-            "finance"
-        ],
-        "blogUrl": "./_posts/2025-07-28-plutus-open-source.md",
-        "pdfPath": "/pdfs/trading_systems/plutus_open_source_breaking_barriers_in_algorithmic_trading.pdf"
-    },
-    {
-        "id": "p21",
-        "title": "Advantages and Disadvantages of a Monolithic Repository",
-        "date": "2024-09-22",
-        "status": "read",
-        "category": "miscellaneous",
-        "description": "Analysis of monolithic repository architecture and trade-offs",
-        "tags": [
-            "miscellaneous",
-            "architecture",
-            "devops"
-        ],
-        "blogUrl": "./_posts/2024-09-08-advantages-disadvantages-monolithic-repo.md",
-        "pdfPath": "/pdfs/misc/advantage_and_disadvantages_of_a_monolithic_repository.pdf"
-    },
-    {
-        "id": "p22",
-        "title": "Bloom Filters: Design Innovations and Novel Applications",
-        "date": "2024-07-04",
-        "status": "queue",
-        "category": "miscellaneous",
-        "description": "Advanced techniques and applications of bloom filter data structures",
-        "tags": [
-            "miscellaneous",
-            "data-structures",
-            "algorithms"
-        ],
-        "blogUrl": null,
-        "pdfPath": "/pdfs/misc/bloom_filters_design_innovations_and_novel_applications.pdf"
-    },
-    {
-        "id": "p23",
-        "title": "Vortex: A Stream-oriented Storage Engine For Big Data Analytics",
-        "date": "2025-10-20",
-        "status": "queue",
-        "category": "data-engineering",
-        "description": "Vortex introduces a stream-oriented storage engine that unifies data ingestion and analytics, enabling real-time query processing over continuously arriving big data.",
-        "tags": [
-            "storage-engine",
-            "database-systems",
-            "big-data"
-        ],
-        "blogUrl": null,
-        "pdfPath": "/pdfs/data_engineering/vortex_a_stream_oriented_storage_engine_for_big_data_analytics.pdf"
-    },
-    {
-        "id": "p24",
-        "title": "C++ design patterns for low-latency applications including high-frequency trading",
-        "date": "2025-10-20",
-        "status": "queue",
-        "category": "system-engineering",
-        "description": "This paper explores C++ design patterns and architectural techniques used in low-latency systems such as high-frequency trading, focusing on minimizing memory overhead, lock contention, and latency in critical paths.",
-        "tags": [
-            "low-latency",
-            "systems",
-            "design-patterns"
-        ],
-        "blogUrl": null,
-        "pdfPath": "/pdfs/systems_engineering/c++_design_pattern_for_low_latency_applications.pdf"
-    },
-    {
-        "id": "p25",
-        "title": "What Every Programmer Should Know About Memory",
-        "date": "2025-10-20",
-        "status": "queue",
-        "category": "system-engineering",
-        "description": "This paper explains how modern memory hierarchies—caches, virtual memory, NUMA, and prefetching—affect program performance, helping developers write code that better utilizes CPU and memory hardware.",
-        "tags": [
-            "memory",
-            "performance",
-            "low-level",
-            "cpu-architecture"
-        ],
-        "blogUrl": null,
-        "pdfPath": "/pdfs/systems_engineering/cpumemory.pdf"
-    },
-    {
-        "id": "p26",
-        "title": "EarnHFT: Efficient Hierarchical Reinforcement Learning for High Frequency Trading",
-        "date": "2025-10-20",
-        "status": "queue",
-        "category": "trading-systems",
-        "description": "TEarnHFT presents a hierarchical reinforcement learning framework tailored for high-frequency trading, where low-level agents handle rapid execution while a high-level policy optimizes long-term trading objectives.",
-        "tags": [
-            "hft",
-            "machine-learning",
-            "finance"
-        ],
-        "blogUrl": null,
-        "pdfPath": "/pdfs/trading_systems/earn_hft.pdf"
-    },
-    {
-        "id": "p27",
-        "title": "FlowHFT: Imitation Learning via Flow Matching Policy for Optimal High-Frequency Trading under Diverse Market Conditions",
-        "date": "2025-10-20",
-        "status": "read",
-        "category": "trading-systems",
-        "description": "FlowHFT introduces a flow-matching imitation learning approach for high-frequency trading, enabling agents to learn optimal trading policies from expert demonstrations across diverse and dynamic market conditions.",
-        "tags": [
-            "imitation-learning",
-            "finance",
-            "hft"
-        ],
-        "blogUrl": null,
-        "pdfPath": "/pdfs/trading_systems/flow_hft.pdf"
-    }
+  {
+    "id": "p-ai-1",
+    "title": "Attention Is All You Need",
+    "date": "2024-10-28",
+    "status": "read",
+    "category": "ai",
+    "description": "Foundational paper on transformer architecture",
+    "tags": [
+      "Artificial Intelligence",
+      "transformers",
+      "attention"
+    ],
+    "pdfPath": "/pdfs/ai/attention_is_all_you_need.pdf"
+  },
+  {
+    "id": "p-ai-2",
+    "title": "Diffusion Models Are Real-Time Game Engines",
+    "date": "2024-09-14",
+    "status": "queue",
+    "category": "ai",
+    "description": "Application of diffusion models to real-time game development",
+    "tags": [
+      "Artificial Intelligence",
+      "diffusion-models",
+      "games"
+    ],
+    "pdfPath": "/pdfs/ai/diffusion_models_are_real_time_game_engines.pdf"
+  },
+  {
+    "id": "p-ai-3",
+    "title": "Textbooks Are All You Need",
+    "date": "2024-11-27",
+    "status": "queue",
+    "category": "ai",
+    "description": "Study on using textbook data for training models",
+    "tags": [
+      "Artificial Intelligence",
+      "training"
+    ],
+    "pdfPath": "/pdfs/ai/textbooks_are_all_you_need.pdf"
+  },
+  {
+    "id": "p-ai-4",
+    "title": "Large Concept Models",
+    "date": "2024-12-22",
+    "status": "queue",
+    "category": "ai",
+    "description": "Exploration of large-scale concept-based models",
+    "tags": [
+      "Artificial Intelligence",
+      "language-models"
+    ],
+    "pdfPath": "/pdfs/ai/large_concept_models.pdf"
+  },
+  {
+    "id": "p-data-engineering-1",
+    "title": "A Comprehensive Survey on Vector Database: Storage and Retrieval Technique, Challenge",
+    "date": "2024-07-04",
+    "status": "read",
+    "category": "data-engineering",
+    "description": "Comprehensive overview of vector database technologies and techniques",
+    "tags": [
+      "data-engineering",
+      "vector-databases"
+    ],
+    "pdfPath": "/pdfs/data_engineering/a_comprehensive_survey_on_vector_database_storage_and_retrieval_technique_challenge.pdf"
+  },
+  {
+    "id": "p-data-engineering-2",
+    "title": "Hive: A Warehousing Solution Over a Map-Reduce Framework",
+    "date": "2024-09-22",
+    "status": "read",
+    "category": "data-engineering",
+    "description": "Architecture and design of Hive data warehouse system",
+    "tags": [
+      "data-engineering",
+      "hadoop",
+      "hive"
+    ],
+    "pdfPath": "/pdfs/data_engineering/hive_a_warehousing_solution_over_a_map_reduce_framework.pdf"
+  },
+  {
+    "id": "p-data-engineering-3",
+    "title": "CLP: Efficient and Scalable Search on Compressed Text Logs",
+    "date": "2025-06-27",
+    "status": "queue",
+    "category": "data-engineering",
+    "description": "Techniques for efficient searching on compressed log data",
+    "tags": [
+      "data-engineering",
+      "logs",
+      "compression"
+    ],
+    "pdfPath": "/pdfs/data_engineering/clp.pdf"
+  },
+  {
+    "id": "p-data-engineering-4",
+    "title": "Presto: A Decade of SQL Analytics at Meta",
+    "date": "2024-07-04",
+    "status": "queue",
+    "category": "data-engineering",
+    "description": "Evolution and architecture of Presto SQL analytics engine at Meta",
+    "tags": [
+      "data-engineering",
+      "sql",
+      "analytics"
+    ],
+    "pdfPath": "/pdfs/data_engineering/presto_a_decade_of_sql_analytics_at_meta.pdf"
+  },
+  {
+    "id": "p-engineering-systems-1",
+    "title": "MapReduce: Simplified Data Processing on Large Clusters",
+    "date": "2024-09-30",
+    "status": "read",
+    "category": "engineering-systems",
+    "description": "Foundational distributed computing framework for large-scale data processing",
+    "tags": [
+      "engineering-systems",
+      "mapreduce",
+      "distributed-systems"
+    ],
+    "pdfPath": "/pdfs/marvels/mapreduce_simplified_data_processing_on_large_clusters.pdf"
+  },
+  {
+    "id": "p-engineering-systems-2",
+    "title": "The Google File System",
+    "date": "2024-09-30",
+    "status": "queue",
+    "category": "engineering-systems",
+    "description": "Design and architecture of Google's distributed file system",
+    "tags": [
+      "engineering-systems",
+      "distributed-systems",
+      "storage"
+    ],
+    "pdfPath": "/pdfs/marvels/the_google_file_system.pdf"
+  },
+  {
+    "id": "p-engineering-systems-3",
+    "title": "Zanzibar: Google's Consistent, Global Authorization System",
+    "date": "2024-09-30",
+    "status": "queue",
+    "category": "engineering-systems",
+    "description": "Centralized authorization system for consistent permission management at scale",
+    "tags": [
+      "engineering-systems",
+      "authorization",
+      "security"
+    ],
+    "pdfPath": "/pdfs/marvels/zanzibar_google's_consistent,_global_authorization_system.pdf"
+  },
+  {
+    "id": "p-system-engineering-1",
+    "title": "Firecracker: Lightweight Virtualization for Serverless Applications",
+    "date": "2024-07-04",
+    "status": "queue",
+    "category": "system-engineering",
+    "description": "Lightweight virtualization technology for serverless computing",
+    "tags": [
+      "system-engineering",
+      "virtualization",
+      "serverless"
+    ],
+    "pdfPath": "/pdfs/systems_engineering/firecracker-lightweight-virtualization-for-serverless-applications.pdf"
+  },
+  {
+    "id": "p-cybersecurity-1",
+    "title": "A Method for Obtaining Digital Signatures and Public-Key Cryptosystems",
+    "date": "2025-02-21",
+    "status": "queue",
+    "category": "cybersecurity",
+    "description": "Foundational work on digital signatures and public-key cryptography",
+    "tags": [
+      "cybersecurity",
+      "cryptography",
+      "digital-signatures"
+    ],
+    "pdfPath": "/pdfs/security/a_method_for_obtaining_digital_signatures_and_public_key_cryptosystems.pdf"
+  },
+  {
+    "id": "p-cybersecurity-2",
+    "title": "New Directions in Cryptography",
+    "date": "2025-02-21",
+    "status": "queue",
+    "category": "cybersecurity",
+    "description": "Pioneering research on new cryptographic approaches",
+    "tags": [
+      "cybersecurity",
+      "cryptography"
+    ],
+    "pdfPath": "/pdfs/security/new_directions_in_cryptography.pdf"
+  },
+  {
+    "id": "p-trading-systems-1",
+    "title": "PLUTUS OPEN SOURCE Breaking Barriers in Algorithmic Trading",
+    "date": "2025-07-28",
+    "status": "read",
+    "category": "trading-systems",
+    "description": "Open-source framework for algorithmic trading systems",
+    "tags": [
+      "trading-systems",
+      "algorithms",
+      "finance"
+    ],
+    "pdfPath": "/pdfs/trading_systems/plutus_open_source_breaking_barriers_in_algorithmic_trading.pdf"
+  },
+  {
+    "id": "p-miscellaneous-1",
+    "title": "Advantages and Disadvantages of a Monolithic Repository",
+    "date": "2024-09-22",
+    "status": "read",
+    "category": "miscellaneous",
+    "description": "Analysis of monolithic repository architecture and trade-offs",
+    "tags": [
+      "miscellaneous",
+      "architecture",
+      "devops"
+    ],
+    "pdfPath": "/pdfs/misc/advantage_and_disadvantages_of_a_monolithic_repository.pdf"
+  },
+  {
+    "id": "p-data-engineering-5",
+    "title": "Vortex: A Stream-oriented Storage Engine For Big Data Analytics",
+    "date": "2025-10-20",
+    "status": "queue",
+    "category": "data-engineering",
+    "description": "Vortex introduces a stream-oriented storage engine that unifies data ingestion and analytics, enabling real-time query processing over continuously arriving big data.",
+    "tags": [
+      "storage-engine",
+      "database-systems",
+      "big-data"
+    ],
+    "pdfPath": "/pdfs/data_engineering/vortex_a_stream_oriented_storage_engine_for_big_data_analytics.pdf"
+  },
+  {
+    "id": "p-system-engineering-2",
+    "title": "C++ design patterns for low-latency applications including high-frequency trading",
+    "date": "2025-10-20",
+    "status": "queue",
+    "category": "system-engineering",
+    "description": "This paper explores C++ design patterns and architectural techniques used in low-latency systems such as high-frequency trading, focusing on minimizing memory overhead, lock contention, and latency in critical paths.",
+    "tags": [
+      "low-latency",
+      "systems",
+      "design-patterns"
+    ],
+    "pdfPath": "/pdfs/systems_engineering/c++_design_pattern_for_low_latency_applications.pdf"
+  },
+  {
+    "id": "p-system-engineering-3",
+    "title": "What Every Programmer Should Know About Memory",
+    "date": "2025-10-20",
+    "status": "queue",
+    "category": "system-engineering",
+    "description": "This paper explains how modern memory hierarchies—caches, virtual memory, NUMA, and prefetching—affect program performance, helping developers write code that better utilizes CPU and memory hardware.",
+    "tags": [
+      "memory",
+      "performance",
+      "low-level",
+      "cpu-architecture"
+    ],
+    "pdfPath": "/pdfs/systems_engineering/cpumemory.pdf"
+  },
+  {
+    "id": "p-trading-systems-2",
+    "title": "EarnHFT: Efficient Hierarchical Reinforcement Learning for High Frequency Trading",
+    "date": "2025-10-20",
+    "status": "queue",
+    "category": "trading-systems",
+    "description": "TEarnHFT presents a hierarchical reinforcement learning framework tailored for high-frequency trading, where low-level agents handle rapid execution while a high-level policy optimizes long-term trading objectives.",
+    "tags": [
+      "hft",
+      "machine-learning",
+      "finance"
+    ],
+    "pdfPath": "/pdfs/trading_systems/earn_hft.pdf"
+  },
+  {
+    "id": "p-trading-systems-3",
+    "title": "FlowHFT: Imitation Learning via Flow Matching Policy for Optimal High-Frequency Trading under Diverse Market Conditions",
+    "date": "2025-10-20",
+    "status": "read",
+    "category": "trading-systems",
+    "description": "FlowHFT introduces a flow-matching imitation learning approach for high-frequency trading, enabling agents to learn optimal trading policies from expert demonstrations across diverse and dynamic market conditions.",
+    "tags": [
+      "imitation-learning",
+      "finance",
+      "hft"
+    ],
+    "pdfPath": "/pdfs/trading_systems/flow_hft.pdf"
+  }
 ]

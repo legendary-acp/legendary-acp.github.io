@@ -39,6 +39,7 @@ const posts: PaperNoteRecord[] = Object.entries(componentModules)
             description: frontmatter.description || '',
             tags: frontmatter.tags || [],
             readTime,
+            paperId: frontmatter.paperId,
         };
 
         return {
@@ -56,4 +57,8 @@ export function getAllPaperNotes(): PaperNote[] {
 
 export function getPaperNotesBySlug(slug: string): PaperNoteRecord | null {
     return posts.find(p => p.meta.slug === slug) ?? null;
+}
+
+export function getPaperNoteByPaperId(paperId: string): PaperNote | null {
+    return posts.find(p => p.meta.paperId === paperId)?.meta ?? null;
 }

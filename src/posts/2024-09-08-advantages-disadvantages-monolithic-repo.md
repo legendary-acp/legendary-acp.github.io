@@ -4,6 +4,7 @@ date: "2024-09-08"
 tags: ["Productivity", "Misc"]
 readTime: "6"
 description: "Exploring MonoRepos: when a single repository boosts collaboration and code reuse, and when it creates complexity and friction."
+paperId: "p-miscellaneous-1"
 ---
 
 When I first encountered the concept of a **MonoRepo**, it didn't quite make sense. 🤔 Why would anyone put all their code into a single repository? In my experience, each microservice had its own dedicated repository, built separately to reduce complexity. Combining everything into one place seemed like it would only increase developer effort and make things more confusing — until I came across this fascinating case study by Google.

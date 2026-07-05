@@ -1,5 +1,7 @@
 import { useMemo, useState } from "react";
+import { Link } from "react-router-dom";
 import readingLog from "../../data/readingLog.json";
+import { getAllPaperNotes } from "../../lib/posts";
 import Chips from "../shared/Chips";
 import PDFViewer from "../shared/PDFViewer";
 
@@ -11,7 +13,6 @@ export type ReadingLogItem = {
   category: string;
   description: string;
   tags: string[];
-  blogUrl?: string;
   pdfPath?: string;
 };
 
@@ -35,7 +36,6 @@ const normalize = (raw: unknown[]): ReadingLogItem[] =>
       category: String(p.category),
       description: String(p.description),
       tags: Array.isArray(p.tags) ? p.tags.map(String) : [],
-      blogUrl: typeof p.blogUrl === "string" ? p.blogUrl : undefined,
       pdfPath: typeof p.pdfPath === "string" ? p.pdfPath : undefined,
     };
   });
@@ -81,9 +81,11 @@ const filterPapers = (
 
 function PaperCard({
   paper,
+  noteSlug,
   onClick,
 }: {
   paper: ReadingLogItem;
+  noteSlug?: string;
   onClick: () => void;
 }) {
   const statusColor =
@@ -130,6 +132,19 @@ function PaperCard({
       <div className="mt-4">
         <Chips items={paper.tags} />
       </div>
+
+      {noteSlug && (
+        <Link
+          to={`/notes/${noteSlug}`}
+          onClick={(e) => e.stopPropagation()}
+          className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-brand hover:text-brand-hover"
+        >
+          Read my notes
+          <span aria-hidden="true" className="transition-transform">
+            →
+          </span>
+        </Link>
+      )}
     </article>
   );
 }
@@ -230,6 +245,14 @@ export default function LogMain() {
 
   const items = useMemo(() => normalize(readingLog as unknown[]), []);
 
+  const noteSlugByPaperId = useMemo(() => {
+    const map = new Map<string, string>();
+    for (const note of getAllPaperNotes()) {
+      if (note.paperId) map.set(note.paperId, note.slug);
+    }
+    return map;
+  }, []);
+
   const categories = useMemo(() => getUniqueCategoryValues(items), [items]);
 
   const filtered = useMemo(
@@ -252,6 +275,7 @@ export default function LogMain() {
             <PaperCard
               key={paper.id}
               paper={paper}
+              noteSlug={noteSlugByPaperId.get(paper.id)}
               onClick={() => setSelectedPaper(paper)}
             />
           ))

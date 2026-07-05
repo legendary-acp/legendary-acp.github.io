@@ -4,6 +4,7 @@ date: "2024-12-13"
 tags: ["Engineering Systems", "Big Data"]
 readTime: "9"
 description: "MapReduce simplifies large-scale data processing by abstracting complex distributed tasks into just two functions: Map and Reduce."
+paperId: "p-engineering-systems-1"
 ---
 
 MapReduce consists of two main components: Map, which converts input data into (key,value) pairs using user-defined functions, and a Reduce function. While this might sound like a simple program, it handles many complex tasks associated with distributed computing, hiding them from the end user and letting them focus on core logic. The system can handle petabytes of data while abstracting details like parallelization, fault-tolerance, data distribution, and load balancing.

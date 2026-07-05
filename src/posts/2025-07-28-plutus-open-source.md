@@ -4,6 +4,7 @@ date: "2025-07-28"
 tags: ["Trading System", "Standard"]
 description: "Plutus proposes an open-source standard for algorithmic trading to boost transparency and collaboration, but risks being just another framework."
 readTime: "4"
+paperId: "p-trading-systems-1"
 ---
 
 ## TL;DR

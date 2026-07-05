@@ -4,6 +4,7 @@ date: "2024-11-15"
 tags: ["AI", "GenAI"]
 readTime: "4"
 description: "The Transformer model replaced recurrence with self-attention, enabling parallel processing and forming the foundation for modern AI like ChatGPT."
+paperId: "p-ai-1"
 ---
 
 Alright, so I've had this paper, "**_Attention is All You Need_**" sitting in my reading list for a solid six months now. Finally decided to check it out today. It's not super hard to understand, but I did have to ask ChatGPT for a little help. Funny enough, ChatGPT is actually built on the transformer architecture the paper talks about. Pretty cool, right?
