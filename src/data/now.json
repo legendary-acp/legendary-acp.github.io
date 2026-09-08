@@ -1,8 +1,7 @@
 {
-  "lastUpdated": "July 2026",
+  "lastUpdated": "September 2026",
   "items": [
-    "Settling into my role as a Software Engineer II at Microsoft, going deeper on large-scale cloud-native infrastructure and observability",
-    "Writing on Debugging Diaries about distributed systems, performance, and the messy realities of running software at scale",
-    "Working through a backlog of systems and reliability papers, logging the ones worth revisiting"
+    "Focusing on new areas at work and broadening the kinds of problems I get to solve",
+    "Getting back to my Rust project and rebuilding momentum through hands-on systems work"
   ]
 }
