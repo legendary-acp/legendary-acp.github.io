@@ -1,4 +1,4 @@
-import{t as e}from"./vendor-react-DrHaS9qn.js";var t=e();function n({items:e}){return(0,t.jsx)(`div`,{className:`flex flex-wrap gap-2`,children:e.map((e,n)=>(0,t.jsx)(`span`,{className:`
+import{t as e}from"./vendor-react-BJcEGXig.js";var t=e();function n({items:e}){return(0,t.jsx)(`div`,{className:`flex flex-wrap gap-2`,children:e.map((e,n)=>(0,t.jsx)(`span`,{className:`
         inline-block select-none
         rounded border border-default-2
         bg-surface-2 px-2.5 py-0.5
